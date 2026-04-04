@@ -1,5 +1,5 @@
 //
-// Created by wanjiangzhi on 2026/3/30.
+// Created by TingIAAI on 2026/4/4.
 //
 
 #ifndef ZCLIBLOG_EXECUTORS_CSTDIO_HPP
@@ -11,17 +11,17 @@
 // NOLINTNEXTLINE
 namespace ZCLibLog {
     namespace executors {
-        inline executor& cstdio() {
-            static executor inst = [](ELString msg, ELogLevel lv) {
-                if (lv >= LogLevel_ERROR) {
-                    fputs(msg.c_str(), stderr);
-                    fputs("\n", stderr);
-                } else {
-                    fputs(msg.c_str(), stdout);
-                    fputs("\n", stdout);
+        /**
+         * @warning 请确保 FILE* 在执行器使用期间有效
+         */
+        inline executor cstdio(FILE* f) {
+            return [f](ELString msg, ELogLevel lv) {
+                if (f) {
+                    fputs(msg.c_str(), f);
+                    fputs("\n", f);
+                    fflush(f);
                 }
             };
-            return inst;
         }
     }
 }
