@@ -68,7 +68,60 @@ public:
     }
 };
 
-ZCLibLog::LoggerSync<ZCLibLog::formatters::vformat> Logger{"MainLogger"};
+struct format {
+    using format_api = ZCLibLog::cxx20_format_api;
+    template <typename... Args>
+    static std::string do_format(ZCLibLog::FLogPack pack, std::format_string<Args...> fmt, Args&&... args) {
+        using namespace ZCLibLog;
+
+        std::string f_msg;
+        if (sizeof...(args) == 0) {
+            f_msg = fmt.get();
+        }
+        else {
+            try {
+                f_msg = std::format(std::forward<std::format_string<Args...>>(fmt), std::forward<Args&&>(args)...);
+            } catch (const std::format_error&) {
+                return {};
+            }
+        }
+
+        const auto tp = std::chrono::system_clock::time_point(std::chrono::milliseconds(pack.time));
+
+        const char* level_str;
+        switch (pack.level) {
+            case LogLevel_TRACE: level_str = "[TRACE]";
+                break;
+            case LogLevel_DEBUG: level_str = "[DEBUG]";
+                break;
+            case LogLevel_INFO: level_str = "[INFO]";
+                break;
+            case LogLevel_WARN: level_str = "[WARN]";
+                break;
+            case LogLevel_ERROR: level_str = "[ERROR]";
+                break;
+            case LogLevel_FATAL: level_str = "[FATAL]";
+                break;
+            default: level_str = "[INFO]";
+                break;
+        }
+
+        return std::format(
+            "{:%Y-%m-%d %H:%M:%S} [{}] {} {}",
+            std::chrono::time_point_cast<std::chrono::milliseconds>(tp),
+            *pack.module,
+            level_str,
+            f_msg
+        );
+    }
+};
+
+ZCLibLog::LoggerSync<format> Logger{
+    "MainLogger",
+    {
+        ZCLibLog::executors::cstdout()
+    }
+};
 RingBuffer<std::string> buf(5);
 
 inline ZCLibLog::executor& ringbuf() {
@@ -80,18 +133,14 @@ inline ZCLibLog::executor& ringbuf() {
 }
 
 int main() {
-    //Logger.bind_executor(ZCLibLog::executors::cstdio());
-    Logger.bind_executor(ringbuf());
-    Logger.bind_executor(ZCLibLog::executors::cstdout());
+    const auto start = std::chrono::high_resolution_clock::now();
 
-    Logger.INFO("Hello {}!", ZCLibLog::PROJECT_NAME);
+    Logger.INFO("Hello {}", ZCLibLog::PROJECT_NAME);
+    Logger.INFO("Hello {}", ZCLibLog::PROJECT_NAME);
 
-    /*std::cout << std::endl;
-    for (const auto& item : buf) {
-        std::cout << item << std::endl;
-    }
-    std::cout << std::endl;
-    std::cout << oss.str() << std::endl;*/
+    const auto end = std::chrono::high_resolution_clock::now();
+    const auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+    std::cout << "Used: " << duration.count() << " ns\n";
 
     return 0;
 }

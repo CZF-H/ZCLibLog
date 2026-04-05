@@ -1,3 +1,6 @@
+// Copyright 2026 CZF-H
+// Licensed under the Apache License, Version 2.0
+
 //
 // Created by wanjiangzhi on 2026/3/30.
 //
@@ -9,7 +12,7 @@
 #include <vector>
 #include <string>
 
-#include "inside/logger_macros.h"
+#include "inside/logger_precompile.hpp"
 #include "inside/logger_types.hpp"
 
 // ReSharper disable CppUnusedIncludeDirective
@@ -19,6 +22,11 @@
 #include "logger_configurations.h"
 #if ZCLIBLOG_LOGGER_CONFIGURATIONS_DEFAULT_CSNPRINTF
 #include "formatters/csnprintf.hpp"
+#endif
+
+#if defined(ZCLibLog_HAS_FORMAT) && ZCLIBLOG_LOGGER_CONFIGURATIONS_ENABLE_CXX20_FORMAT
+#define ZCLibLog_USE_FORMAT
+#include <format>
 #endif
 
 namespace ZCLibLog {
@@ -47,6 +55,20 @@ namespace ZCLibLog {
             return m_level;
         }
 
+        void execute(const std::string& message, const LogLevel level) const {
+            if (!message.empty()) {
+                // ReSharper disable once CppUseElementsView
+                // ReSharper disable once CppUseStructuredBinding
+                for (const auto& the_executor_pair : m_executors) {
+                    the_executor_pair.second(message, level);
+                }
+            }
+        }
+
+        ZCLibLog_NODISCARD bool has_executor() const {
+            return !m_executors.empty();
+        }
+
         size_t bind_executor(executor ex) {
             m_executors.emplace_back(m_nextID, std::move(ex));
             return m_nextID++;
@@ -69,10 +91,31 @@ namespace ZCLibLog {
         }
 
         // ReSharper disable once CppNonExplicitConvertingConstructor
-        LoggerSync(std::string name, const LogLevel level = LogLevel_ALL) : m_name(std::move(name)),
-                                                                            m_level(level) {}
+        LoggerSync(
+            std::string name,
+            const std::initializer_list<executor>& executors = {},
+            const LogLevel level = LogLevel_ALL
+        ) : m_name(std::move(name)),
+            m_level(level) {
+            for (const auto& executor : executors) {
+                bind_executor(executor);
+            }
+        }
 
         class Tag {
+            [[nodiscard]] LogPack get_log_pack() const {
+                const auto now = std::chrono::system_clock::now();
+                const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
+                    now.time_since_epoch()
+                ).count();
+
+                LogPack p;
+                p.module = &m_logger->name();
+                p.level = m_level;
+                p.time = ms;
+
+                return p;
+            }
         protected:
             const LoggerSync* const m_logger{};
             const LogLevel m_level{};
@@ -86,27 +129,28 @@ namespace ZCLibLog {
                                                                         m_level(level) {}
 
             template <typename Fmt, typename... Args>
-            void operator()(Fmt fmt, Args&&... args) const {
-                if (m_logger->m_executors.empty()) return;
-
-                const auto now = std::chrono::system_clock::now();
-                const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
-                    now.time_since_epoch()
-                ).count();
-
-                LogPack p;
-                p.module = &m_logger->name();
-                p.level = m_level;
-                p.time = ms;
-
-                std::string Formatted = Formatter::do_format(p, std::forward<Fmt>(fmt), std::forward<Args>(args)...);
-
-                if (!Formatted.empty()) {
-                    for (const auto& the_executor_pair : m_logger->m_executors) {
-                        the_executor_pair.second(Formatted, level());
-                    }
-                }
+            void operator()(Fmt&& fmt, Args&&... args) const {
+                if (!m_logger->has_executor()) return;
+                const std::string Formatted = Formatter::do_format(
+                    get_log_pack(),
+                    std::forward<Fmt>(fmt),
+                    std::forward<Args>(args)...
+                );
+                m_logger->execute(Formatted, level());
             }
+
+            #ifdef ZCLibLog_USE_FORMAT
+            template <typename... Args>
+            void operator()(std::format_string<Args...> fmt, Args&&... args) const {
+                if (!m_logger->has_executor()) return;
+                const std::string Formatted = Formatter::do_format(
+                    get_log_pack(),
+                    fmt,
+                    std::forward<Args>(args)...
+                );
+                m_logger->execute(Formatted, level());
+            }
+            #endif
         };
 
         Tag ALL{this, LogLevel_ALL};

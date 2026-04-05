@@ -1,9 +1,9 @@
 //
-// Created by TingIAAI on 2026/4/4.
+// Created by wanjiangzhi on 2026/4/4.
 //
 
-#ifndef ZCLIBLOG_FORMATTERS_VFORMAT_HPP
-#define ZCLIBLOG_FORMATTERS_VFORMAT_HPP
+#ifndef ZCLIBLOG_FORMATTERS_FORMAT_HPP
+#define ZCLIBLOG_FORMATTERS_FORMAT_HPP
 
 #include <format>
 #include <chrono>
@@ -11,8 +11,8 @@
 
 // NOLINTNEXTLINE
 namespace ZCLibLog::formatters {
-    struct vformat {
-        using format_api = traditional_fmt_api;
+    struct format {
+        using format_api = cxx20_format_api;
         template <typename... Args>
         static std::string do_format(FLogPack pack, const std::string_view fmt, Args&... args) {
             std::string f_msg;
@@ -59,4 +59,4 @@ namespace ZCLibLog::formatters {
 }
 
 
-#endif // ZCLIBLOG_FORMATTERS_VFORMAT_HPP
+#endif // ZCLIBLOG_FORMATTERS_FORMAT_HPP

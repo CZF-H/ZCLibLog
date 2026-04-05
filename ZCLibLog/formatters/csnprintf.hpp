@@ -1,3 +1,6 @@
+// Copyright 2026 CZF-H
+// Licensed under the Apache License, Version 2.0
+
 //
 // Created by wanjiangzhi on 2026/3/30.
 //
@@ -13,8 +16,8 @@
 // NOLINTNEXTLINE
 namespace ZCLibLog {
     namespace formatters {
-        class csnprintf {
-        public:
+        struct csnprintf {
+            using format_api = traditional_fmt_api;
             template<typename... Args>
             static std::string do_format(FLogPack pack, const char* fmt, Args&&... args) {
                 thread_local std::array<char, 4096> buffer;

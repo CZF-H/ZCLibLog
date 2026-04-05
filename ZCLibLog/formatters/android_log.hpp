@@ -1,9 +1,5 @@
-//
-// Created by wanjiangzhi on 2026/4/4.
-//
-
-#ifndef ZCLIBLOG_ANDROID_LOG_HPP
-#define ZCLIBLOG_ANDROID_LOG_HPP
+// Copyright 2026 CZF-H
+// Licensed under the Apache License, Version 2.0
 
 //
 // Created by TingIAAI on 2026/4/4.
@@ -20,8 +16,8 @@
 // NOLINTNEXTLINE
 namespace ZCLibLog {
     namespace formatters {
-        class android_log {
-        public:
+        struct android_log {
+            using format_api = traditional_fmt_api;
             template<typename... Args>
             static std::string do_format(FLogPack pack, const char* fmt, Args&&... args) {
                 thread_local std::array<char, 4096> buffer;
@@ -66,5 +62,3 @@ namespace ZCLibLog {
 }
 
 #endif // ZCLIBLOG_FORMATTERS_ANDROID_LOG_HPP
-
-#endif //ZCLIBLOG_ANDROID_LOG_HPP

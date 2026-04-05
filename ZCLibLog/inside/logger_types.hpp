@@ -25,7 +25,6 @@ namespace ZCLibLog {
         LogLevel_NONE = std::numeric_limits<LogLevel>::max()
     };
 
-
     struct LogPack {
         const std::string* module = {};
         uint64_t time = {};
@@ -38,6 +37,9 @@ namespace ZCLibLog {
     using executor = std::function<void(ELString, ELogLevel)>;
 
     using FLogPack = const LogPack&;    // 格式化接受的数据包
+
+    struct cxx20_format_api;
+    struct traditional_fmt_api;
 }
 
 #endif //ZCLIBLOG_LOGGER_CLASSES_HPP

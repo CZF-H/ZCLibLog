@@ -1,3 +1,6 @@
+// Copyright 2026 CZF-H
+// Licensed under the Apache License, Version 2.0
+
 //
 // Created by TingIAAI on 2026/4/4.
 //
@@ -14,7 +17,7 @@ namespace ZCLibLog {
         /**
          * @warning 请确保 FILE* 在执行器使用期间有效
          */
-        inline executor cstdio(FILE* f) {
+        inline executor cstdio(FILE*& f) {
             return [f](ELString msg, ELogLevel) {
                 if (f) {
                     fputs(msg.c_str(), f);

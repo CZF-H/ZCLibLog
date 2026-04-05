@@ -1,3 +1,6 @@
+// Copyright 2026 CZF-H
+// Licensed under the Apache License, Version 2.0
+
 //
 // Created by wanjiangzhi on 2026/3/30.
 //
@@ -15,7 +18,7 @@
 #include <utility>
 #include <vector>
 
-#include "inside/logger_macros.h"
+#include "inside/logger_precompile.hpp"
 #include "inside/logger_types.hpp"
 
 // ReSharper disable CppUnusedIncludeDirective
@@ -124,10 +127,31 @@ namespace ZCLibLog {
         }
 
         // ReSharper disable once CppNonExplicitConvertingConstructor
-        LoggerAsync(std::string name, const LogLevel level = LogLevel_ALL) : m_name(std::move(name)),
-                                                                                      m_level(level) {}
+        LoggerAsync(
+            std::string name,
+            const std::initializer_list<executor>& executors = {},
+            const LogLevel level = LogLevel_ALL
+        ) : m_name(std::move(name)),
+            m_level(level) {
+            for (const auto& executor : executors) {
+                bind_executor(executor);
+            }
+        }
 
         class Tag {
+            [[nodiscard]] LogPack get_log_pack() const {
+                const auto now = std::chrono::system_clock::now();
+                const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
+                    now.time_since_epoch()
+                ).count();
+
+                LogPack p;
+                p.module = &m_logger->name();
+                p.level = m_level;
+                p.time = ms;
+
+                return p;
+            }
         protected:
             const LoggerAsync* const m_logger{};
             const LogLevel m_level{};
@@ -144,18 +168,8 @@ namespace ZCLibLog {
             void operator()(Fmt fmt, Args&&... args) const {
                 if (m_logger->m_executors.empty()) return;
 
-                const auto now = std::chrono::system_clock::now();
-                const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
-                    now.time_since_epoch()
-                ).count();
-
-                LogPack p;
-                p.module = &m_logger->name();
-                p.level = m_level;
-                p.time = ms;
-
                 auto Formatted = std::make_shared<std::string>(
-                    Formatter::do_format(p, std::forward<Fmt>(fmt), std::forward<Args>(args)...)
+                    Formatter::do_format(get_log_pack(), std::forward<Fmt>(fmt), std::forward<Args>(args)...)
                 );
                 LoggerAsync_ThreadPool.submit(
                     [this, Formatted] {
