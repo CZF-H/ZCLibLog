@@ -28,6 +28,7 @@
 #define ZCLibLog_USE_FORMAT
 #include <format>
 #endif
+#include <type_traits>
 
 namespace ZCLibLog {
     template <
@@ -129,6 +130,9 @@ namespace ZCLibLog {
                                                                         m_level(level) {}
 
             template <typename Fmt, typename... Args>
+            #ifdef ZCLibLog_USE_FORMAT
+            requires (!std::is_constructible_v<std::format_string<Args...>, Fmt&&>)
+            #endif
             void operator()(Fmt&& fmt, Args&&... args) const {
                 if (!m_logger->has_executor()) return;
                 const std::string Formatted = Formatter::do_format(
