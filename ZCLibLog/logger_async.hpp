@@ -29,6 +29,11 @@
 #if ZCLIBLOG_LOGGER_CONFIGURATIONS_DEFAULT_CSNPRINTF
 #include "formatters/csnprintf.hpp"
 #endif
+#if defined(ZCLibLog_HAS_FORMAT) && ZCLIBLOG_LOGGER_CONFIGURATIONS_ENABLE_CXX20_FORMAT
+#define ZCLibLog_USE_FORMAT
+#include <format>
+#endif
+#include <type_traits>
 
 namespace ZCLibLog {
     namespace details {
@@ -165,7 +170,10 @@ namespace ZCLibLog {
                                                                          m_level(level) {}
 
             template <typename Fmt, typename... Args>
-            void operator()(Fmt fmt, Args&&... args) const {
+            #ifdef ZCLibLog_USE_FORMAT
+            requires (!std::is_constructible_v<std::format_string<Args...>, Fmt&&>)
+            #endif
+            void operator()(Fmt&& fmt, Args&&... args) const {
                 if (m_logger->m_executors.empty()) return;
 
                 auto Formatted = std::make_shared<std::string>(
@@ -181,6 +189,26 @@ namespace ZCLibLog {
                     }
                 );
             }
+
+            #ifdef ZCLibLog_USE_FORMAT
+            template <typename... Args>
+            void operator()(std::format_string<Args...> fmt, Args&&... args) const {
+                if (m_logger->m_executors.empty()) return;
+
+                auto Formatted = std::make_shared<std::string>(
+                    Formatter::do_format(get_log_pack(), fmt, std::forward<Args>(args)...)
+                );
+                LoggerAsync_ThreadPool.submit(
+                    [this, Formatted] {
+                        if (!Formatted->empty()) {
+                            for (const auto& the_executor_pair : m_logger->m_executors) {
+                                the_executor_pair.second(*Formatted, level());
+                            }
+                        }
+                    }
+                );
+            }
+            #endif
         };
 
         Tag ALL{this, LogLevel_ALL};
