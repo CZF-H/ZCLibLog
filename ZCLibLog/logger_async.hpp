@@ -9,6 +9,7 @@
 #define ZCLIBLOG_LOGGER_ASYNC_HPP
 
 #include <algorithm>
+#include <chrono>
 #include <atomic>
 #include <condition_variable>
 #include <functional>

@@ -9,6 +9,7 @@
 #define ZCLIBLOG_LOGGER_SYNC_HPP
 
 #include <algorithm>
+#include <chrono>
 #include <vector>
 #include <string>
 
