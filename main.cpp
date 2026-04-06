@@ -1,10 +1,9 @@
 #include "ZCLibLog/logger_sync.hpp"
 #include "ZCLibLog/logger_async.hpp"
 
-#include "ZCLibLog/formatters/vformat.hpp"
+#include "ZCLibLog/formatters/format.hpp"
 #include "ZCLibLog/executors/cstdout.hpp"
 #include "ZCLibLog/executors/iostream.hpp"
-#include "ZCLibLog/executors/ostream.hpp"
 
 template<typename T>
 class RingBuffer {
@@ -68,9 +67,7 @@ public:
     }
 };
 
-ZCLibLog::LoggerSync<ZCLibLog::formatters::vformat> Logger{"MainLogger"};
 RingBuffer<std::string> buf(5);
-
 inline ZCLibLog::executor& ringbuf() {
     using namespace ZCLibLog;
     static executor inst = [](ELString msg, ELogLevel) {
@@ -79,19 +76,29 @@ inline ZCLibLog::executor& ringbuf() {
     return inst;
 }
 
-int main() {
-    //Logger.bind_executor(ZCLibLog::executors::cstdio());
-    Logger.bind_executor(ringbuf());
-    Logger.bind_executor(ZCLibLog::executors::cstdout());
-
-    Logger.INFO("Hello {}!", ZCLibLog::PROJECT_NAME);
-
-    /*std::cout << std::endl;
-    for (const auto& item : buf) {
-        std::cout << item << std::endl;
+ZCLibLog::LoggerSync<ZCLibLog::formatters::format> Logger{
+    "MainLogger",
+    {
+        ZCLibLog::executors::iostream(),
+        ringbuf()
     }
-    std::cout << std::endl;
-    std::cout << oss.str() << std::endl;*/
+};
+
+
+int main() {
+    Logger.ALL("Hello {}!", ZCLibLog::PROJECT_NAME);
+
+    Logger.TRACE("This is trace");
+
+    Logger.DEBUG("This is debug");
+
+    Logger.INFO("This is info");
+
+    Logger.WARN("This is warning");
+
+    Logger.ERROR("This is error");
+
+    Logger.FATAL("This is fatal");
 
     return 0;
 }

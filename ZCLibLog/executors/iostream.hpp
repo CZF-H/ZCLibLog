@@ -1,3 +1,6 @@
+// Copyright 2026 CZF-H
+// Licensed under the Apache License, Version 2.0
+
 //
 // Created by wanjiangzhi on 2026/3/30.
 //
@@ -15,10 +18,8 @@ namespace ZCLibLog {
             static executor inst = [](ELString msg, ELogLevel lv) {
                 if (lv >= LogLevel_ERROR)
                     std::cerr << msg << std::endl;
-                else if (lv >= LogLevel_INFO)
-                    std::cout << msg << std::endl;
                 else
-                    std::clog << msg << std::endl;
+                    std::cout << msg << std::endl;
             };
             return inst;
         }
