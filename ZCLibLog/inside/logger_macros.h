@@ -8,8 +8,8 @@
 #ifndef ZCLIBLOG_LOGGER_MACROS_H
 #define ZCLIBLOG_LOGGER_MACROS_H
 
-#ifdef _MSC_VER
-    #define ZCLibLog_CPP_VER _MSC_VER
+#ifdef _MSVC_LANG
+    #define ZCLibLog_CPP_VER _MSVC_LANG
 #else
     #define ZCLibLog_CPP_VER __cplusplus
 #endif
