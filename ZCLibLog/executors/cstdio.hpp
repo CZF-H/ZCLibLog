@@ -18,7 +18,7 @@ namespace ZCLibLog {
          * @warning 请确保 FILE* 在执行器使用期间有效
          */
         inline executor cstdio(FILE*& f) {
-            return [f](ELString msg, ELogLevel) {
+            return [&f](ELString msg, ELogLevel) {
                 if (f) {
                     fputs(msg.c_str(), f);
                     fputs("\n", f);
