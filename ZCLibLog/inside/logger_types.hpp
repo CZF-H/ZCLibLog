@@ -8,6 +8,7 @@
 #include <string>
 #include <thread>
 #include <functional>
+#include <type_traits>
 
 namespace ZCLibLog {
     using LogLevel = uint16_t;
@@ -25,9 +26,8 @@ namespace ZCLibLog {
         LogLevel_NONE = std::numeric_limits<LogLevel>::max()
     };
 
-
     struct LogPack {
-        const std::string* module = {};
+        const std::string* name = {};
         uint64_t time = {};
         LogLevel level = {};
     };
@@ -38,6 +38,15 @@ namespace ZCLibLog {
     using executor = std::function<void(ELString, ELogLevel)>;
 
     using FLogPack = const LogPack&;    // 格式化接受的数据包
+
+    struct format_api{};
+    struct format_apis {
+        struct stdcxx20 : format_api {};
+        struct traditional : format_api{};
+    };
+
+    template <typename Formatter, typename FormatAPI = format_api>
+    using is_format_api = std::is_base_of<FormatAPI, Formatter>;
 }
 
 #endif //ZCLIBLOG_LOGGER_CLASSES_HPP

@@ -1,3 +1,6 @@
+// Copyright 2026 CZF-H
+// Licensed under the Apache License, Version 2.0
+
 //
 // Created by wanjiangzhi on 2026/3/30.
 //
@@ -13,8 +16,7 @@
 // NOLINTNEXTLINE
 namespace ZCLibLog {
     namespace formatters {
-        class csnprintf {
-        public:
+        struct csnprintf : format_apis::traditional {
             template<typename... Args>
             static std::string do_format(FLogPack pack, const char* fmt, Args&&... args) {
                 thread_local std::array<char, 4096> buffer;
@@ -59,7 +61,7 @@ namespace ZCLibLog {
                     default: break;
                 }
 
-                len = std::snprintf(buffer.data(), buffer.size(), "%s [%s] [%s] %s", ms_time.data(), pack.module->c_str(), log_level, f_msg.c_str());
+                len = std::snprintf(buffer.data(), buffer.size(), "%s [%s] [%s] %s", ms_time.data(), pack.name->c_str(), log_level, f_msg.c_str());
                 if (len < 0) return {};
                 if (len >= static_cast<int>(buffer.size())) len = buffer.size() - 1;
                 return {buffer.data(), buffer.data() + len};
