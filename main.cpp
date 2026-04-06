@@ -1,10 +1,9 @@
 #include "ZCLibLog/logger_sync.hpp"
 #include "ZCLibLog/logger_async.hpp"
 
-#include "ZCLibLog/formatters/vformat.hpp"
+#include "ZCLibLog/formatters/format.hpp"
 #include "ZCLibLog/executors/cstdout.hpp"
 #include "ZCLibLog/executors/iostream.hpp"
-#include "ZCLibLog/executors/ostream.hpp"
 
 template<typename T>
 class RingBuffer {
@@ -68,62 +67,7 @@ public:
     }
 };
 
-struct format {
-    using format_api = ZCLibLog::cxx20_format_api;
-    template <typename... Args>
-    static std::string do_format(ZCLibLog::FLogPack pack, std::format_string<Args...> fmt, Args&&... args) {
-        using namespace ZCLibLog;
-
-        std::string f_msg;
-        if (sizeof...(args) == 0) {
-            f_msg = fmt.get();
-        }
-        else {
-            try {
-                f_msg = std::format(std::forward<std::format_string<Args...>>(fmt), std::forward<Args&&>(args)...);
-            } catch (const std::format_error&) {
-                return {};
-            }
-        }
-
-        const auto tp = std::chrono::system_clock::time_point(std::chrono::milliseconds(pack.time));
-
-        const char* level_str;
-        switch (pack.level) {
-            case LogLevel_TRACE: level_str = "[TRACE]";
-                break;
-            case LogLevel_DEBUG: level_str = "[DEBUG]";
-                break;
-            case LogLevel_INFO: level_str = "[INFO]";
-                break;
-            case LogLevel_WARN: level_str = "[WARN]";
-                break;
-            case LogLevel_ERROR: level_str = "[ERROR]";
-                break;
-            case LogLevel_FATAL: level_str = "[FATAL]";
-                break;
-            default: level_str = "[INFO]";
-                break;
-        }
-
-        return std::format(
-            "{:%Y-%m-%d %H:%M:%S} [{}] {} {}",
-            std::chrono::time_point_cast<std::chrono::milliseconds>(tp),
-            *pack.module,
-            level_str,
-            f_msg
-        );
-    }
-};
-
-ZCLibLog::LoggerSync<format> Logger{
-    "MainLogger",
-    {
-        ZCLibLog::executors::cstdout()
-    }
-};
 RingBuffer<std::string> buf(5);
-
 inline ZCLibLog::executor& ringbuf() {
     using namespace ZCLibLog;
     static executor inst = [](ELString msg, ELogLevel) {
@@ -132,15 +76,29 @@ inline ZCLibLog::executor& ringbuf() {
     return inst;
 }
 
+ZCLibLog::LoggerSync<ZCLibLog::formatters::format> Logger{
+    "MainLogger",
+    {
+        ZCLibLog::executors::iostream(),
+        ringbuf()
+    }
+};
+
+
 int main() {
-    const auto start = std::chrono::high_resolution_clock::now();
+    Logger.ALL("Hello {}!", ZCLibLog::PROJECT_NAME);
 
-    Logger.INFO("Hello {}", ZCLibLog::PROJECT_NAME);
-    Logger.INFO("Hello {}", ZCLibLog::PROJECT_NAME);
+    Logger.TRACE("This is trace");
 
-    const auto end = std::chrono::high_resolution_clock::now();
-    const auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
-    std::cout << "Used: " << duration.count() << " ns\n";
+    Logger.DEBUG("This is debug");
+
+    Logger.INFO("This is info");
+
+    Logger.WARN("This is warning");
+
+    Logger.ERROR("This is error");
+
+    Logger.FATAL("This is fatal");
 
     return 0;
 }

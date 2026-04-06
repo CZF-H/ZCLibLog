@@ -42,6 +42,7 @@
 
 #if ZCLibLog_CPP >= 20
     #define ZCLibLog_HAS_FORMAT
+    #define ZCLibLog_HAS_CONSTRAINTS
 #endif
 
 #endif //ZCLIBLOG_LOGGER_MACROS_H

@@ -1,3 +1,6 @@
+// Copyright 2026 CZF-H
+// Licensed under the Apache License, Version 2.0
+
 //
 // Created by TingIAAI on 2026/4/4.
 //
@@ -11,17 +14,16 @@
 
 // NOLINTNEXTLINE
 namespace ZCLibLog::formatters {
-    struct vformat {
-        using format_api = traditional_fmt_api;
+    struct vformat : format_apis::traditional  {
         template <typename... Args>
-        static std::string do_format(FLogPack pack, const std::string_view fmt, Args&... args) {
+        static std::string do_format(FLogPack pack, const std::string_view fmt, Args&&... args) {
             std::string f_msg;
             if (sizeof...(args) == 0) {
                 f_msg = fmt;
             }
             else {
                 try {
-                    f_msg = std::vformat(fmt, std::make_format_args(std::forward<Args&>(args)...));
+                    f_msg = std::vformat(fmt, std::make_format_args(args...));
                 } catch (const std::format_error&) {
                     return {};
                 }
@@ -50,7 +52,7 @@ namespace ZCLibLog::formatters {
             return std::format(
                 "{:%Y-%m-%d %H:%M:%S} [{}] {} {}",
                 std::chrono::time_point_cast<std::chrono::milliseconds>(tp),
-                *pack.module,
+                *pack.name,
                 level_str,
                 f_msg
             );

@@ -18,10 +18,8 @@ namespace ZCLibLog {
             static executor inst = [](ELString msg, ELogLevel lv) {
                 if (lv >= LogLevel_ERROR)
                     std::cerr << msg << std::endl;
-                else if (lv >= LogLevel_INFO)
-                    std::cout << msg << std::endl;
                 else
-                    std::clog << msg << std::endl;
+                    std::cout << msg << std::endl;
             };
             return inst;
         }
