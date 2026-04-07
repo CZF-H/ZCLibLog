@@ -14,7 +14,7 @@ namespace ZCLibLog {
     using LogLevel = uint16_t;
 
     enum LogLevel_ : LogLevel {
-        LogLevel_ALL = 0,
+        LogLevel_ALL = LogLevel{},
 
         LogLevel_TRACE = 1,
         LogLevel_DEBUG = 2,
@@ -30,6 +30,15 @@ namespace ZCLibLog {
         const std::string* name = {};
         uint64_t time = {};
         LogLevel level = {};
+    };
+
+    struct LogConfig {
+        LogLevel min_level;
+        LogLevel max_level;
+
+        // ReSharper disable once CppNonExplicitConvertingConstructor
+        LogConfig(const LogLevel level = {}) : min_level(level), max_level(LogLevel_NONE) {}
+        LogConfig(const LogLevel min_level, const LogLevel max_level) : min_level(min_level), max_level(max_level) {}
     };
 
     using ELogLevel = const LogLevel;    // 执行器接收的等级

@@ -81,7 +81,8 @@ ZCLibLog::LoggerSync<ZCLibLog::formatters::format> Logger{
     {
         ZCLibLog::executors::iostream(),
         ringbuf()
-    }
+    },
+    ZCLibLog::LogLevel_INFO
 };
 
 

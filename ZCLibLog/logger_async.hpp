@@ -120,18 +120,21 @@ namespace ZCLibLog {
         using executor_pair = std::pair<size_t, executor>;
 
         std::string m_name;
-        LogLevel m_level;
+        std::vector<executor_pair> m_executors;
         size_t m_nextID{};
 
-        std::vector<executor_pair> m_executors;
-
+        LogConfig m_config;
     public:
         ZCLibLog_NODISCARD const std::string& name() const noexcept {
             return m_name;
         }
 
-        ZCLibLog_NODISCARD LogLevel& level() noexcept {
-            return m_level;
+        ZCLibLog_NODISCARD LogConfig& config() noexcept {
+            return m_config;
+        }
+
+        ZCLibLog_NODISCARD bool be_executable(const LogLevel level) const {
+            return m_config.min_level <= level && level <= m_config.max_level;
         }
 
         void execute(const std::shared_ptr<std::string>& message, const LogLevel level) const {
@@ -192,9 +195,9 @@ namespace ZCLibLog {
         LoggerAsync(
             std::string name,
             const std::initializer_list<executor>& executors = {},
-            const LogLevel level = LogLevel_ALL
+            const LogConfig config = {}
         ) : m_name(std::move(name)),
-            m_level(level) {
+            m_config(config) {
             for (const auto& executor : executors) {
                 bind_executor(executor);
             }
@@ -214,6 +217,14 @@ namespace ZCLibLog {
 
                 return p;
             }
+
+            ZCLibLog_NODISCARD bool check_executable() const {
+                if (
+                    m_logger->has_executor() &&
+                    m_logger->be_executable(level())
+                ) return true;
+                return {};
+            }
         protected:
             const LoggerAsync* const m_logger{};
             const LogLevel m_level{};
@@ -230,7 +241,7 @@ namespace ZCLibLog {
             requires is_format_api<Formatter, format_apis::traditional>::value
             #endif
             void operator()(Fmt&& fmt, Args&&... args) const {
-                if (!m_logger->has_executor()) return;
+                if (!check_executable()) return;
                 auto Formatted = std::make_shared<std::string>(
                     Formatter::do_format(
                         get_log_pack(),
@@ -247,7 +258,7 @@ namespace ZCLibLog {
             requires is_format_api<Formatter, format_apis::stdcxx20>::value
             #endif
             void operator()(std::format_string<Args...>&& fmt, Args&&... args) const {
-                if (!m_logger->has_executor()) return;
+                if (!check_executable()) return;
                 auto Formatted = std::make_shared<std::string>(
                     Formatter::do_format(
                         get_log_pack(),
