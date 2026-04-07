@@ -68,38 +68,34 @@ public:
 };
 
 RingBuffer<std::string> buf(5);
-inline ZCLibLog::executor& ringbuf() {
-    using namespace ZCLibLog;
-    static executor inst = [](ELString msg, ELogLevel) {
+struct ringbuf : ZCLibLog::executor_api {
+    void do_execute(ZCLibLog::ELString msg, ZCLibLog::ELogLevel) override {
         buf.push(msg);
-    };
-    return inst;
-}
+    }
+};
+
+struct none : ZCLibLog::executor_api {
+    void do_execute(ZCLibLog::ELString, ZCLibLog::ELogLevel) override {
+    }
+};
 
 ZCLibLog::LoggerSync<ZCLibLog::formatters::format> Logger{
     "MainLogger",
     {
-        ZCLibLog::executors::iostream(),
-        ringbuf()
+        new ZCLibLog::executors::cstdout
     },
     ZCLibLog::LogLevel_INFO
 };
 
 
 int main() {
-    Logger.ALL("Hello {}!", ZCLibLog::PROJECT_NAME);
+    const auto start = std::chrono::steady_clock::now();
 
-    Logger.TRACE("This is trace");
+    Logger.INFO("Hello {}!", ZCLibLog::PROJECT_NAME);
 
-    Logger.DEBUG("This is debug");
+    const auto end = std::chrono::steady_clock::now();
+    const auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
 
-    Logger.INFO("This is info");
-
-    Logger.WARN("This is warning");
-
-    Logger.ERROR("This is error");
-
-    Logger.FATAL("This is fatal");
-
+    std::cout << "Used: " << duration.count() << " ns" << std::endl;
     return 0;
 }

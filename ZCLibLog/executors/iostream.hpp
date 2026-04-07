@@ -14,15 +14,14 @@
 // NOLINTNEXTLINE
 namespace ZCLibLog {
     namespace executors {
-        inline executor& iostream() {
-            static executor inst = [](ELString msg, ELogLevel lv) {
+        struct iostream : executor_api {
+            void do_execute(ELString msg, ELogLevel lv) override {
                 if (lv >= LogLevel_ERROR)
                     std::cerr << msg << std::endl;
                 else
                     std::cout << msg << std::endl;
-            };
-            return inst;
-        }
+            }
+        };
     }
 }
 

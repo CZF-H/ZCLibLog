@@ -7,7 +7,7 @@
 
 #include <string>
 #include <thread>
-#include <functional>
+#include <memory>
 #include <type_traits>
 
 namespace ZCLibLog {
@@ -44,7 +44,32 @@ namespace ZCLibLog {
     using ELogLevel = const LogLevel;    // 执行器接收的等级
     using ELString = const std::string&; // 执行器接受的字符串
 
-    using executor = std::function<void(ELString, ELogLevel)>;
+    struct executor_api {
+        virtual void do_execute(ELString, ELogLevel) = 0;
+        virtual ~executor_api() = default;
+    };
+
+    using executor = executor_api*;
+
+    template <typename Executor>
+    using is_executor_api = std::is_base_of<executor_api, Executor>;
+
+    template <typename ExecutorClass, typename... Args>
+    executor NewExecutor(Args&&... args) {
+        static_assert(is_executor_api<ExecutorClass>::value, "Input Class is not a executor");
+        return reinterpret_cast<executor>(new ExecutorClass(std::forward<Args>(args)...));
+    }
+
+    template <typename ExecutorClass, typename... Args>
+    ExecutorClass* NewExecutorRaw(Args&&... args) {
+        static_assert(is_executor_api<ExecutorClass>::value, "Input Class is not a executor");
+        return new ExecutorClass(std::forward<Args>(args)...);
+    }
+
+    inline void DeleteExecutor(executor& executor_ptr) {
+        delete executor_ptr;
+        executor_ptr = nullptr;
+    }
 
     using FLogPack = const LogPack&;    // 格式化接受的数据包
 
