@@ -100,7 +100,7 @@ namespace ZCLibLog {
             return !m_executors.empty();
         }
 
-        size_t bind_executor(executor ex) {
+        size_t bind_executor(const executor& ex) {
             if (!ex) throw std::invalid_argument("executor is nullptr");
             #if ZCLIBLOG_LOGGER_CONFIGURATIONS_LOGGER_SYNC_MUTEX
             std::lock_guard<ZCLibLog_MUTEX> lock(m_mutex);

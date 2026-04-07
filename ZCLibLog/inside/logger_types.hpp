@@ -49,27 +49,58 @@ namespace ZCLibLog {
         virtual ~executor_api() = default;
     };
 
-    using executor = executor_api*;
-
     template <typename Executor>
     using is_executor_api = std::is_base_of<executor_api, Executor>;
 
-    template <typename ExecutorClass, typename... Args>
-    executor NewExecutor(Args&&... args) {
-        static_assert(is_executor_api<ExecutorClass>::value, "Input Class is not a executor");
-        return reinterpret_cast<executor>(new ExecutorClass(std::forward<Args>(args)...));
-    }
+    class executor {
+    public:
+        using base_ptr_type = std::shared_ptr<executor_api>;
+        using inside_type = base_ptr_type::element_type;
+    private:
+        base_ptr_type executor_ptr;
+    public:
+        executor() = default;
+        // ReSharper disable once CppNonExplicitConvertingConstructor
+        /**
+         * @warning 裸指针传入后禁止delete!
+         */
+        executor(inside_type* executor_ptr) : executor_ptr(executor_ptr) {}
 
-    template <typename ExecutorClass, typename... Args>
-    ExecutorClass* NewExecutorRaw(Args&&... args) {
-        static_assert(is_executor_api<ExecutorClass>::value, "Input Class is not a executor");
-        return new ExecutorClass(std::forward<Args>(args)...);
-    }
+        template<typename Executor, typename... Args>
+        static executor Construct(Args&&... args) {
+            static_assert(is_executor_api<Executor>::value, "Executor must be a real executor");
 
-    inline void DeleteExecutor(executor& executor_ptr) {
-        delete executor_ptr;
-        executor_ptr = nullptr;
-    }
+            executor Constructed;
+            Constructed.executor_ptr = std::move(std::make_shared<Executor>(std::forward<Args>(args)...));
+
+            return std::move(Constructed);
+        }
+
+        ZCLibLog_NODISCARD inside_type* get() const noexcept {
+            return executor_ptr.get();
+        }
+
+        ZCLibLog_NODISCARD bool unique() const noexcept {
+            return executor_ptr.unique();
+        }
+
+        ZCLibLog_NODISCARD long use_count() const noexcept {
+            return executor_ptr.use_count();
+        }
+
+        inside_type* operator->() const noexcept {
+            return executor_ptr.operator->();
+        }
+
+        inside_type& operator*() const noexcept {
+            return executor_ptr.operator*();
+        }
+
+        // ReSharper disable once CppNonExplicitConversionOperator
+        operator bool() const noexcept {
+            return executor_ptr.get() != nullptr;
+        }
+    };
 
     using FLogPack = const LogPack&;    // 格式化接受的数据包
 

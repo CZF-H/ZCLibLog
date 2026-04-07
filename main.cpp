@@ -82,7 +82,7 @@ struct none : ZCLibLog::executor_api {
 ZCLibLog::LoggerSync<ZCLibLog::formatters::format> Logger{
     "MainLogger",
     {
-        new ZCLibLog::executors::cstdout
+       new ZCLibLog::executors::cstdout,
     },
     ZCLibLog::LogLevel_INFO
 };
