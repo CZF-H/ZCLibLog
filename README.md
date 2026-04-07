@@ -2,6 +2,10 @@
 
 > 一个轻量、可扩展的 C++11 日志库：支持同步 / 异步 Logger、自定义 Formatter、可插拔 Executor。
 
+![C++](https://img.shields.io/badge/language-C++-blue)
+![C++](https://img.shields.io/badge/C++-C++11%2B-brightgreen)
+![License](https://img.shields.io/github/license/CZF-H/ZCLibLog)
+
 ## ✨ 特点
 
 - **双模型日志器**：`LoggerSync`（同步）与 `LoggerAsync`（异步线程池）。
