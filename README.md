@@ -284,8 +284,7 @@ ZCLibLog::LoggerSync<ZCLibLog::formatters::android_log> logger{
 ## 🛡️ 保护与最佳实践
 
 1. **执行器生命周期管理**：
-    - 当前接口使用裸指针 `executor`（`executor_api*`）。
-    - 推荐使用 `NewExecutor<T>()` / `DeleteExecutor()` 辅助函数来管理资源，避免泄漏。
+    - 推荐使用 `executor::Construct`辅助函数来管理资源，避免`double delete`。
 2. **外部资源有效性保护**：
     - `cstdio(FILE*&)`、`ostream(std::ostream&)` 依赖外部引用，请确保日志期间对象仍然有效。
 3. **级别过滤保护**：
