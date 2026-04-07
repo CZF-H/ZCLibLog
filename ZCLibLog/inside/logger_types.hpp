@@ -81,7 +81,8 @@ namespace ZCLibLog {
         }
 
         ZCLibLog_NODISCARD bool unique() const noexcept {
-            return executor_ptr.unique();
+            // return executor_ptr.unique();
+            return executor_ptr.use_count() == 1;
         }
 
         ZCLibLog_NODISCARD long use_count() const noexcept {
