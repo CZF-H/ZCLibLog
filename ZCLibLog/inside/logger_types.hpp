@@ -74,7 +74,7 @@ namespace ZCLibLog {
     using FLogPack = const LogPack&;    // 格式化接受的数据包
 
     struct format_api{};
-    struct format_apis {
+    namespace format_apis {
         struct stdcxx20 : format_api {};
         struct traditional : format_api{};
     };
