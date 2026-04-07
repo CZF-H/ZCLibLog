@@ -1,12 +1,12 @@
 # ZCLibLog
 
-> 一个轻量、可扩展的 C++20 日志库：支持同步 / 异步 Logger、可插拔 Formatter、可插拔 Executor。
+> 一个轻量、可扩展的 C++11 日志库：支持同步 / 异步 Logger、自定义 Formatter、可插拔 Executor。
 
 ## ✨ 特点
 
 - **双模型日志器**：`LoggerSync`（同步）与 `LoggerAsync`（异步线程池）。
 - **可插拔 Formatter**：内置 `csnprintf`、`format`、`vformat`，也支持自定义。
-- **可插拔 Executor**：内置终端、流、`FILE*`、lambda 等输出执行器。
+- **可插拔 Executor**：内置终端、流、`FILE*`、Android Log、lambda 等输出执行器。
 - **分级过滤**：`TRACE ~ FATAL`，可通过 `LogConfig` 控制最小/最大等级。
 - **头文件即用**：直接 `#include`，无需复杂运行时依赖。
 
@@ -15,18 +15,40 @@
 ## 📦 目录速览
 
 - 日志器：
-  - `ZCLibLog/logger_sync.hpp`
-  - `ZCLibLog/logger_async.hpp`
+    - `ZCLibLog/logger_sync.hpp`
+    - `ZCLibLog/logger_async.hpp`
 - Formatter：
-  - `ZCLibLog/formatters/csnprintf.hpp`
-  - `ZCLibLog/formatters/format.hpp`
-  - `ZCLibLog/formatters/vformat.hpp`
+    - `ZCLibLog/formatters/csnprintf.hpp`
+    - `ZCLibLog/formatters/format.hpp`
+    - `ZCLibLog/formatters/vformat.hpp`
 - Executor：
-  - `ZCLibLog/executors/cstdout.hpp`
-  - `ZCLibLog/executors/iostream.hpp`
-  - `ZCLibLog/executors/cstdio.hpp`
-  - `ZCLibLog/executors/ostream.hpp`
-  - `ZCLibLog/executors/lambda.hpp`
+    - `ZCLibLog/executors/cstdout.hpp`
+    - `ZCLibLog/executors/iostream.hpp`
+    - `ZCLibLog/executors/cstdio.hpp`
+    - `ZCLibLog/executors/ostream.hpp`
+    - `ZCLibLog/executors/lambda.hpp`
+    - `ZCLibLog/executors/android_log.hpp`
+
+---
+
+## 🔍 需要了解
+
+### executor的构造方式
+
+executor的构造方式目前有两种
+
+1. 通过裸指针构造
+2. 通过工厂函数`executor::Construct`构造
+
+> 裸指针构造要确保对象生命周期比Logger更长
+
+> 通过`new`构造的对象需要确保你不会`delete`
+> 
+> 🚫 如果对象不是在`executor`的构造函数中构造，请不要多次传入裸指针！
+> 
+> 📢 建议使用`executor::Construct`而不是裸指针构造
+> 
+> 📓 如果需要请遵循动态分配对象的立即传递
 
 ---
 
@@ -43,7 +65,7 @@ int main() {
     ZCLibLog::LoggerSync<ZCLibLog::formatters::format> logger{
         "MainLogger",
         {
-            new ZCLibLog::executors::cstdout
+            ZCLibLog::executor::Construct<ZCLibLog::executors::cstdout>()
         },
         ZCLibLog::LogLevel_INFO
     };
@@ -65,7 +87,7 @@ int main() {
     ZCLibLog::LoggerSync<> logger{
         "DefaultFmt",
         {
-            new ZCLibLog::executors::iostream
+            ZCLibLog::executor::Construct<ZCLibLog::executors::iostream>()
         },
         ZCLibLog::LogLevel_DEBUG
     };
@@ -85,7 +107,7 @@ int main() {
     ZCLibLog::LoggerAsync<ZCLibLog::formatters::vformat> logger{
         "AsyncLogger",
         {
-            new ZCLibLog::executors::cstdout
+            ZCLibLog::executor::Construct<ZCLibLog::executors::cstdout>()
         },
         ZCLibLog::LogLevel_TRACE
     };
@@ -101,21 +123,23 @@ int main() {
 
 ### Formatter
 
-| 名称 | 输入风格 | 说明 |
-|---|---|---|
-| `formatters::csnprintf` | `printf` 样式 | 默认方案，兼容性好，性能稳定 |
-| `formatters::format` | `std::format_string` | 类型安全，现代 C++20 风格 |
-| `formatters::vformat` | `std::string_view` + 参数包 | 便于动态格式串 |
+| 名称                        | 输入风格                     | 说明                       |
+|---------------------------|--------------------------|--------------------------|
+| `formatters::csnprintf`   | `printf` 样式              | 默认方案，兼容性好，性能稳定           |
+| `formatters::format`      | `std::format_string`     | 类型安全，现代 C++20 风格         |
+| `formatters::vformat`     | `std::string_view` + 参数包 | 便于动态格式串                  |
+| `formatters::android_log` | `printf` 样式              | 面向 Android Logcat 的短格式输出 |
 
 ### Executor
 
-| 名称 | 输出目标 | 说明 |
-|---|---|---|
-| `executors::cstdout` | `stdout / stderr` | `ERROR` 及以上输出到 `stderr` |
-| `executors::iostream` | `std::cout / std::cerr` | C++ iostream 方式 |
-| `executors::cstdio` | `FILE*` | 写入 C 文件句柄并 `fflush` |
-| `executors::ostream` | `std::ostream&` | 任意输出流（如 `ofstream`） |
-| `executors::lambda` | 自定义回调 | 用 lambda 快速接入任意目标 |
+| 名称                       | 输出目标                    | 说明                          |
+|--------------------------|-------------------------|-----------------------------|
+| `executors::cstdout`     | `stdout / stderr`       | `ERROR` 及以上输出到 `stderr`     |
+| `executors::iostream`    | `std::cout / std::cerr` | C++ iostream 方式             |
+| `executors::cstdio`      | `FILE*`                 | 写入 C 文件句柄并 `fflush`         |
+| `executors::ostream`     | `std::ostream&`         | 任意输出流（如 `ofstream`）         |
+| `executors::lambda`      | 自定义回调                   | 用 lambda 快速接入任意目标           |
+| `executors::android_log` | Android Logcat          | 调用 `__android_log_write` 输出 |
 
 ---
 
@@ -154,7 +178,7 @@ struct MyFormatter : ZCLibLog::format_apis::stdcxx20 {
 
 ZCLibLog::LoggerSync<MyFormatter> logger{
     "CustomFmt",
-    { new ZCLibLog::executors::cstdout },
+    { ZCLibLog::executor::Construct<ZCLibLog::executors::cstdout>() },
     ZCLibLog::LogLevel_INFO
 };
 ```
@@ -196,7 +220,7 @@ private:
 
 ZCLibLog::LoggerSync<> logger{
     "FileLogger",
-    { new FileExecutor("app.log") },
+    { ZCLibLog::executor::Construct<FileExecutor>("app.log") },
     ZCLibLog::LogLevel_DEBUG
 };
 ```
@@ -211,7 +235,7 @@ ZCLibLog::LoggerSync<> logger{
 
 ZCLibLog::LoggerSync<> logger{"Dynamic"};
 
-size_t id = logger.bind_executor(new ZCLibLog::executors::cstdout);
+size_t id = logger.bind_executor(ZCLibLog::executor::Construct<ZCLibLog::executors::cstdout>());
 logger.INFO("executor attached");
 
 logger.debind_executor(id);
@@ -220,20 +244,55 @@ logger.INFO("this line will not be printed");
 
 ---
 
+## 🧪 进阶：lambda 包装器与 Android 用法
+
+```cpp
+#include "ZCLibLog/logger_sync.hpp"
+#include "ZCLibLog/executors/lambda.hpp"
+
+std::vector<std::string> sink;
+
+ZCLibLog::LoggerSync<> logger{"LambdaSink"};
+auto ex = ZCLibLog::lambda_wrapper([&](ZCLibLog::ELString msg, ZCLibLog::ELogLevel) {
+    sink.push_back(msg);
+});
+
+logger.bind_executor(ex);
+logger.INFO("captured to vector");
+```
+
+Android 平台可组合 `formatters::android_log + executors::android_log`：
+
+```cpp
+#include "ZCLibLog/logger_sync.hpp"
+#include "ZCLibLog/formatters/android_log.hpp"
+#include "ZCLibLog/executors/android_log.hpp"
+
+ZCLibLog::LoggerSync<ZCLibLog::formatters::android_log> logger{
+    "AndroidLogger",
+    { ZCLibLog::executor::Construct<ZCLibLog::executors::android_log>("MyApp") },
+    ZCLibLog::LogLevel_INFO
+};
+```
+
+---
+
 ## 🛡️ 保护与最佳实践
 
 1. **执行器生命周期管理**：
-   - 当前接口使用裸指针 `executor`（`executor_api*`）。
-   - 你创建的执行器（`new`）需在合适时机自行释放，避免泄漏。
+    - 当前接口使用裸指针 `executor`（`executor_api*`）。
+    - 推荐使用 `NewExecutor<T>()` / `DeleteExecutor()` 辅助函数来管理资源，避免泄漏。
 2. **外部资源有效性保护**：
-   - `cstdio(FILE*&)`、`ostream(std::ostream&)` 依赖外部引用，请确保日志期间对象仍然有效。
+    - `cstdio(FILE*&)`、`ostream(std::ostream&)` 依赖外部引用，请确保日志期间对象仍然有效。
 3. **级别过滤保护**：
-   - 使用 `LogConfig(min, max)` 约束输出范围，避免大量低级别日志冲击性能。
+    - 使用 `LogConfig(min, max)` 约束输出范围，避免大量低级别日志冲击性能。
 4. **异步使用建议**：
-   - 高频日志下优先 `LoggerAsync`，并根据业务调整线程数（`logger_configurations.h`）。
+    - 高频日志下优先 `LoggerAsync`，并根据业务调整线程数（`logger_configurations.h`）。
 5. **格式串匹配保护**：
-   - `csnprintf` 需严格保证格式串与参数匹配。
-   - `format` / `vformat` 在类型安全上更友好（推荐 C++20 环境优先使用）。
+    - `csnprintf` 需严格保证格式串与参数匹配。
+    - `format` / `vformat` 在类型安全上更友好（推荐 C++20 环境优先使用）。
+6. **Android 构建保护**：
+    - 仅在 Android NDK 环境下包含 `android_log` 相关头文件，避免非 Android 平台编译失败。
 
 ---
 
@@ -252,3 +311,9 @@ cmake --build build -j
 ## 📄 许可证
 
 Apache-2.0
+
+---
+
+## 📢 声明
+
+此文档使用ChatGPT Codex生成，如内容有误请您谅解，感谢指出错误，谢谢
