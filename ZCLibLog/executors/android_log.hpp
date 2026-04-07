@@ -11,12 +11,14 @@
 #include <android/log.h>
 
 #include "../inside/logger_constants.hpp"
+#include "../inside/logger_types.hpp"
 
 // NOLINTNEXTLINE
 namespace ZCLibLog {
     namespace executors {
-        inline executor android_log(const char* tag) {
-            return [tag](ELString msg, ELogLevel lv) {
+        struct android_log : executor_api {
+            explicit android_log(const char* tag = PROJECT_NAME) : tag(tag) {}
+            void do_execute(ELString msg, ELogLevel lv) override {
                 int android_level = ANDROID_LOG_INFO;
                 switch (lv) {
                     case LogLevel_TRACE: android_level = ANDROID_LOG_VERBOSE; break;
@@ -28,12 +30,10 @@ namespace ZCLibLog {
                     default: break;
                 }
                 __android_log_write(android_level, tag, msg.c_str());
-            };
-        }
-        inline executor& android_log() {
-            static executor inst = android_log(PROJECT_NAME);
-            return inst;
-        }
+            }
+        private:
+            const char* tag;
+        };
     }
 }
 

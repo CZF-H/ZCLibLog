@@ -84,12 +84,12 @@ namespace ZCLibLog {
                 // ReSharper disable once CppUseElementsView
                 // ReSharper disable once CppUseStructuredBinding
                 for (const auto& the_executor_pair : m_executors) {
-                    the_executor_pair.second(message, level);
+                    the_executor_pair.second->do_execute(message, level);
                 }
             }
         }
 
-        ZCLibLog_NODISCARD bool be_executable(const LogLevel level) const {
+        ZCLibLog_NODISCARD bool be_executable(const LogLevel level) const noexcept {
             return m_config.min_level <= level && level <= m_config.max_level;
         }
 
@@ -101,10 +101,11 @@ namespace ZCLibLog {
         }
 
         size_t bind_executor(executor ex) {
+            if (!ex) throw std::invalid_argument("executor is nullptr");
             #if ZCLIBLOG_LOGGER_CONFIGURATIONS_LOGGER_SYNC_MUTEX
             std::lock_guard<ZCLibLog_MUTEX> lock(m_mutex);
             #endif
-            m_executors.emplace_back(m_nextID, std::move(ex));
+            m_executors.emplace_back(m_nextID, ex);
             return m_nextID++;
         }
 
@@ -133,12 +134,12 @@ namespace ZCLibLog {
         // ReSharper disable once CppNonExplicitConvertingConstructor
         LoggerSync(
             std::string name,
-            const std::initializer_list<executor>& executors = {},
+            const std::initializer_list<executor>& executor_ptrs = {},
             const LogConfig config = {}
         ) : m_name(std::move(name)),
             m_config(config) {
-            for (const auto& executor : executors) {
-                bind_executor(executor);
+            for (const auto& executor_ptr : executor_ptrs) {
+                bind_executor(executor_ptr);
             }
         }
 

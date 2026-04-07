@@ -17,15 +17,18 @@ namespace ZCLibLog {
         /**
          * @warning 请确保 FILE* 在执行器使用期间有效
          */
-        inline executor cstdio(FILE*& f) {
-            return [&f](ELString msg, ELogLevel) {
+        struct cstdio : executor_api {
+            explicit cstdio(FILE*& f) : f(f) {}
+            void do_execute(ELString msg, ELogLevel) override {
                 if (f) {
                     fputs(msg.c_str(), f);
                     fputs("\n", f);
                     fflush(f);
                 }
-            };
-        }
+            }
+        private:
+            FILE*& f;
+        };
     }
 }
 

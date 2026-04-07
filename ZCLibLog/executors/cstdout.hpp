@@ -14,8 +14,8 @@
 // NOLINTNEXTLINE
 namespace ZCLibLog {
     namespace executors {
-        inline executor& cstdout() {
-            static executor inst = [](ELString msg, ELogLevel lv) {
+        struct cstdout : executor_api {
+            void do_execute(ELString msg, ELogLevel lv) override {
                 if (lv >= LogLevel_ERROR) {
                     fputs(msg.c_str(), stderr);
                     fputs("\n", stderr);
@@ -23,9 +23,8 @@ namespace ZCLibLog {
                     fputs(msg.c_str(), stdout);
                     fputs("\n", stdout);
                 }
-            };
-            return inst;
-        }
+            }
+        };
     }
 }
 

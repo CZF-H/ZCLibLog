@@ -17,11 +17,14 @@ namespace ZCLibLog {
         /**
          * @warning 请确保执行时输出流没有被销毁
          */
-        inline executor ostream(std::ostream& os) {
-            return [&os](ELString msg, ELogLevel) {
+        struct ostream : executor_api {
+            explicit ostream(std::ostream& os) : os(os) {}
+            void do_execute(ELString msg, ELogLevel) override {
                 os << msg << std::endl;
-            };
-        }
+            }
+        private:
+            std::ostream& os;
+        };
     }
 }
 
