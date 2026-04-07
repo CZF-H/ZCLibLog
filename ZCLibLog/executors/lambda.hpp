@@ -27,7 +27,7 @@ namespace ZCLibLog {
     }
 
     inline executor lambda_wrapper(executors::lambda::constructible constructed) {
-        return new executors::lambda(std::move(constructed));
+        return executor::Construct<executors::lambda>(std::move(constructed));
     }
 }
 

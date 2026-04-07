@@ -66,13 +66,13 @@ namespace ZCLibLog {
         std::vector<executor_pair> m_executors;
         size_t m_nextID{};
 
-        LogConfig m_config;
+        LogLevelCfg m_config;
     public:
         ZCLibLog_NODISCARD const std::string& name() const noexcept {
             return m_name;
         }
 
-        ZCLibLog_NODISCARD LogConfig& config() noexcept {
+        ZCLibLog_NODISCARD LogLevelCfg& config() noexcept {
             return m_config;
         }
 
@@ -135,7 +135,7 @@ namespace ZCLibLog {
         LoggerSync(
             std::string name,
             const std::initializer_list<executor>& executor_ptrs = {},
-            const LogConfig config = {}
+            const LogLevelCfg config = {}
         ) : m_name(std::move(name)),
             m_config(config) {
             for (const auto& executor_ptr : executor_ptrs) {

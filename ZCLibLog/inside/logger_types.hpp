@@ -32,13 +32,13 @@ namespace ZCLibLog {
         LogLevel level = {};
     };
 
-    struct LogConfig {
+    struct LogLevelCfg {
         LogLevel min_level;
         LogLevel max_level;
 
         // ReSharper disable once CppNonExplicitConvertingConstructor
-        LogConfig(const LogLevel level = {}) : min_level(level), max_level(LogLevel_NONE) {}
-        LogConfig(const LogLevel min_level, const LogLevel max_level) : min_level(min_level), max_level(max_level) {}
+        LogLevelCfg(const LogLevel level = {}) : min_level(level), max_level(LogLevel_NONE) {}
+        LogLevelCfg(const LogLevel min_level, const LogLevel max_level) : min_level(min_level), max_level(max_level) {}
     };
 
     using ELogLevel = const LogLevel;    // 执行器接收的等级
@@ -102,6 +102,7 @@ namespace ZCLibLog {
             return executor_ptr.get() != nullptr;
         }
     };
+
 
     using FLogPack = const LogPack&;    // 格式化接受的数据包
 
