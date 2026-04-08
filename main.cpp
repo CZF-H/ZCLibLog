@@ -113,5 +113,6 @@ int main() {
     const auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
 
     std::cout << "Used: " << duration.count() << " ns" << std::endl;
+
     return 0;
 }

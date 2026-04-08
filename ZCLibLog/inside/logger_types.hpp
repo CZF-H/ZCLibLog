@@ -13,18 +13,30 @@
 namespace ZCLibLog {
     using LogLevelBase = uint16_t;
 
+    #define ZCLIBLOG_HELPER_LEVELS(Register) \
+        Register(ALL,   0) \
+        Register(TRACE, 1) \
+        Register(DEBUG, 2) \
+        Register(INFO,  3) \
+        Register(WARN,  4) \
+        Register(ERROR, 5) \
+        Register(FATAL, 6) \
+        Register(OFF, std::numeric_limits<LogLevelBase>::max())
+
     enum class LogLevel : LogLevelBase {
-        ALL = LogLevelBase{},
-
-        TRACE = 1,
-        DEBUG = 2,
-        INFO  = 3,
-        WARN  = 4,
-        ERROR = 5,
-        FATAL = 6,
-
-        NONE = std::numeric_limits<LogLevelBase>::max()
+        #define ENUM_CASE(name, value) name = value,
+        ZCLIBLOG_HELPER_LEVELS(ENUM_CASE)
+        #undef ENUM_CASE
     };
+
+    inline const char* LogLevelToString(const LogLevel level) {
+        switch(level) {
+            #define X(name, value) case LogLevel::name: return #name;
+            ZCLIBLOG_HELPER_LEVELS(X)
+            #undef X
+        }
+        return "UNKNOWN";
+    }
 
     struct LogPack {
         const std::string* name = {};
@@ -37,7 +49,7 @@ namespace ZCLibLog {
         LogLevel max_level;
 
         // ReSharper disable once CppNonExplicitConvertingConstructor
-        LogLevelCfg(const LogLevel level = {}) : min_level(level), max_level(LogLevel::NONE) {}
+        LogLevelCfg(const LogLevel level = {}) : min_level(level), max_level(LogLevel::OFF) {}
         LogLevelCfg(const LogLevel min_level, const LogLevel max_level) : min_level(min_level), max_level(max_level) {}
     };
 

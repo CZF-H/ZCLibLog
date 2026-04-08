@@ -214,7 +214,6 @@ namespace ZCLibLog {
         Tag WARN{this, LogLevel::WARN};
         Tag ERROR{this, LogLevel::ERROR};
         Tag FATAL{this, LogLevel::FATAL};
-        Tag NONE{this, LogLevel::NONE};
     };
 }
 
