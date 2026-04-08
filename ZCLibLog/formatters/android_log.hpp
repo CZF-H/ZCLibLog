@@ -16,6 +16,12 @@
 // NOLINTNEXTLINE
 namespace ZCLibLog {
     namespace formatters {
+        /**
+         * @struct android_log
+         * @brief 为"__android_log_write"设计的基于C语言"snprintf"的格式化接口
+         * @note 和android_log executor配套使用获得最佳体验
+         * @author TingIAAI
+         */
         struct android_log : format_apis::traditional  {
             template<typename... Args>
             static std::string do_format(FLogPack pack, const char* fmt, Args&&... args) {

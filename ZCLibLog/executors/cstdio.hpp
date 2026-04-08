@@ -15,7 +15,10 @@
 namespace ZCLibLog {
     namespace executors {
         /**
-         * @warning 请确保 FILE* 在执行器使用期间有效
+         * @struct cstdio
+         * @brief C语言"stdio"通用执行器
+         * @warning 请确保执行器存在时传入的FILE*没有被销毁
+         * @author TingIAAI
          */
         struct cstdio : executor_api {
             explicit cstdio(FILE*& f) : f(f) {}

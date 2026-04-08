@@ -14,7 +14,11 @@
 
 namespace ZCLibLog {
     namespace executors {
-        /** lambda thunk **/
+        /**
+         * @struct lambda
+         * @brief C++ lambda函数thunk执行器
+         * @author wanjiangzhi
+         */
         struct lambda : executor_api {
             using constructible = std::function<void(ELString, ELogLevel)>;
             explicit lambda(constructible constructed) : constructed(std::move(constructed)) {}
@@ -26,6 +30,11 @@ namespace ZCLibLog {
         };
     }
 
+    /**
+     * @brief 辅助创建lambda thunk执行器
+     * @param constructed 可构造的函数
+     * @return 包装执行器
+     */
     inline executor lambda_wrapper(executors::lambda::constructible constructed) {
         return executor::Construct<executors::lambda>(std::move(constructed));
     }

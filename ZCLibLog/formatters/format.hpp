@@ -14,6 +14,11 @@
 
 // NOLINTNEXTLINE
 namespace ZCLibLog::formatters {
+    /**
+     * @struct format
+     * @brief 基于C++20的"std::format"的编译期格式化接口
+     * @author wanjiangzhi
+     */
     struct format : format_apis::stdcxx20 {
         template <typename... Args>
         static std::string do_format(FLogPack pack, std::format_string<Args...>&& fmt, Args&&... args) {

@@ -16,6 +16,12 @@
 // NOLINTNEXTLINE
 namespace ZCLibLog {
     namespace executors {
+        /**
+         * @struct android_log
+         * @brief C语言风格"android_log"通用执行器
+         * @note 和android_log formatter配套使用获得最佳体验
+         * @author wanjiangzhi
+         */
         struct android_log : executor_api {
             explicit android_log(const char* tag = PROJECT_NAME) : tag(tag) {}
             void do_execute(ELString msg, ELogLevel lv) override {

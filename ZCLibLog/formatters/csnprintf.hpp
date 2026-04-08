@@ -16,6 +16,11 @@
 // NOLINTNEXTLINE
 namespace ZCLibLog {
     namespace formatters {
+        /**
+         * @struct csnprintf
+         * @brief 基于C语言"snprintf"的格式化接口
+         * @author wanjiangzhi
+         */
         struct csnprintf : format_apis::traditional {
             template<typename... Args>
             static std::string do_format(FLogPack pack, const char* fmt, Args&&... args) {

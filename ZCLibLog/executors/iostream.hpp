@@ -14,6 +14,11 @@
 // NOLINTNEXTLINE
 namespace ZCLibLog {
     namespace executors {
+        /**
+         * @struct iostream
+         * @brief C++"iostream"标准输出执行器
+         * @author wanjiangzhi
+         */
         struct iostream : executor_api {
             void do_execute(ELString msg, ELogLevel lv) override {
                 if (lv >= LogLevel::ERROR)
