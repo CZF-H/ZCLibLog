@@ -51,12 +51,12 @@ namespace ZCLibLog {
 
                 auto log_level = "INFO"; // fallback
                 switch (pack.level) {
-                    case LogLevel_TRACE: log_level = "TRACE"; break;
-                    case LogLevel_DEBUG: log_level = "DEBUG"; break;
-                    case LogLevel_INFO: log_level = "INFO"; break;
-                    case LogLevel_WARN: log_level = "WARN"; break;
-                    case LogLevel_ERROR: log_level = "ERROR"; break;
-                    case LogLevel_FATAL: log_level = "FATAL"; break;
+                    case LogLevel::TRACE: log_level = "TRACE"; break;
+                    case LogLevel::DEBUG: log_level = "DEBUG"; break;
+                    case LogLevel::INFO: log_level = "INFO"; break;
+                    case LogLevel::WARN: log_level = "WARN"; break;
+                    case LogLevel::ERROR: log_level = "ERROR"; break;
+                    case LogLevel::FATAL: log_level = "FATAL"; break;
 
                     default: break;
                 }

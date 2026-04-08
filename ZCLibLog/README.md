@@ -71,7 +71,7 @@ int main() {
         {
             ZCLibLog::executor::Construct<ZCLibLog::executors::cstdout>()
         },
-        ZCLibLog::LogLevel_INFO
+        ZCLibLog::LogLevel::INFO
     };
 
     logger.INFO("Hello {}", "ZCLibLog");
@@ -93,7 +93,7 @@ int main() {
         {
             ZCLibLog::executor::Construct<ZCLibLog::executors::iostream>()
         },
-        ZCLibLog::LogLevel_DEBUG
+        ZCLibLog::LogLevel::DEBUG
     };
 
     logger.DEBUG("id=%d, user=%s", 42, "alice");
@@ -113,7 +113,7 @@ int main() {
         {
             ZCLibLog::executor::Construct<ZCLibLog::executors::cstdout>()
         },
-        ZCLibLog::LogLevel_TRACE
+        ZCLibLog::LogLevel::TRACE
     };
 
     logger.TRACE("task={} started", 1001);
@@ -164,7 +164,7 @@ int main() {
 struct MyFormatter : ZCLibLog::format_apis::stdcxx20 {
     template <typename... Args>
     static std::string do_format(
-        ZCLibLog::FLogPack pack,
+        FLogPack pack,
         std::format_string<Args...>&& fmt,
         Args&&... args
     ) {
@@ -183,7 +183,7 @@ struct MyFormatter : ZCLibLog::format_apis::stdcxx20 {
 ZCLibLog::LoggerSync<MyFormatter> logger{
     "CustomFmt",
     { ZCLibLog::executor::Construct<ZCLibLog::executors::cstdout>() },
-    ZCLibLog::LogLevel_INFO
+    ZCLibLog::LogLevel::INFO
 };
 ```
 
@@ -205,7 +205,7 @@ ZCLibLog::LoggerSync<MyFormatter> logger{
 struct FileExecutor : ZCLibLog::executor_api {
     explicit FileExecutor(const std::string& path) : out(path, std::ios::app) {}
 
-    void do_execute(ZCLibLog::ELString msg, ZCLibLog::ELogLevel) override {
+    void do_execute(ELString msg, ELogLevel) override {
         if (out.is_open()) {
             out << msg << '\n';
             out.flush();
@@ -225,7 +225,7 @@ private:
 ZCLibLog::LoggerSync<> logger{
     "FileLogger",
     { ZCLibLog::executor::Construct<FileExecutor>("app.log") },
-    ZCLibLog::LogLevel_DEBUG
+    ZCLibLog::LogLevel::DEBUG
 };
 ```
 
@@ -275,7 +275,7 @@ Android 平台可组合 `formatters::android_log + executors::android_log`：
 ZCLibLog::LoggerSync<ZCLibLog::formatters::android_log> logger{
     "AndroidLogger",
     { ZCLibLog::executor::Construct<ZCLibLog::executors::android_log>("MyApp") },
-    ZCLibLog::LogLevel_INFO
+    ZCLibLog::LogLevel::INFO
 };
 ```
 

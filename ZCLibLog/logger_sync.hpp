@@ -207,14 +207,14 @@ namespace ZCLibLog {
             #endif
         };
 
-        Tag ALL{this, LogLevel_ALL};
-        Tag TRACE{this, LogLevel_TRACE};
-        Tag DEBUG{this, LogLevel_DEBUG};
-        Tag INFO{this, LogLevel_INFO};
-        Tag WARN{this, LogLevel_WARN};
-        Tag ERROR{this, LogLevel_ERROR};
-        Tag FATAL{this, LogLevel_FATAL};
-        Tag NONE{this, LogLevel_NONE};
+        Tag ALL{this, LogLevel::ALL};
+        Tag TRACE{this, LogLevel::TRACE};
+        Tag DEBUG{this, LogLevel::DEBUG};
+        Tag INFO{this, LogLevel::INFO};
+        Tag WARN{this, LogLevel::WARN};
+        Tag ERROR{this, LogLevel::ERROR};
+        Tag FATAL{this, LogLevel::FATAL};
+        Tag NONE{this, LogLevel::NONE};
     };
 }
 

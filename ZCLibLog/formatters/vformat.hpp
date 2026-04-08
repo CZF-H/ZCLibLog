@@ -33,17 +33,17 @@ namespace ZCLibLog::formatters {
 
             const char* level_str;
             switch (pack.level) {
-                case LogLevel_TRACE: level_str = "[TRACE]";
+                case LogLevel::TRACE: level_str = "[TRACE]";
                     break;
-                case LogLevel_DEBUG: level_str = "[DEBUG]";
+                case LogLevel::DEBUG: level_str = "[DEBUG]";
                     break;
-                case LogLevel_INFO: level_str = "[INFO]";
+                case LogLevel::INFO: level_str = "[INFO]";
                     break;
-                case LogLevel_WARN: level_str = "[WARN]";
+                case LogLevel::WARN: level_str = "[WARN]";
                     break;
-                case LogLevel_ERROR: level_str = "[ERROR]";
+                case LogLevel::ERROR: level_str = "[ERROR]";
                     break;
-                case LogLevel_FATAL: level_str = "[FATAL]";
+                case LogLevel::FATAL: level_str = "[FATAL]";
                     break;
                 default: level_str = "[INFO]";
                     break;

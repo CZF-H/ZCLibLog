@@ -2,8 +2,8 @@
 // Created by wanjiangzhi on 2026/3/30.
 //
 
-#ifndef ZCLIBLOG_LOGGER_CLASSES_HPP
-#define ZCLIBLOG_LOGGER_CLASSES_HPP
+#ifndef ZCLIBLOG_LOGGER_TYPES_HPP
+#define ZCLIBLOG_LOGGER_TYPES_HPP
 
 #include <string>
 #include <thread>
@@ -11,19 +11,19 @@
 #include <type_traits>
 
 namespace ZCLibLog {
-    using LogLevel = uint16_t;
+    using LogLevelBase = uint16_t;
 
-    enum LogLevel_ : LogLevel {
-        LogLevel_ALL = LogLevel{},
+    enum class LogLevel : LogLevelBase {
+        ALL = LogLevelBase{},
 
-        LogLevel_TRACE = 1,
-        LogLevel_DEBUG = 2,
-        LogLevel_INFO  = 3,
-        LogLevel_WARN  = 4,
-        LogLevel_ERROR = 5,
-        LogLevel_FATAL = 6,
+        TRACE = 1,
+        DEBUG = 2,
+        INFO  = 3,
+        WARN  = 4,
+        ERROR = 5,
+        FATAL = 6,
 
-        LogLevel_NONE = std::numeric_limits<LogLevel>::max()
+        NONE = std::numeric_limits<LogLevelBase>::max()
     };
 
     struct LogPack {
@@ -37,7 +37,7 @@ namespace ZCLibLog {
         LogLevel max_level;
 
         // ReSharper disable once CppNonExplicitConvertingConstructor
-        LogLevelCfg(const LogLevel level = {}) : min_level(level), max_level(LogLevel_NONE) {}
+        LogLevelCfg(const LogLevel level = {}) : min_level(level), max_level(LogLevel::NONE) {}
         LogLevelCfg(const LogLevel min_level, const LogLevel max_level) : min_level(min_level), max_level(max_level) {}
     };
 
@@ -47,6 +47,10 @@ namespace ZCLibLog {
     struct executor_api {
         virtual void do_execute(ELString, ELogLevel) = 0;
         virtual ~executor_api() = default;
+    protected:
+        using ELString = ELString;
+        using ELogLevel = ELogLevel;
+        using LogLevel = LogLevel;
     };
 
     template <typename Executor>
@@ -104,9 +108,15 @@ namespace ZCLibLog {
     };
 
 
-    using FLogPack = const LogPack&;    // 格式化接受的数据包
+    using FLogPack = const LogPack&; // 格式化接受的数据包
+    using FLString = std::string;    // 格式化输出的字符串
 
-    struct format_api{};
+    struct format_api {
+    protected:
+        using FLogPack = FLogPack;
+        using FLString = FLString;
+        using LogLevel = LogLevel;
+    };
     namespace format_apis {
         struct stdcxx20 : format_api {};
         struct traditional : format_api{};
@@ -116,4 +126,4 @@ namespace ZCLibLog {
     using is_format_api = std::is_base_of<FormatAPI, Formatter>;
 }
 
-#endif //ZCLIBLOG_LOGGER_CLASSES_HPP
+#endif //ZCLIBLOG_LOGGER_TYPES_HPP

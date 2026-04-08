@@ -69,13 +69,13 @@ public:
 
 RingBuffer<std::string> buf(5);
 struct ringbuf : ZCLibLog::executor_api {
-    void do_execute(ZCLibLog::ELString msg, ZCLibLog::ELogLevel) override {
+    void do_execute(ELString msg, ELogLevel) override {
         buf.push(msg);
     }
 };
 
 struct none : ZCLibLog::executor_api {
-    void do_execute(ZCLibLog::ELString, ZCLibLog::ELogLevel) override {
+    void do_execute(ELString, ELogLevel) override {
     }
 };
 

@@ -16,7 +16,7 @@ namespace ZCLibLog {
     namespace executors {
         struct cstdout : executor_api {
             void do_execute(ELString msg, ELogLevel lv) override {
-                if (lv >= LogLevel_ERROR) {
+                if (lv >= LogLevel::ERROR) {
                     fputs(msg.c_str(), stderr);
                     fputs("\n", stderr);
                 } else {

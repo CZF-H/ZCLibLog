@@ -16,7 +16,7 @@ namespace ZCLibLog {
     namespace executors {
         struct iostream : executor_api {
             void do_execute(ELString msg, ELogLevel lv) override {
-                if (lv >= LogLevel_ERROR)
+                if (lv >= LogLevel::ERROR)
                     std::cerr << msg << std::endl;
                 else
                     std::cout << msg << std::endl;

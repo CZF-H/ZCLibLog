@@ -21,12 +21,12 @@ namespace ZCLibLog {
             void do_execute(ELString msg, ELogLevel lv) override {
                 int android_level = ANDROID_LOG_INFO;
                 switch (lv) {
-                    case LogLevel_TRACE: android_level = ANDROID_LOG_VERBOSE; break;
-                    case LogLevel_DEBUG: android_level = ANDROID_LOG_DEBUG;   break;
-                    case LogLevel_INFO:  android_level = ANDROID_LOG_INFO;    break;
-                    case LogLevel_WARN:  android_level = ANDROID_LOG_WARN;    break;
-                    case LogLevel_ERROR: android_level = ANDROID_LOG_ERROR;   break;
-                    case LogLevel_FATAL: android_level = ANDROID_LOG_FATAL;   break;
+                    case LogLevel::TRACE: android_level = ANDROID_LOG_VERBOSE; break;
+                    case LogLevel::DEBUG: android_level = ANDROID_LOG_DEBUG;   break;
+                    case LogLevel::INFO:  android_level = ANDROID_LOG_INFO;    break;
+                    case LogLevel::WARN:  android_level = ANDROID_LOG_WARN;    break;
+                    case LogLevel::ERROR: android_level = ANDROID_LOG_ERROR;   break;
+                    case LogLevel::FATAL: android_level = ANDROID_LOG_FATAL;   break;
                     default: break;
                 }
                 __android_log_write(android_level, tag, msg.c_str());
