@@ -8,9 +8,8 @@
 #ifndef ZCLIBLOG_EXECUTORS_LAMBDA_HPP
 #define ZCLIBLOG_EXECUTORS_LAMBDA_HPP
 
+#include "basic_executor.hpp"
 #include <functional>
-#include <utility>
-#include "../inside/logger_types.hpp"
 
 namespace ZCLibLog {
     namespace executors {

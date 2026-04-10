@@ -8,10 +8,10 @@
 #ifndef ZCLIBLOG_FORMATTERS_CSNPRINTF_HPP
 #define ZCLIBLOG_FORMATTERS_CSNPRINTF_HPP
 
+#include "format_apis/traditional.hpp"
 #include <ctime>
 #include <cstdio>
 #include <array>
-#include "../inside/logger_types.hpp"
 
 // NOLINTNEXTLINE
 namespace ZCLibLog {
@@ -54,7 +54,7 @@ namespace ZCLibLog {
                 thread_local std::array<char, 80> ms_time;
                 std::snprintf(ms_time.data(), ms_time.size(), "%s.%03d", time.data(), ms);
 
-                auto log_level = "INFO"; // fallback
+                auto log_level = "OUT"; // fallback
                 switch (pack.level) {
                     case LogLevel::TRACE: log_level = "TRACE"; break;
                     case LogLevel::DEBUG: log_level = "DEBUG"; break;

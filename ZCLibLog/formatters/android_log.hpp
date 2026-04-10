@@ -8,10 +8,10 @@
 #ifndef ZCLIBLOG_FORMATTERS_ANDROID_LOG_HPP
 #define ZCLIBLOG_FORMATTERS_ANDROID_LOG_HPP
 
+#include "format_apis/traditional.hpp"
 #include <ctime>
 #include <cstdio>
 #include <array>
-#include "../inside/logger_types.hpp"
 
 // NOLINTNEXTLINE
 namespace ZCLibLog {

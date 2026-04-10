@@ -1,11 +1,12 @@
 var indexSectionsWithContent =
 {
-  0: "abcdefghilmnostuvw~",
-  1: "acefilotv",
-  2: "df",
+  0: "abcdefghilmnostuvwz~",
+  1: "abcefilotv",
+  2: "dfz",
   3: "bcdeghlnostu~",
   4: "adefilmntw",
-  5: "efl"
+  5: "efil",
+  6: "l"
 };
 
 var indexSectionNames =
@@ -15,16 +16,18 @@ var indexSectionNames =
   2: "namespaces",
   3: "functions",
   4: "variables",
-  5: "typedefs"
+  5: "typedefs",
+  6: "enums"
 };
 
 var indexSectionLabels =
 {
-  0: "All",
-  1: "Classes",
-  2: "Namespaces",
-  3: "Functions",
-  4: "Variables",
-  5: "Typedefs"
+  0: "全部",
+  1: "类",
+  2: "命名空间",
+  3: "函数",
+  4: "变量",
+  5: "类型定义",
+  6: "枚举"
 };
 

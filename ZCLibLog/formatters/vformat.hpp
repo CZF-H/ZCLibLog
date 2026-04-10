@@ -8,9 +8,9 @@
 #ifndef ZCLIBLOG_FORMATTERS_VFORMAT_HPP
 #define ZCLIBLOG_FORMATTERS_VFORMAT_HPP
 
+#include "format_apis/traditional.hpp"
 #include <format>
 #include <chrono>
-#include "../inside/logger_types.hpp"
 
 // NOLINTNEXTLINE
 namespace ZCLibLog::formatters {
@@ -29,8 +29,8 @@ namespace ZCLibLog::formatters {
             else {
                 try {
                     f_msg = std::vformat(fmt, std::make_format_args(args...));
-                } catch (const std::format_error&) {
-                    return {};
+                } catch (const std::format_error& e) {
+                    return e.what();
                 }
             }
 
@@ -50,7 +50,7 @@ namespace ZCLibLog::formatters {
                     break;
                 case LogLevel::FATAL: level_str = "[FATAL]";
                     break;
-                default: level_str = "[INFO]";
+                default: level_str = "[OUT]";
                     break;
             }
 

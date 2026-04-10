@@ -8,8 +8,8 @@
 #ifndef ZCLIBLOG_EXECUTORS_CSTDIO_HPP
 #define ZCLIBLOG_EXECUTORS_CSTDIO_HPP
 
+#include "basic_executor.hpp"
 #include <cstdio>
-#include "../inside/logger_types.hpp"
 
 // NOLINTNEXTLINE
 namespace ZCLibLog {

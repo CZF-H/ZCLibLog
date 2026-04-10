@@ -8,9 +8,9 @@
 #ifndef ZCLIBLOG_FORMATTERS_FORMAT_HPP
 #define ZCLIBLOG_FORMATTERS_FORMAT_HPP
 
+#include "format_apis/stdcxx20format.hpp"
 #include <format>
 #include <chrono>
-#include "../inside/logger_types.hpp"
 
 // NOLINTNEXTLINE
 namespace ZCLibLog::formatters {
@@ -19,20 +19,15 @@ namespace ZCLibLog::formatters {
      * @brief 基于C++20的"std::format"的编译期格式化接口
      * @author wanjiangzhi
      */
-    struct format : format_apis::stdcxx20 {
+    struct format : format_apis::stdcxx20format {
         template <typename... Args>
         static std::string do_format(FLogPack pack, std::format_string<Args...>&& fmt, Args&&... args) {
-
             std::string f_msg;
             if (sizeof...(args) == 0) {
                 f_msg = fmt.get();
             }
             else {
-                try {
-                    f_msg = std::format(std::forward<std::format_string<Args...>&&>(fmt), std::forward<Args&&>(args)...);
-                } catch (const std::format_error&) {
-                    return {};
-                }
+                f_msg = std::format(std::forward<std::format_string<Args...>&&>(fmt), std::forward<Args&&>(args)...);
             }
 
             const auto tp = std::chrono::system_clock::time_point(std::chrono::milliseconds(pack.time));
@@ -51,7 +46,7 @@ namespace ZCLibLog::formatters {
                     break;
                 case LogLevel::FATAL: level_str = "[FATAL]";
                     break;
-                default: level_str = "[INFO]";
+                default: level_str = "[OUT]";
                     break;
             }
 

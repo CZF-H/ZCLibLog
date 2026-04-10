@@ -8,10 +8,9 @@
 #ifndef ZCLIBLOG_EXECUTORS_ANDROID_LOG_HPP
 #define ZCLIBLOG_EXECUTORS_ANDROID_LOG_HPP
 
-#include <android/log.h>
-
+#include "basic_executor.hpp"
 #include "../inside/logger_constants.hpp"
-#include "../inside/logger_types.hpp"
+#include <android/log.h>
 
 // NOLINTNEXTLINE
 namespace ZCLibLog {

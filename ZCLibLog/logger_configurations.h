@@ -17,10 +17,7 @@
 /// @brief 启用C++20字面量format (不影响vformat)
 #define ZCLIBLOG_LOGGER_CONFIGURATIONS_ENABLE_CXX20_FORMAT true
 
-/// @brief LoggerSync资源加锁
-#define ZCLIBLOG_LOGGER_CONFIGURATIONS_LOGGER_SYNC_MUTEX false
-
-/// @brief LoggerAsync资源加锁
-#define ZCLIBLOG_LOGGER_CONFIGURATIONS_LOGGER_ASYNC_MUTEX true
+/// @brief Logger资源加锁
+#define ZCLIBLOG_LOGGER_CONFIGURATIONS_LOGGER_MUTEX false
 
 #endif //ZCLIBLOG_LOGGER_CONFIGURATIONS_H

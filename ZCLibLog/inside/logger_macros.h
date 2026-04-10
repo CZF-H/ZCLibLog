@@ -34,6 +34,16 @@
     #define ZCLibLog_CPP 03
 #endif
 
+#if ZCLibLog_CPP >= 14
+    #define ZCLibLog_DEPRECATED(msg) [[deprecated(msg)]]
+#elif defined(__GNUC__) || defined(__clang__)
+    #define ZCLibLog_DEPRECATED(msg) __attribute__((deprecated(msg)))
+#elif defined(_MSC_VER)
+    #define ZCLibLog_DEPRECATED(msg) __declspec(deprecated(msg))
+#else
+    #define ZCLibLog_DEPRECATED(msg)
+#endif
+
 #if ZCLibLog_CPP >= 17 // C++17启用nodiscard特性，避免警告
     #define ZCLibLog_NODISCARD [[nodiscard]]
 #else

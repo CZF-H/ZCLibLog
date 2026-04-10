@@ -8,8 +8,8 @@
 #ifndef ZCLIBLOG_EXECUTORS_OSTREAM_HPP
 #define ZCLIBLOG_EXECUTORS_OSTREAM_HPP
 
+#include "basic_executor.hpp"
 #include <ostream>
-#include "../inside/logger_types.hpp"
 
 // NOLINTNEXTLINE
 namespace ZCLibLog {

@@ -4,3 +4,5 @@ project(ZCLibLog)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(${PROJECT_NAME}_Example main.cpp)
+
+target_link_libraries(${PROJECT_NAME}_Example)

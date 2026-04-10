@@ -10,6 +10,8 @@
 #include <memory>
 #include <type_traits>
 
+#include "logger_macros.h"
+
 namespace ZCLibLog {
     /// @brief 日志等级的基础类型
     using LogLevelBase = uint16_t;
@@ -42,9 +44,9 @@ namespace ZCLibLog {
      */
     inline const char* LogLevelToString(const LogLevel level) {
         switch (level) {
-            #define ZCLIBLOG_HELPER_ENUM_CASE(name, value) case LogLevel::name: return #name;
+                #define ZCLIBLOG_HELPER_ENUM_CASE(name, value) case LogLevel::name: return #name;
             ZCLIBLOG_HELPER_LEVELS(ZCLIBLOG_HELPER_ENUM_CASE)
-            #undef ZCLIBLOG_HELPER_ENUM_CASE
+                #undef ZCLIBLOG_HELPER_ENUM_CASE
         }
         return "UNKNOWN";
     }
@@ -71,13 +73,16 @@ namespace ZCLibLog {
          * @brief 单等级构造
          * @param level 日志的最低等级
          */
-        LogLevelCfg(const LogLevel level = {}) : min_level(level), max_level(LogLevel::OFF) {}
+        LogLevelCfg(const LogLevel level = {}) : min_level(level),
+                                                 max_level(LogLevel::OFF) {}
+
         /**
          * @brief 等级范围构造
          * @param min_level 日志的最低等级
          * @param max_level 日志的最高等级
          */
-        LogLevelCfg(const LogLevel min_level, const LogLevel max_level) : min_level(min_level), max_level(max_level) {}
+        LogLevelCfg(const LogLevel min_level, const LogLevel max_level) : min_level(min_level),
+                                                                          max_level(max_level) {}
     };
 
     /// @brief 执行器接收的等级
@@ -85,11 +90,16 @@ namespace ZCLibLog {
     /// @brief 执行器接受的字符串
     using ELString = const std::string&;
 
+    /**
+     * @struct executor_api
+     * @brief 执行器的基类抽象类
+     */
     struct executor_api {
         /// @brief 自定义执行器需要重载的执行函数
         virtual void do_execute(ELString, ELogLevel) = 0;
         /// @brief 自定义执行器可能重载的析构函数
         virtual ~executor_api() = default;
+
     protected:
         /// @brief 简化写法
         using ELString = ELString;
@@ -115,8 +125,10 @@ namespace ZCLibLog {
     public:
         using base_ptr_type = std::shared_ptr<executor_api>;
         using inside_type = base_ptr_type::element_type;
+
     private:
         base_ptr_type executor_ptr;
+
     public:
         executor() = default;
         // ReSharper disable once CppNonExplicitConvertingConstructor
@@ -136,7 +148,7 @@ namespace ZCLibLog {
          * @param args 执行器类构造参数
          * @return 包装执行器
          */
-        template<typename Executor, typename... Args>
+        template <typename Executor, typename... Args>
         static executor Construct(Args&&... args) {
             static_assert(is_executor_api<Executor>::value, "Executor must be a real executor");
 
@@ -204,22 +216,7 @@ namespace ZCLibLog {
      * @namespace format_apis
      * @brief 预定的一些format_api
      */
-    namespace format_apis {
-        /**
-         * @struct traditional
-         * @brief 传统格式化API
-         * @note 使用常规类型(const char*, std::string_view, std::string)fmt
-         */
-        struct traditional : format_api{};
-        #if ZCLibLog_CPP >= 20
-        /**
-         * @struct traditional
-         * @brief C++20 format API
-         * @note 使用std::format_string<Args...>作为fmt
-         */
-        struct stdcxx20 : format_api {};
-        #endif
-    };
+    namespace format_apis {}
 
     /**
      * @brief 判断是否是基于format api
@@ -229,6 +226,71 @@ namespace ZCLibLog {
      */
     template <typename Formatter, typename FormatAPI = format_api>
     using is_format_api = std::is_base_of<FormatAPI, Formatter>;
+
+    /**
+     * @class LogTagBase
+     * @brief 根基Tag类，构造无用，仅继承
+     * @tparam Logger 日志器
+     */
+    template <typename Logger>
+    class LogTagBase {
+    protected:
+        /// @brief 获取当前的日志信息包
+        ZCLibLog_NODISCARD LogPack get_log_pack() const {
+            const auto now = std::chrono::system_clock::now();
+            const auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(
+                now.time_since_epoch()
+            ).count();
+
+            LogPack p;
+            p.name = &m_logger->name();
+            p.level = m_level;
+            p.time = ms;
+
+            return p;
+        }
+
+        /// @brief 检查是否可执行
+        ZCLibLog_NODISCARD bool check_executable() const {
+            if (
+                m_logger->has_executor() &&
+                m_logger->be_executable(level())
+            )
+                return true;
+            return {};
+        }
+
+        const Logger* const m_logger{};
+        const LogLevel m_level{};
+    public:
+        /// @brief 获取当前Tag的等级
+        ZCLibLog_NODISCARD const LogLevel& level() const noexcept {
+            return m_level;
+        }
+
+        /**
+         * @brief 构造Tag
+         * @param logger 日志器指针（引用非拥有）
+         * @param level 当前Tag的日志等级
+         */
+        LogTagBase(const Logger* const logger, const LogLevel level) : m_logger(logger),
+                                                                    m_level(level) {}
+    };
+
+    /**
+     * @class LogTag
+     * @brief 泛型模板，无法特化
+     * @tparam FormatterAPI 格式化API
+     * @tparam Logger
+     */
+    template <typename FormatterAPI, typename Logger>
+    struct LogTag : LogTagBase<Logger> {
+        using LogTagBase<Logger>::LogTagBase;
+        static_assert(
+            is_format_api<FormatterAPI>::value,
+            "Formatter must be format_api"
+        );
+    };
 }
 
 #endif //ZCLIBLOG_LOGGER_TYPES_HPP

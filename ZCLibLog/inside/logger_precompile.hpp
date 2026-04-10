@@ -14,4 +14,10 @@
     #error "ZCLibLog need CPP Standard is less than 11"
 #endif
 
+/**
+ * @namespace ZCLibLog
+ * @brief ZCLibLog的命名空间
+ */
+namespace ZCLibLog {}
+
 #endif //ZCLIBLOG_LOGGER_PRECOMPILE_HPP
