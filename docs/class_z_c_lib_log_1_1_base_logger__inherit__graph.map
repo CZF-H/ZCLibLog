@@ -1,0 +1,7 @@
+<map id="ZCLibLog::BaseLogger&lt; Formatter &gt;" name="ZCLibLog::BaseLogger&lt; Formatter &gt;">
+<area shape="rect" id="Node000001" title="基本日志器，无执行" alt="" coords="94,5,238,304"/>
+<area shape="rect" id="Node000002" href="$struct_z_c_lib_log_1_1_logger_async.html" title="异步日志器" alt="" coords="5,352,156,565"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,316,113,353,108,351,119,321"/>
+<area shape="rect" id="Node000003" href="$struct_z_c_lib_log_1_1_logger_sync.html" title="同步日志器" alt="" coords="180,352,323,565"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="213,316,224,353,219,352,211,321"/>
+</map>

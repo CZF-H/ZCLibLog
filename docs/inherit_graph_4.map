@@ -1,0 +1,15 @@
+<map id="类继承关系图" name="类继承关系图">
+<area shape="rect" id="Node000000" href="$struct_z_c_lib_log_1_1executor__api.html" title="执行器的基类抽象类" alt="" coords="5,180,165,207"/>
+<area shape="rect" id="Node000001" href="$struct_z_c_lib_log_1_1executors_1_1android__log.html" title="C语言风格&quot;android_log&quot;通用执行器" alt="" coords="213,5,355,48"/>
+<area shape="poly" id="edge4_Node000000_Node000001" title=" " alt="" coords="104,166,150,113,179,84,211,58,233,47,229,51,214,62,183,88,154,117,108,169"/>
+<area shape="rect" id="Node000002" href="$struct_z_c_lib_log_1_1executors_1_1cstdio.html" title="C语言&quot;stdio&quot;通用执行器" alt="" coords="213,72,355,115"/>
+<area shape="poly" id="edge5_Node000000_Node000002" title=" " alt="" coords="124,170,211,124,238,114,234,117,214,129,127,175"/>
+<area shape="rect" id="Node000003" href="$struct_z_c_lib_log_1_1executors_1_1cstdout.html" title="C语言&quot;stdout&quot;标准输出执行器" alt="" coords="213,139,355,181"/>
+<area shape="poly" id="edge6_Node000000_Node000003" title=" " alt="" coords="179,175,214,171,210,173,181,180"/>
+<area shape="rect" id="Node000004" href="$struct_z_c_lib_log_1_1executors_1_1iostream.html" title="C++&quot;iostream&quot;标准输出执行器" alt="" coords="213,205,355,248"/>
+<area shape="poly" id="edge7_Node000000_Node000004" title=" " alt="" coords="180,207,215,214,210,216,181,212"/>
+<area shape="rect" id="Node000005" href="$struct_z_c_lib_log_1_1executors_1_1lambda.html" title="C++ lambda函数thunk执行器" alt="" coords="213,272,355,315"/>
+<area shape="poly" id="edge8_Node000000_Node000005" title=" " alt="" coords="125,212,214,258,238,271,233,272,211,262,125,217"/>
+<area shape="rect" id="Node000006" href="$struct_z_c_lib_log_1_1executors_1_1ostream.html" title="C++&quot;ostream&quot;通用执行器" alt="" coords="213,339,355,381"/>
+<area shape="poly" id="edge9_Node000000_Node000006" title=" " alt="" coords="107,216,154,270,183,299,214,325,234,338,228,338,211,329,179,303,150,274,105,221"/>
+</map>

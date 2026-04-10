@@ -1,0 +1,15 @@
+<map id="ZCLibLog::executor_api" name="ZCLibLog::executor_api">
+<area shape="rect" id="Node000001" title="执行器的基类抽象类" alt="" coords="386,5,535,96"/>
+<area shape="rect" id="Node000002" href="$struct_z_c_lib_log_1_1executors_1_1android__log.html" title="C语言风格&quot;android_log&quot;通用执行器" alt="" coords="5,144,137,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="370,72,265,103,207,123,151,146,138,153,135,148,149,142,205,118,263,98,374,70"/>
+<area shape="rect" id="Node000003" href="$struct_z_c_lib_log_1_1executors_1_1cstdio.html" title="C语言&quot;stdio&quot;通用执行器" alt="" coords="161,144,293,251"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="376,102,307,146,294,155,292,150,304,142,371,104"/>
+<area shape="rect" id="Node000004" href="$struct_z_c_lib_log_1_1executors_1_1cstdout.html" title="C语言&quot;stdout&quot;标准输出执行器" alt="" coords="317,155,449,240"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="432,108,407,157,404,153,428,111"/>
+<area shape="rect" id="Node000005" href="$struct_z_c_lib_log_1_1executors_1_1iostream.html" title="C++&quot;iostream&quot;标准输出执行器" alt="" coords="473,155,605,240"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="493,107,519,156,514,154,490,111"/>
+<area shape="rect" id="Node000006" href="$struct_z_c_lib_log_1_1executors_1_1lambda.html" title="C++ lambda函数thunk执行器" alt="" coords="629,144,761,251"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="548,100,618,142,632,153,627,152,615,146,547,105"/>
+<area shape="rect" id="Node000007" href="$struct_z_c_lib_log_1_1executors_1_1ostream.html" title="C++&quot;ostream&quot;通用执行器" alt="" coords="785,144,917,251"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="550,68,659,98,717,118,774,142,788,151,783,150,771,146,715,123,657,103,549,73"/>
+</map>
