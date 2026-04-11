@@ -56,7 +56,7 @@ namespace ZCLibLog {
     class BaseLogger {
         using Self = BaseLogger;
         // ReSharper disable CppUseTypeTraitAlias
-        static_assert(is_format_api<Formatter>::value,
+        static_assert(is_formatter<Formatter>::value,
                   "Formatter must be format_api");
         // ReSharper enable CppUseTypeTraitAlias
     protected:

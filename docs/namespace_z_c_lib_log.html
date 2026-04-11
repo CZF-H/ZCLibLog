@@ -113,6 +113,12 @@ $(function() {
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_z_c_lib_log_1_1format__api.html">format_api</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">定义了一些简化写法  <a href="struct_z_c_lib_log_1_1format__api.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_z_c_lib_log_1_1is__format__api.html">is_format_api</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断是否是基于format api  <a href="struct_z_c_lib_log_1_1is__format__api.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_z_c_lib_log_1_1is__formatter.html">is_formatter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断是否是是基于format api的formatter  <a href="struct_z_c_lib_log_1_1is__formatter.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_z_c_lib_log_1_1_logger_async.html">LoggerAsync</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">异步日志器  <a href="struct_z_c_lib_log_1_1_logger_async.html#details">更多...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,10 +170,6 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>FLogPack</b> = const
 using&#160;</td><td class="memItemRight" valign="bottom"><b>FLString</b> = std::string</td></tr>
 <tr class="memdesc:a870408c890297092548758d2f7d9c5e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">格格式化输出的字符串 <br /></td></tr>
 <tr class="separator:a870408c890297092548758d2f7d9c5e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeca3950f60973d24b0c821a05eb2d1ee" id="r_aeca3950f60973d24b0c821a05eb2d1ee"><td class="memTemplParams" colspan="2">template&lt;typename Formatter , typename FormatAPI  = format_api&gt; </td></tr>
-<tr class="memitem:aeca3950f60973d24b0c821a05eb2d1ee"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aeca3950f60973d24b0c821a05eb2d1ee">is_format_api</a> = std::is_base_of&lt;FormatAPI, Formatter&gt;</td></tr>
-<tr class="memdesc:aeca3950f60973d24b0c821a05eb2d1ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断是否是基于format api  <br /></td></tr>
-<tr class="separator:aeca3950f60973d24b0c821a05eb2d1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 枚举</h2></td></tr>
@@ -206,32 +208,6 @@ template&lt;typename Executor &gt; </div>
 <dl class="tparams"><dt>模板参数</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Executor</td><td>需要判断的Executor类 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>注解</dt><dd>可和std::is_base_of一样使用::value成员 </dd></dl>
-
-</div>
-</div>
-<a id="aeca3950f60973d24b0c821a05eb2d1ee" name="aeca3950f60973d24b0c821a05eb2d1ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeca3950f60973d24b0c821a05eb2d1ee">&#9670;&#160;</a></span>is_format_api</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename Formatter , typename FormatAPI  = format_api&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="#aeca3950f60973d24b0c821a05eb2d1ee">ZCLibLog::is_format_api</a> = std::is_base_of&lt;FormatAPI, Formatter&gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>判断是否是基于format api </p>
-<dl class="tparams"><dt>模板参数</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Formatter</td><td>需要判断的Formatter类 </td></tr>
-    <tr><td class="paramname">FormatAPI</td><td>判断是否是某个format_api（默认全部） </td></tr>
   </table>
   </dd>
 </dl>

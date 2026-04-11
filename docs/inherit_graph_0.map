@@ -1,7 +1,7 @@
 <map id="类继承关系图" name="类继承关系图">
-<area shape="rect" id="Node000000" href="$class_z_c_lib_log_1_1_base_logger.html" title="基本日志器，无执行" alt="" coords="5,39,160,81"/>
-<area shape="rect" id="Node000001" href="$struct_z_c_lib_log_1_1_logger_async.html" title="异步日志器" alt="" coords="208,5,369,48"/>
-<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="174,42,210,39,205,41,176,48"/>
-<area shape="rect" id="Node000002" href="$struct_z_c_lib_log_1_1_logger_sync.html" title="同步日志器" alt="" coords="211,72,366,115"/>
-<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="175,72,213,81,208,81,175,78"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,47,152,73"/>
+<area shape="rect" id="Node000001" href="$struct_z_c_lib_log_1_1is__format__api.html" title="判断是否是基于format api" alt="" coords="207,5,346,48"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="166,43,209,38,204,39,168,48"/>
+<area shape="rect" id="Node000002" href="$struct_z_c_lib_log_1_1is__formatter.html" title="判断是否是是基于format api的formatter" alt="" coords="200,72,354,115"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="167,72,202,80,197,81,167,78"/>
 </map>

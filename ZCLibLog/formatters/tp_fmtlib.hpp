@@ -16,6 +16,11 @@
 // NOLINTNEXTLINE
 namespace ZCLibLog {
     namespace formatters {
+        /**
+         * @namespace ZCLibLog::formatters::fmtlib
+         * @brief 基于第三方的fmtlib
+         * @author wanjiangzhi
+         */
         namespace fmtlib {
             /**
              * @struct format

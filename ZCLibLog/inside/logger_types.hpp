@@ -222,13 +222,34 @@ namespace ZCLibLog {
     };
 
     /**
+     * @struct is_format_api
      * @brief 判断是否是基于format api
-     * @tparam Formatter 需要判断的Formatter类
-     * @tparam FormatAPI 判断是否是某个format_api（默认全部）
-     * @note 可和std::is_base_of一样使用::value成员
+     * @tparam FormatAPI 需要判断的FormatAPI类
+     * @note 可和使用::value成员
      */
-    template <typename Formatter, typename FormatAPI = format_api>
-    using is_format_api = std::is_base_of<FormatAPI, Formatter>;
+    template <typename FormatAPI>
+    struct is_format_api
+    : std::integral_constant<
+        bool,
+        std::is_base_of<format_api, FormatAPI>::value &&
+        !std::is_same<FormatAPI, format_api>::value
+    > {};
+
+    /**
+     * @struct is_formatter
+     * @brief 判断是否是是基于format api的formatter
+     * @tparam Formatter 需要判断的Formatter类
+     * @note 可使用::value成员
+     */
+    template <typename Formatter>
+    struct is_formatter
+    : std::integral_constant<
+        bool,
+        std::is_base_of<format_api, typename Formatter::Format_API>::value &&
+        !std::is_same<typename Formatter::Format_API, format_api>::value &&
+        std::is_base_of<typename Formatter::Format_API, Formatter>::value &&
+        !std::is_same<typename Formatter::Format_API, Formatter>::value
+    > {};
 
     /**
      * @class LogTagBase

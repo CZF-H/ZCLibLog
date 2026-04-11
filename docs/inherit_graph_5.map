@@ -1,3 +1,23 @@
 <map id="类继承关系图" name="类继承关系图">
-<area shape="rect" id="Node000000" href="$struct_z_c_lib_log_1_1_log_level_cfg.html" title="Log等级范围" alt="" coords="5,5,164,32"/>
+<area shape="rect" id="Node000000" href="$struct_z_c_lib_log_1_1format__api.html" title="定义了一些简化写法" alt="" coords="5,80,152,107"/>
+<area shape="rect" id="Node000001" href="$struct_z_c_lib_log_1_1format__apis_1_1fmtlib.html" title="fmtlib API" alt="" coords="200,5,353,48"/>
+<area shape="poly" id="edge15_Node000000_Node000001" title=" " alt="" coords="134,72,212,47,209,51,137,77"/>
+<area shape="rect" id="Node000003" href="$struct_z_c_lib_log_1_1format__apis_1_1stdcxx20format.html" title="C++20 format API" alt="" coords="200,72,353,115"/>
+<area shape="poly" id="edge17_Node000000_Node000003" title=" " alt="" coords="166,91,201,92,197,95,168,96"/>
+<area shape="rect" id="Node000005" href="$struct_z_c_lib_log_1_1format__apis_1_1traditional.html" title="传统格式化API" alt="" coords="200,239,353,281"/>
+<area shape="poly" id="edge19_Node000000_Node000005" title=" " alt="" coords="108,114,252,237,247,240,107,119"/>
+<area shape="rect" id="Node000002" href="$struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1format.html" title="基于第三方的fmtlib" alt="" coords="401,5,545,48"/>
+<area shape="poly" id="edge16_Node000001_Node000002" title=" " alt="" coords="367,24,403,26,398,28,369,29"/>
+<area shape="rect" id="Node000004" href="$struct_z_c_lib_log_1_1formatters_1_1format.html" title="基于C++20的&quot;std::format&quot;的编译期格式化接口" alt="" coords="401,72,545,115"/>
+<area shape="poly" id="edge18_Node000003_Node000004" title=" " alt="" coords="368,91,403,92,398,94,369,96"/>
+<area shape="rect" id="Node000006" href="$struct_z_c_lib_log_1_1formatters_1_1android__log.html" title="为&quot;__android_log_write&quot;设计的基于C语言&quot;snprintf&quot;的格式化接口" alt="" coords="401,139,545,181"/>
+<area shape="poly" id="edge20_Node000005_Node000006" title=" " alt="" coords="329,229,400,191,427,181,422,183,402,196,331,233"/>
+<area shape="rect" id="Node000007" href="$struct_z_c_lib_log_1_1formatters_1_1boost__format.html" title="基于boost::format" alt="" coords="401,205,545,248"/>
+<area shape="poly" id="edge21_Node000005_Node000007" title=" " alt="" coords="368,242,403,238,398,240,369,247"/>
+<area shape="rect" id="Node000008" href="$struct_z_c_lib_log_1_1formatters_1_1csnprintf.html" title="基于C语言&quot;snprintf&quot;的格式化接口" alt="" coords="401,272,545,315"/>
+<area shape="poly" id="edge22_Node000005_Node000008" title=" " alt="" coords="368,273,403,281,398,282,369,278"/>
+<area shape="rect" id="Node000009" href="$struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1vformat.html" title="基于第三方的fmtlib" alt="" coords="401,339,545,381"/>
+<area shape="poly" id="edge23_Node000005_Node000009" title=" " alt="" coords="330,286,402,324,427,338,422,338,400,329,329,292"/>
+<area shape="rect" id="Node000010" href="$struct_z_c_lib_log_1_1formatters_1_1vformat.html" title="基于C++20的&quot;std::vformat&quot;+&quot;std::format&quot;的动态格式化接口" alt="" coords="401,405,545,448"/>
+<area shape="poly" id="edge24_Node000005_Node000010" title=" " alt="" coords="304,291,348,342,403,391,422,405,417,404,399,395,344,346,302,296"/>
 </map>
