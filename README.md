@@ -85,7 +85,7 @@ int main() {
 
 |                 文件                  |                 风格                  |             说明             |
 |:-----------------------------------:|:-----------------------------------:|:--------------------------:|
-|    `formatters/android_log。hpp`     |          Android Logcat风格           |         面向 Logcat          |
+|    `formatters/android_log.hpp`     |          Android Logcat风格           |         面向 Logcat          |
 |       `formatters/format.hpp`       |         C++20 `std::format`         |       C++20 编译期检查风格        |
 |      `formatters/snprintf.hpp`      |            C `snprintf`             |    默认方案，兼容 C++11，跨平台稳妥     |
 | `formatters/tp_absl_str_format.hpp` |      Abseil `absl::StrFormat`       |    absl third-party lib    |
