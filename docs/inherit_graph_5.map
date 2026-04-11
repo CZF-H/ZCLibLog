@@ -1,6 +1,6 @@
 <map id="类继承关系图" name="类继承关系图">
 <area shape="rect" id="Node000000" href="$struct_z_c_lib_log_1_1format__api.html" title="定义了一些简化写法" alt="" coords="5,113,152,140"/>
-<area shape="rect" id="Node000001" href="$struct_z_c_lib_log_1_1format__apis_1_1absl__str__format.html" title=" " alt="" coords="200,5,353,48"/>
+<area shape="rect" id="Node000001" href="$struct_z_c_lib_log_1_1format__apis_1_1absl__str__format.html" title="absl format API" alt="" coords="200,5,353,48"/>
 <area shape="poly" id="edge15_Node000000_Node000001" title=" " alt="" coords="114,103,198,58,225,47,222,51,201,62,118,107"/>
 <area shape="rect" id="Node000003" href="$struct_z_c_lib_log_1_1format__apis_1_1fmtlib.html" title="fmtlib API" alt="" coords="200,72,353,115"/>
 <area shape="poly" id="edge17_Node000000_Node000003" title=" " alt="" coords="165,110,201,104,197,108,169,114"/>

@@ -15,9 +15,9 @@
 namespace ZCLibLog {
     namespace format_apis {
         /**
-         * @struct fmtlib
-         * @brief fmtlib API
-         * @note 使用fmt::format_string<Args...>作为fmt
+         * @struct absl_str_format
+         * @brief absl format API
+         * @note 使用absl::FormatSpec<Args...>作为fmt
          */
         struct absl_str_format : format_api {
             ZCLibLog_Format_API(absl_str_format);
