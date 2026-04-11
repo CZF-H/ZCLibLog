@@ -1,0 +1,10 @@
+<map id="ZCLibLog/logger_base.hpp" name="ZCLibLog/logger_base.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="110,5,286,32"/>
+<area shape="rect" id="Node000002" href="$logger__async_8hpp.html" title=" " alt="" coords="5,80,189,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,43,116,81,113,77,170,40"/>
+<area shape="rect" id="Node000004" href="$logger__sync_8hpp.html" title=" " alt="" coords="213,80,389,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="229,39,286,79,280,80,228,44"/>
+<area shape="rect" id="Node000003" href="$logger__shortcuts_8hpp.html" title=" " alt="" coords="97,155,300,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="128,113,183,154,178,155,126,119"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="273,115,218,156,215,152,268,117"/>
+</map>

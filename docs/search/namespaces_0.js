@@ -5,5 +5,6 @@ var searchData=
   ['zcliblog_3a_3aexecutors_2',['executors',['../namespace_z_c_lib_log_1_1executors.html',1,'ZCLibLog']]],
   ['zcliblog_3a_3aformat_5fapis_3',['format_apis',['../namespace_z_c_lib_log_1_1format__apis.html',1,'ZCLibLog']]],
   ['zcliblog_3a_3aformatters_4',['formatters',['../namespace_z_c_lib_log_1_1formatters.html',1,'ZCLibLog']]],
-  ['zcliblog_3a_3aformatters_3a_3afmtlib_5',['fmtlib',['../namespace_z_c_lib_log_1_1formatters_1_1fmtlib.html',1,'ZCLibLog::formatters']]]
+  ['zcliblog_3a_3aformatters_3a_3afmtlib_5',['fmtlib',['../namespace_z_c_lib_log_1_1formatters_1_1fmtlib.html',1,'ZCLibLog::formatters']]],
+  ['zcliblog_3a_3ashortcuts_6',['shortcuts',['../namespace_z_c_lib_log_1_1shortcuts.html',1,'ZCLibLog']]]
 ];

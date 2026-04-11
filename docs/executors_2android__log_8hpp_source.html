@@ -83,7 +83,7 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">android_log.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright 2026 CZF-H</span></div>
+<a href="executors_2android__log_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright 2026 CZF-H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Licensed under the Apache License, Version 2.0</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
@@ -93,8 +93,8 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef ZCLIBLOG_EXECUTORS_ANDROID_LOG_HPP</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define ZCLIBLOG_EXECUTORS_ANDROID_LOG_HPP</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;basic_executor.hpp&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;../inside/logger_constants.hpp&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="basic__executor_8hpp.html">basic_executor.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="logger__constants_8hpp.html">../inside/logger_constants.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;android/log.h&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// NOLINTNEXTLINE</span></div>
@@ -104,7 +104,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespace_z_c_lib_log_1_1executors.html">   17</a></span>    <span class="keyword">namespace </span>executors {</div>
 <div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_z_c_lib_log_1_1executors_1_1android__log.html">   24</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="struct_z_c_lib_log_1_1executors_1_1android__log.html">android_log</a> : <a class="code hl_struct" href="struct_z_c_lib_log_1_1executor__api.html">executor_api</a> {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keyword">explicit</span> <a class="code hl_struct" href="struct_z_c_lib_log_1_1executors_1_1android__log.html">android_log</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* tag = PROJECT_NAME) : tag(tag) {}</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="struct_z_c_lib_log_1_1executors_1_1android__log.html#a60a7f5830c2d819068efcee50b51fc86">   25</a></span>            <span class="keyword">explicit</span> <a class="code hl_function" href="struct_z_c_lib_log_1_1executors_1_1android__log.html#a60a7f5830c2d819068efcee50b51fc86">android_log</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* tag = PROJECT_NAME) : tag(tag) {}</div>
 <div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_z_c_lib_log_1_1executors_1_1android__log.html#a7a1671686234a481e120aea7c7f9bfe3">   26</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="struct_z_c_lib_log_1_1executors_1_1android__log.html#a7a1671686234a481e120aea7c7f9bfe3">do_execute</a>(<a class="code hl_typedef" href="struct_z_c_lib_log_1_1executor__api.html#ae5a108b77c755c951311c141ddaa31ff">ELString</a> msg, <a class="code hl_typedef" href="struct_z_c_lib_log_1_1executor__api.html#a58a8826bbc50e9506d31593743627383">ELogLevel</a> lv)<span class="keyword"> override </span>{</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                <span class="keywordtype">int</span> android_level = ANDROID_LOG_INFO;</div>
@@ -130,11 +130,14 @@ $(function() { codefold.init(0); });
 </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif </span><span class="comment">//ZCLIBLOG_EXECUTORS_ANDROID_LOG_HPP</span></div>
+<div class="ttc" id="abasic__executor_8hpp_html"><div class="ttname"><a href="basic__executor_8hpp.html">basic_executor.hpp</a></div></div>
+<div class="ttc" id="alogger__constants_8hpp_html"><div class="ttname"><a href="logger__constants_8hpp.html">logger_constants.hpp</a></div></div>
 <div class="ttc" id="anamespace_z_c_lib_log_html"><div class="ttname"><a href="namespace_z_c_lib_log.html">ZCLibLog</a></div><div class="ttdoc">ZCLibLog的命名空间</div><div class="ttdef"><b>Definition</b> android_log.hpp:16</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1executor__api_html"><div class="ttname"><a href="struct_z_c_lib_log_1_1executor__api.html">ZCLibLog::executor_api</a></div><div class="ttdoc">执行器的基类抽象类</div><div class="ttdef"><b>Definition</b> logger_types.hpp:106</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1executor__api_html_a58a8826bbc50e9506d31593743627383"><div class="ttname"><a href="struct_z_c_lib_log_1_1executor__api.html#a58a8826bbc50e9506d31593743627383">ZCLibLog::executor_api::ELogLevel</a></div><div class="ttdeci">ELogLevel ELogLevel</div><div class="ttdoc">简化写法</div><div class="ttdef"><b>Definition</b> logger_types.hpp:116</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1executor__api_html_ae5a108b77c755c951311c141ddaa31ff"><div class="ttname"><a href="struct_z_c_lib_log_1_1executor__api.html#ae5a108b77c755c951311c141ddaa31ff">ZCLibLog::executor_api::ELString</a></div><div class="ttdeci">ELString ELString</div><div class="ttdoc">简化写法</div><div class="ttdef"><b>Definition</b> logger_types.hpp:114</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1executors_1_1android__log_html"><div class="ttname"><a href="struct_z_c_lib_log_1_1executors_1_1android__log.html">ZCLibLog::executors::android_log</a></div><div class="ttdoc">C语言风格&quot;android_log&quot;通用执行器</div><div class="ttdef"><b>Definition</b> android_log.hpp:24</div></div>
+<div class="ttc" id="astruct_z_c_lib_log_1_1executors_1_1android__log_html_a60a7f5830c2d819068efcee50b51fc86"><div class="ttname"><a href="struct_z_c_lib_log_1_1executors_1_1android__log.html#a60a7f5830c2d819068efcee50b51fc86">ZCLibLog::executors::android_log::android_log</a></div><div class="ttdeci">android_log(const char *tag=PROJECT_NAME)</div><div class="ttdef"><b>Definition</b> android_log.hpp:25</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1executors_1_1android__log_html_a7a1671686234a481e120aea7c7f9bfe3"><div class="ttname"><a href="struct_z_c_lib_log_1_1executors_1_1android__log.html#a7a1671686234a481e120aea7c7f9bfe3">ZCLibLog::executors::android_log::do_execute</a></div><div class="ttdeci">void do_execute(ELString msg, ELogLevel lv) override</div><div class="ttdoc">自定义执行器需要重载的执行函数</div><div class="ttdef"><b>Definition</b> android_log.hpp:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

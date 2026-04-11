@@ -1,5 +1,11 @@
 var searchData=
 [
-  ['max_5flevel_0',['max_level',['../struct_z_c_lib_log_1_1_log_level_cfg.html#a8dd61b4fa0b2df6217844d47effc6e35',1,'ZCLibLog::LogLevelCfg']]],
-  ['min_5flevel_1',['min_level',['../struct_z_c_lib_log_1_1_log_level_cfg.html#ac1e3de003fb89c29eff2a5dacda62b20',1,'ZCLibLog::LogLevelCfg']]]
+  ['m_5fconfig_0',['m_config',['../class_z_c_lib_log_1_1_base_logger.html#a16064691447dfbcefc352be1f4692d04',1,'ZCLibLog::BaseLogger']]],
+  ['m_5fexecutors_1',['m_executors',['../class_z_c_lib_log_1_1_base_logger.html#acab85a8e902bc844f9a7ead58fb2dc13',1,'ZCLibLog::BaseLogger']]],
+  ['m_5flevel_2',['m_level',['../class_z_c_lib_log_1_1_log_tag_base.html#ab4d4ed488ccc3e7e664e61ab587e92c4',1,'ZCLibLog::LogTagBase']]],
+  ['m_5flogger_3',['m_logger',['../class_z_c_lib_log_1_1_log_tag_base.html#aced62fad771b6535617a86e582830f84',1,'ZCLibLog::LogTagBase']]],
+  ['m_5fname_4',['m_name',['../class_z_c_lib_log_1_1_base_logger.html#af693f7021ea9f685a5593c862e253e16',1,'ZCLibLog::BaseLogger']]],
+  ['m_5fnextid_5',['m_nextID',['../class_z_c_lib_log_1_1_base_logger.html#ae195fd9b6ed00e514b1fea6eab4eab83',1,'ZCLibLog::BaseLogger']]],
+  ['max_5flevel_6',['max_level',['../struct_z_c_lib_log_1_1_log_level_cfg.html#a8dd61b4fa0b2df6217844d47effc6e35',1,'ZCLibLog::LogLevelCfg']]],
+  ['min_5flevel_7',['min_level',['../struct_z_c_lib_log_1_1_log_level_cfg.html#ac1e3de003fb89c29eff2a5dacda62b20',1,'ZCLibLog::LogLevelCfg']]]
 ];

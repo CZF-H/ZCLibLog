@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['check_5fexecutable_0',['check_executable',['../class_z_c_lib_log_1_1_log_tag_base.html#a5553f477d17881f236563c9574791ad5',1,'ZCLibLog::LogTagBase']]],
-  ['clear_5fexecutors_1',['clear_executors',['../class_z_c_lib_log_1_1_base_logger.html#a502e27b2a251cc2515d7a55a6d4313fb',1,'ZCLibLog::BaseLogger']]],
-  ['config_2',['config',['../class_z_c_lib_log_1_1_base_logger.html#a425509a627f94e71d1d8c1353feab0df',1,'ZCLibLog::BaseLogger']]]
+  ['baselogger_0',['BaseLogger',['../class_z_c_lib_log_1_1_base_logger.html#a91e239d07dc43253ea374b1158868df4',1,'ZCLibLog::BaseLogger']]],
+  ['be_5fexecutable_1',['be_executable',['../class_z_c_lib_log_1_1_base_logger.html#a2e813b3dfffbd761fb14b05466abf9c1',1,'ZCLibLog::BaseLogger']]],
+  ['bind_5fexecutor_2',['bind_executor',['../class_z_c_lib_log_1_1_base_logger.html#a9dec96e3ec41c015095089fff2d115fd',1,'ZCLibLog::BaseLogger']]]
 ];

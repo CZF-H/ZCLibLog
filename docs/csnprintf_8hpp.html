@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ZCLibLog: ZCLibLog/formatters/csnprintf.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ZCLibLog
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5f71cbd69de711eaebafa5a61b512c59.html">ZCLibLog</a></li><li class="navelem"><a class="el" href="dir_cd93620e6c31c7c1c93f04eb184acd1d.html">formatters</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a>  </div>
+  <div class="headertitle"><div class="title">csnprintf.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="traditional_8hpp_source.html">format_apis/traditional.hpp</a>&quot;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
+<code>#include &lt;cstdio&gt;</code><br />
+<code>#include &lt;array&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+csnprintf.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="csnprintf_8hpp__incl.png" border="0" usemap="#a_z_c_lib_log_2formatters_2csnprintf_8hpp" alt=""/></div>
+<map name="a_z_c_lib_log_2formatters_2csnprintf_8hpp" id="a_z_c_lib_log_2formatters_2csnprintf_8hpp">
+<area shape="rect" title=" " alt="" coords="344,5,485,48"/>
+<area shape="rect" href="traditional_8hpp.html" title=" " alt="" coords="152,96,326,123"/>
+<area shape="poly" title=" " alt="" coords="367,50,282,91,279,87,371,47"/>
+<area shape="rect" title=" " alt="" coords="349,96,403,123"/>
+<area shape="poly" title=" " alt="" coords="406,47,391,83,387,80,403,51"/>
+<area shape="rect" title=" " alt="" coords="426,96,483,123"/>
+<area shape="poly" title=" " alt="" coords="426,46,444,83,439,81,424,51"/>
+<area shape="rect" title=" " alt="" coords="507,96,557,123"/>
+<area shape="poly" title=" " alt="" coords="445,46,504,87,499,87,445,51"/>
+<area shape="rect" href="basic__format__api_8hpp.html" title=" " alt="" coords="166,171,311,197"/>
+<area shape="poly" title=" " alt="" coords="240,121,241,156,236,154,237,126"/>
+<area shape="rect" href="logger__types_8hpp.html" title=" " alt="" coords="180,245,298,288"/>
+<area shape="poly" title=" " alt="" coords="240,196,241,231,236,229,237,200"/>
+<area shape="rect" title=" " alt="" coords="5,336,59,363"/>
+<area shape="poly" title=" " alt="" coords="186,291,74,334,72,330,185,286"/>
+<area shape="rect" title=" " alt="" coords="83,336,144,363"/>
+<area shape="poly" title=" " alt="" coords="209,288,147,330,144,325,204,289"/>
+<area shape="rect" title=" " alt="" coords="167,336,225,363"/>
+<area shape="poly" title=" " alt="" coords="230,287,212,324,208,320,225,290"/>
+<area shape="rect" title=" " alt="" coords="248,336,317,363"/>
+<area shape="poly" title=" " alt="" coords="251,286,271,323,266,321,249,291"/>
+<area shape="rect" title=" " alt="" coords="342,336,424,363"/>
+<area shape="poly" title=" " alt="" coords="276,286,349,328,344,328,275,291"/>
+<area shape="rect" href="logger__macros_8h.html" title=" " alt="" coords="448,336,565,363"/>
+<area shape="poly" title=" " alt="" coords="299,283,453,331,448,332,298,288"/>
+</map>
+</div>
+</div>
+<p><a href="csnprintf_8hpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_z_c_lib_log_1_1formatters_1_1csnprintf.html">ZCLibLog::formatters::csnprintf</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">基于C语言"snprintf"的格式化接口  <a href="struct_z_c_lib_log_1_1formatters_1_1csnprintf.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespace_z_c_lib_log" id="r_namespace_z_c_lib_log"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_z_c_lib_log.html">ZCLibLog</a></td></tr>
+<tr class="memdesc:namespace_z_c_lib_log"><td class="mdescLeft">&#160;</td><td class="mdescRight">ZCLibLog的命名空间 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_z_c_lib_log_1_1formatters" id="r_namespace_z_c_lib_log_1_1formatters"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_z_c_lib_log_1_1formatters.html">ZCLibLog::formatters</a></td></tr>
+<tr class="memdesc:namespace_z_c_lib_log_1_1formatters"><td class="mdescLeft">&#160;</td><td class="mdescRight">预定的一些formatter <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

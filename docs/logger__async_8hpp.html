@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ZCLibLog: ZCLibLog/logger_async.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ZCLibLog
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5f71cbd69de711eaebafa5a61b512c59.html">ZCLibLog</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a>  </div>
+  <div class="headertitle"><div class="title">logger_async.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;atomic&gt;</code><br />
+<code>#include &lt;condition_variable&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;queue&gt;</code><br />
+<code>#include &lt;thread&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;mutex&gt;</code><br />
+<code>#include &quot;<a class="el" href="logger__base_8hpp_source.html">logger_base.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+logger_async.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="logger__async_8hpp__incl.png" border="0" usemap="#a_z_c_lib_log_2logger__async_8hpp" alt=""/></div>
+<map name="a_z_c_lib_log_2logger__async_8hpp" id="a_z_c_lib_log_2logger__async_8hpp">
+<area shape="rect" title=" " alt="" coords="313,5,496,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,66,107"/>
+<area shape="poly" title=" " alt="" coords="322,34,213,55,82,82,80,77,212,50,327,31"/>
+<area shape="rect" title=" " alt="" coords="90,80,216,107"/>
+<area shape="poly" title=" " alt="" coords="359,34,212,78,210,73,363,31"/>
+<area shape="rect" title=" " alt="" coords="240,80,317,107"/>
+<area shape="poly" title=" " alt="" coords="380,34,315,74,312,70,385,31"/>
+<area shape="rect" title=" " alt="" coords="320,229,388,256"/>
+<area shape="poly" title=" " alt="" coords="404,31,363,216,358,213,400,34"/>
+<area shape="rect" title=" " alt="" coords="991,80,1048,107"/>
+<area shape="poly" title=" " alt="" coords="497,22,712,39,843,55,979,80,973,80,842,60,712,44,497,27"/>
+<area shape="rect" title=" " alt="" coords="412,229,470,256"/>
+<area shape="poly" title=" " alt="" coords="409,31,433,181,438,215,434,213,428,182,405,34"/>
+<area shape="rect" title=" " alt="" coords="1072,80,1124,107"/>
+<area shape="poly" title=" " alt="" coords="496,20,608,25,746,35,900,52,1060,80,1054,80,899,57,746,41,608,30,497,25"/>
+<area shape="rect" title=" " alt="" coords="1148,80,1206,107"/>
+<area shape="poly" title=" " alt="" coords="497,19,621,23,778,33,954,50,1135,79,1130,80,953,56,778,38,621,29,497,24"/>
+<area shape="rect" href="logger__base_8hpp.html" title=" " alt="" coords="851,80,967,107"/>
+<area shape="poly" title=" " alt="" coords="493,30,837,80,833,83,493,35"/>
+<area shape="rect" href="logger__precompile_8hpp.html" title=" " alt="" coords="1061,155,1250,181"/>
+<area shape="poly" title=" " alt="" coords="952,105,1100,150,1095,150,951,110"/>
+<area shape="rect" title=" " alt="" coords="1274,155,1349,181"/>
+<area shape="poly" title=" " alt="" coords="968,102,1262,154,1257,155,967,107"/>
+<area shape="rect" title=" " alt="" coords="1372,155,1451,181"/>
+<area shape="poly" title=" " alt="" coords="967,102,980,104,1168,126,1251,135,1360,154,1354,154,1250,140,1167,131,979,109,967,107"/>
+<area shape="rect" title=" " alt="" coords="1475,155,1532,181"/>
+<area shape="poly" title=" " alt="" coords="967,102,980,104,1113,118,1219,124,1325,132,1462,155,1457,155,1324,137,1218,129,1113,123,979,109,967,108"/>
+<area shape="rect" title=" " alt="" coords="1338,229,1392,256"/>
+<area shape="poly" title=" " alt="" coords="967,102,980,104,1088,108,1270,114,1448,126,1512,137,1533,144,1547,153,1557,171,1553,187,1539,201,1518,212,1463,229,1407,239,1407,234,1462,223,1516,207,1536,197,1549,185,1552,172,1543,156,1531,149,1510,142,1447,131,1269,119,1088,114,979,109,967,108"/>
+<area shape="rect" href="logger__types_8hpp.html" title=" " alt="" coords="442,155,600,181"/>
+<area shape="poly" title=" " alt="" coords="853,105,604,154,603,149,848,106"/>
+<area shape="rect" title=" " alt="" coords="780,229,862,256"/>
+<area shape="poly" title=" " alt="" coords="940,105,967,119,991,137,1005,159,1006,171,1000,183,975,208,944,225,910,235,878,241,877,236,909,230,942,220,972,203,996,180,1001,170,1000,160,988,141,964,124,939,110"/>
+<area shape="rect" href="logger__constants_8hpp.html" title=" " alt="" coords="624,155,807,181"/>
+<area shape="poly" title=" " alt="" coords="878,107,764,151,763,146,873,108"/>
+<area shape="rect" href="logger__configurations_8h.html" title=" " alt="" coords="831,155,986,181"/>
+<area shape="poly" title=" " alt="" coords="911,105,911,141,907,137,907,109"/>
+<area shape="rect" href="logger__macros_8h.html" title=" " alt="" coords="992,229,1109,256"/>
+<area shape="poly" title=" " alt="" coords="1140,181,1082,223,1080,218,1135,183"/>
+<area shape="poly" title=" " alt="" coords="494,181,398,225,396,220,489,182"/>
+<area shape="poly" title=" " alt="" coords="509,181,467,221,464,217,504,183"/>
+<area shape="poly" title=" " alt="" coords="601,178,979,231,974,232,600,183"/>
+<area shape="poly" title=" " alt="" coords="600,177,612,179,1026,215,1325,239,1320,239,1025,221,611,184,600,183"/>
+<area shape="rect" title=" " alt="" coords="493,229,554,256"/>
+<area shape="poly" title=" " alt="" coords="523,180,525,215,520,212,519,184"/>
+<area shape="poly" title=" " alt="" coords="574,179,767,228,762,228,573,185"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div class="dyncontent">
+<div class="center"><img src="logger__async_8hpp__dep__incl.png" border="0" usemap="#a_z_c_lib_log_2logger__async_8hppdep" alt=""/></div>
+<map name="a_z_c_lib_log_2logger__async_8hppdep" id="a_z_c_lib_log_2logger__async_8hppdep">
+<area shape="rect" title=" " alt="" coords="15,5,198,32"/>
+<area shape="rect" href="logger__shortcuts_8hpp.html" title=" " alt="" coords="5,80,208,107"/>
+<area shape="poly" title=" " alt="" coords="108,46,109,81,104,79,105,50"/>
+</map>
+</div>
+</div>
+<p><a href="logger__async_8hpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_z_c_lib_log_1_1details_1_1_thread_pool.html">ZCLibLog::details::ThreadPool</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">内部使用的线程池  <a href="class_z_c_lib_log_1_1details_1_1_thread_pool.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_z_c_lib_log_1_1_logger_async.html">ZCLibLog::LoggerAsync&lt; Formatter &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">异步日志器  <a href="struct_z_c_lib_log_1_1_logger_async.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespace_z_c_lib_log" id="r_namespace_z_c_lib_log"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_z_c_lib_log.html">ZCLibLog</a></td></tr>
+<tr class="memdesc:namespace_z_c_lib_log"><td class="mdescLeft">&#160;</td><td class="mdescRight">ZCLibLog的命名空间 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_z_c_lib_log_1_1details" id="r_namespace_z_c_lib_log_1_1details"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_z_c_lib_log_1_1details.html">ZCLibLog::details</a></td></tr>
+<tr class="memdesc:namespace_z_c_lib_log_1_1details"><td class="mdescLeft">&#160;</td><td class="mdescRight">内部使用的工具 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

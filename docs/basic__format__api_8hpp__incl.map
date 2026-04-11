@@ -1,0 +1,17 @@
+<map id="ZCLibLog/formatters/format_apis/basic_format_api.hpp" name="ZCLibLog/formatters/format_apis/basic_format_api.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="152,5,325,64"/>
+<area shape="rect" id="Node000002" href="$logger__types_8hpp.html" title=" " alt="" coords="180,112,298,155"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="240,62,241,98,236,96,237,67"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,203,59,229"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="186,158,74,201,72,196,185,153"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="83,203,144,229"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="209,155,147,196,144,192,204,156"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="167,203,225,229"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="230,154,212,191,208,187,225,157"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="248,203,317,229"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="251,153,271,190,266,188,249,158"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="342,203,424,229"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="276,153,349,195,344,195,275,158"/>
+<area shape="rect" id="Node000008" href="$logger__macros_8h.html" title=" " alt="" coords="448,203,565,229"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="299,150,453,197,448,198,298,155"/>
+</map>

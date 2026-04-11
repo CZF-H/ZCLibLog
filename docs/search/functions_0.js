@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['baselogger_0',['BaseLogger',['../class_z_c_lib_log_1_1_base_logger.html#a91e239d07dc43253ea374b1158868df4',1,'ZCLibLog::BaseLogger']]],
-  ['be_5fexecutable_1',['be_executable',['../class_z_c_lib_log_1_1_base_logger.html#a2e813b3dfffbd761fb14b05466abf9c1',1,'ZCLibLog::BaseLogger']]],
-  ['bind_5fexecutor_2',['bind_executor',['../class_z_c_lib_log_1_1_base_logger.html#a9dec96e3ec41c015095089fff2d115fd',1,'ZCLibLog::BaseLogger']]]
+  ['android_5flog_0',['android_log',['../struct_z_c_lib_log_1_1executors_1_1android__log.html#a60a7f5830c2d819068efcee50b51fc86',1,'ZCLibLog::executors::android_log']]]
 ];

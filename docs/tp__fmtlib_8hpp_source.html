@@ -83,7 +83,7 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">tp_fmtlib.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright 2026 CZF-H</span></div>
+<a href="tp__fmtlib_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright 2026 CZF-H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Licensed under the Apache License, Version 2.0</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
@@ -93,8 +93,8 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef ZCLIBLOG_FORMATTERS_TP_FMTLIB_HPP</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define ZCLIBLOG_FORMATTERS_TP_FMTLIB_HPP</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;format_apis/tp_fmtlib.hpp&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;format_apis/traditional.hpp&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="format__apis_2tp__fmtlib_8hpp.html">format_apis/tp_fmtlib.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="traditional_8hpp.html">format_apis/traditional.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;fmt/format.h&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;fmt/chrono.h&gt;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
@@ -105,7 +105,8 @@ $(function() { codefold.init(0); });
 <div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1format.html">   30</a></span>            <span class="keyword">struct </span><a class="code hl_struct" href="struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1format.html">format</a> : <a class="code hl_struct" href="struct_z_c_lib_log_1_1format__apis_1_1fmtlib.html">format_apis::fmtlib</a> {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                <span class="keyword">static</span> std::string do_format(<a class="code hl_typedef" href="struct_z_c_lib_log_1_1format__api.html#a77adb5baa8e53fe33c0ab1e8fb1d14ed">FLogPack</a> pack, fmt::format_string&lt;Args...&gt;&amp;&amp; fmt, Args&amp;&amp;... args) {</div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1format.html#a7ff6606d31b16b6760069d47b7ecd164">   32</a></span>                <span class="keyword">static</span> std::string <a class="code hl_function" href="struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1format.html#a7ff6606d31b16b6760069d47b7ecd164">do_format</a>(<a class="code hl_typedef" href="struct_z_c_lib_log_1_1format__api.html#a77adb5baa8e53fe33c0ab1e8fb1d14ed">FLogPack</a> pack, fmt::format_string&lt;Args...&gt;&amp;&amp; fmt, Args&amp;&amp;... args) {</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                    std::string f_msg;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>...(args) == 0) {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                        f_msg = fmt.get().data();</div>
@@ -144,12 +145,14 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                        f_msg</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                    );</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                }</div>
+</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            };</div>
 </div>
 <div class="foldopen" id="foldopen00077" data-start="{" data-end="};">
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1vformat.html">   77</a></span>            <span class="keyword">struct </span><a class="code hl_struct" href="struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1vformat.html">vformat</a> : <a class="code hl_struct" href="struct_z_c_lib_log_1_1format__apis_1_1traditional.html">format_apis::traditional</a> {</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <span class="keyword">static</span> std::string do_format(<a class="code hl_typedef" href="struct_z_c_lib_log_1_1format__api.html#a77adb5baa8e53fe33c0ab1e8fb1d14ed">FLogPack</a> pack, <span class="keyword">const</span> fmt::string_view fmt, Args&amp;&amp;... args) {</div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1vformat.html#a04fbfdf1cd82b72a850c10a3ed3713f0">   79</a></span>                <span class="keyword">static</span> std::string <a class="code hl_function" href="struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1vformat.html#a04fbfdf1cd82b72a850c10a3ed3713f0">do_format</a>(<a class="code hl_typedef" href="struct_z_c_lib_log_1_1format__api.html#a77adb5baa8e53fe33c0ab1e8fb1d14ed">FLogPack</a> pack, <span class="keyword">const</span> fmt::string_view fmt, Args&amp;&amp;... args) {</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                    std::string f_msg;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                    <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>...(args) == 0) {</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                        f_msg = fmt.data();</div>
@@ -188,6 +191,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                        f_msg</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                    );</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                }</div>
+</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            };</div>
 </div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        }</div>
@@ -195,12 +199,16 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#endif </span><span class="comment">//ZCLIBLOG_FORMATTERS_TP_FMTLIB_HPP</span></div>
+<div class="ttc" id="aformat__apis_2tp__fmtlib_8hpp_html"><div class="ttname"><a href="format__apis_2tp__fmtlib_8hpp.html">tp_fmtlib.hpp</a></div></div>
 <div class="ttc" id="anamespace_z_c_lib_log_html"><div class="ttname"><a href="namespace_z_c_lib_log.html">ZCLibLog</a></div><div class="ttdoc">ZCLibLog的命名空间</div><div class="ttdef"><b>Definition</b> android_log.hpp:16</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1format__api_html_a77adb5baa8e53fe33c0ab1e8fb1d14ed"><div class="ttname"><a href="struct_z_c_lib_log_1_1format__api.html#a77adb5baa8e53fe33c0ab1e8fb1d14ed">ZCLibLog::format_api::FLogPack</a></div><div class="ttdeci">FLogPack FLogPack</div><div class="ttdoc">简化写法</div><div class="ttdef"><b>Definition</b> logger_types.hpp:217</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1format__apis_1_1fmtlib_html"><div class="ttname"><a href="struct_z_c_lib_log_1_1format__apis_1_1fmtlib.html">ZCLibLog::format_apis::fmtlib</a></div><div class="ttdoc">fmtlib API</div><div class="ttdef"><b>Definition</b> tp_fmtlib.hpp:22</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1format__apis_1_1traditional_html"><div class="ttname"><a href="struct_z_c_lib_log_1_1format__apis_1_1traditional.html">ZCLibLog::format_apis::traditional</a></div><div class="ttdoc">传统格式化API</div><div class="ttdef"><b>Definition</b> traditional.hpp:20</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1format_html"><div class="ttname"><a href="struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1format.html">ZCLibLog::formatters::fmtlib::format</a></div><div class="ttdoc">基于第三方的fmtlib</div><div class="ttdef"><b>Definition</b> tp_fmtlib.hpp:30</div></div>
+<div class="ttc" id="astruct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1format_html_a7ff6606d31b16b6760069d47b7ecd164"><div class="ttname"><a href="struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1format.html#a7ff6606d31b16b6760069d47b7ecd164">ZCLibLog::formatters::fmtlib::format::do_format</a></div><div class="ttdeci">static std::string do_format(FLogPack pack, fmt::format_string&lt; Args... &gt; &amp;&amp;fmt, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> tp_fmtlib.hpp:32</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1vformat_html"><div class="ttname"><a href="struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1vformat.html">ZCLibLog::formatters::fmtlib::vformat</a></div><div class="ttdoc">基于第三方的fmtlib</div><div class="ttdef"><b>Definition</b> tp_fmtlib.hpp:77</div></div>
+<div class="ttc" id="astruct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1vformat_html_a04fbfdf1cd82b72a850c10a3ed3713f0"><div class="ttname"><a href="struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1vformat.html#a04fbfdf1cd82b72a850c10a3ed3713f0">ZCLibLog::formatters::fmtlib::vformat::do_format</a></div><div class="ttdeci">static std::string do_format(FLogPack pack, const fmt::string_view fmt, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> tp_fmtlib.hpp:79</div></div>
+<div class="ttc" id="atraditional_8hpp_html"><div class="ttname"><a href="traditional_8hpp.html">traditional.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

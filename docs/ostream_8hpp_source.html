@@ -83,7 +83,7 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">ostream.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright 2026 CZF-H</span></div>
+<a href="ostream_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright 2026 CZF-H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Licensed under the Apache License, Version 2.0</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
@@ -93,7 +93,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef ZCLIBLOG_EXECUTORS_OSTREAM_HPP</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define ZCLIBLOG_EXECUTORS_OSTREAM_HPP</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;basic_executor.hpp&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="basic__executor_8hpp.html">basic_executor.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;ostream&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// NOLINTNEXTLINE</span></div>
@@ -101,7 +101,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">namespace </span>executors {</div>
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_z_c_lib_log_1_1executors_1_1ostream.html">   23</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="struct_z_c_lib_log_1_1executors_1_1ostream.html">ostream</a> : <a class="code hl_struct" href="struct_z_c_lib_log_1_1executor__api.html">executor_api</a> {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keyword">explicit</span> <a class="code hl_struct" href="struct_z_c_lib_log_1_1executors_1_1ostream.html">ostream</a>(std::ostream&amp; os) : os(os) {}</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="struct_z_c_lib_log_1_1executors_1_1ostream.html#aaa85b074cb384e96ff3a983d03c7fb44">   24</a></span>            <span class="keyword">explicit</span> <a class="code hl_function" href="struct_z_c_lib_log_1_1executors_1_1ostream.html#aaa85b074cb384e96ff3a983d03c7fb44">ostream</a>(std::ostream&amp; os) : os(os) {}</div>
 <div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="struct_z_c_lib_log_1_1executors_1_1ostream.html#ae96cd78154b19f9a3aeaab6c1792cb01">   25</a></span>            <span class="keywordtype">void</span> <a class="code hl_function" href="struct_z_c_lib_log_1_1executors_1_1ostream.html#ae96cd78154b19f9a3aeaab6c1792cb01">do_execute</a>(<a class="code hl_typedef" href="struct_z_c_lib_log_1_1executor__api.html#ae5a108b77c755c951311c141ddaa31ff">ELString</a> msg, <a class="code hl_typedef" href="struct_z_c_lib_log_1_1executor__api.html#a58a8826bbc50e9506d31593743627383">ELogLevel</a>)<span class="keyword"> override </span>{</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                os &lt;&lt; msg &lt;&lt; std::endl;</div>
@@ -115,11 +115,13 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif </span><span class="comment">//ZCLIBLOG_EXECUTORS_OSTREAM_HPP</span></div>
+<div class="ttc" id="abasic__executor_8hpp_html"><div class="ttname"><a href="basic__executor_8hpp.html">basic_executor.hpp</a></div></div>
 <div class="ttc" id="anamespace_z_c_lib_log_html"><div class="ttname"><a href="namespace_z_c_lib_log.html">ZCLibLog</a></div><div class="ttdoc">ZCLibLog的命名空间</div><div class="ttdef"><b>Definition</b> android_log.hpp:16</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1executor__api_html"><div class="ttname"><a href="struct_z_c_lib_log_1_1executor__api.html">ZCLibLog::executor_api</a></div><div class="ttdoc">执行器的基类抽象类</div><div class="ttdef"><b>Definition</b> logger_types.hpp:106</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1executor__api_html_a58a8826bbc50e9506d31593743627383"><div class="ttname"><a href="struct_z_c_lib_log_1_1executor__api.html#a58a8826bbc50e9506d31593743627383">ZCLibLog::executor_api::ELogLevel</a></div><div class="ttdeci">ELogLevel ELogLevel</div><div class="ttdoc">简化写法</div><div class="ttdef"><b>Definition</b> logger_types.hpp:116</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1executor__api_html_ae5a108b77c755c951311c141ddaa31ff"><div class="ttname"><a href="struct_z_c_lib_log_1_1executor__api.html#ae5a108b77c755c951311c141ddaa31ff">ZCLibLog::executor_api::ELString</a></div><div class="ttdeci">ELString ELString</div><div class="ttdoc">简化写法</div><div class="ttdef"><b>Definition</b> logger_types.hpp:114</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1executors_1_1ostream_html"><div class="ttname"><a href="struct_z_c_lib_log_1_1executors_1_1ostream.html">ZCLibLog::executors::ostream</a></div><div class="ttdoc">C++&quot;ostream&quot;通用执行器</div><div class="ttdef"><b>Definition</b> ostream.hpp:23</div></div>
+<div class="ttc" id="astruct_z_c_lib_log_1_1executors_1_1ostream_html_aaa85b074cb384e96ff3a983d03c7fb44"><div class="ttname"><a href="struct_z_c_lib_log_1_1executors_1_1ostream.html#aaa85b074cb384e96ff3a983d03c7fb44">ZCLibLog::executors::ostream::ostream</a></div><div class="ttdeci">ostream(std::ostream &amp;os)</div><div class="ttdef"><b>Definition</b> ostream.hpp:24</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1executors_1_1ostream_html_ae96cd78154b19f9a3aeaab6c1792cb01"><div class="ttname"><a href="struct_z_c_lib_log_1_1executors_1_1ostream.html#ae96cd78154b19f9a3aeaab6c1792cb01">ZCLibLog::executors::ostream::do_execute</a></div><div class="ttdeci">void do_execute(ELString msg, ELogLevel) override</div><div class="ttdoc">自定义执行器需要重载的执行函数</div><div class="ttdef"><b>Definition</b> ostream.hpp:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

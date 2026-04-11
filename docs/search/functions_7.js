@@ -1,4 +1,9 @@
 var searchData=
 [
-  ['make_0',['make',['../class_z_c_lib_log_1_1executor.html#a2e02ff50fdee4d9548f509f3571f61ee',1,'ZCLibLog::executor']]]
+  ['lambda_0',['lambda',['../struct_z_c_lib_log_1_1executors_1_1lambda.html#a84aa706a63ef7377a0aa2a236a7c669a',1,'ZCLibLog::executors::lambda']]],
+  ['lambda_5fwrapper_1',['lambda_wrapper',['../namespace_z_c_lib_log.html#a03f07c02343444f65e172433854d8098',1,'ZCLibLog']]],
+  ['level_2',['level',['../class_z_c_lib_log_1_1_log_tag_base.html#a2f0e7969a0930276584120ab6167b728',1,'ZCLibLog::LogTagBase']]],
+  ['loglevelcfg_3',['LogLevelCfg',['../struct_z_c_lib_log_1_1_log_level_cfg.html#ab0975ad511783219700dfdae0ea0ae90',1,'ZCLibLog::LogLevelCfg::LogLevelCfg(const LogLevel level={})'],['../struct_z_c_lib_log_1_1_log_level_cfg.html#aadc2cd01ffcdf2c422ce27de435bea10',1,'ZCLibLog::LogLevelCfg::LogLevelCfg(const LogLevel min_level, const LogLevel max_level)']]],
+  ['logleveltostring_4',['LogLevelToString',['../namespace_z_c_lib_log.html#ad6f030f50fda850b64e927e8ee224063',1,'ZCLibLog']]],
+  ['logtagbase_5',['LogTagBase',['../class_z_c_lib_log_1_1_log_tag_base.html#a1132ce0c6f62b37eed236ceb792f371b',1,'ZCLibLog::LogTagBase']]]
 ];

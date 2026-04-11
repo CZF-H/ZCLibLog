@@ -83,7 +83,7 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">tp_boost-format.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright 2026 CZF-H</span></div>
+<a href="tp__boost-format_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright 2026 CZF-H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Licensed under the Apache License, Version 2.0</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
@@ -93,7 +93,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef ZCLIBLOG_FORMATTERS_TP_BOOST_FORMAT_HPP</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define ZCLIBLOG_FORMATTERS_TP_BOOST_FORMAT_HPP</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;format_apis/traditional.hpp&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="traditional_8hpp.html">format_apis/traditional.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;boost/format.hpp&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
@@ -103,7 +103,8 @@ $(function() { codefold.init(0); });
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_z_c_lib_log_1_1formatters_1_1boost__format.html">   23</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="struct_z_c_lib_log_1_1formatters_1_1boost__format.html">boost_format</a> : <a class="code hl_struct" href="struct_z_c_lib_log_1_1format__apis_1_1traditional.html">format_apis::traditional</a>  {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            <span class="keyword">static</span> std::string do_format(<a class="code hl_typedef" href="struct_z_c_lib_log_1_1format__api.html#a77adb5baa8e53fe33c0ab1e8fb1d14ed">FLogPack</a> pack, <span class="keyword">const</span> std::string&amp; fmt, Args&amp;&amp;... args) {</div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="struct_z_c_lib_log_1_1formatters_1_1boost__format.html#a774b73338242ee261f7b837bb6666dea">   25</a></span>            <span class="keyword">static</span> std::string <a class="code hl_function" href="struct_z_c_lib_log_1_1formatters_1_1boost__format.html#a774b73338242ee261f7b837bb6666dea">do_format</a>(<a class="code hl_typedef" href="struct_z_c_lib_log_1_1format__api.html#a77adb5baa8e53fe33c0ab1e8fb1d14ed">FLogPack</a> pack, <span class="keyword">const</span> std::string&amp; fmt, Args&amp;&amp;... args) {</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                std::string f_msg;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                <span class="keywordflow">if</span> (<span class="keyword">sizeof</span>...(args) == 0) {</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                    f_msg = fmt;</div>
@@ -159,6 +160,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                    % f_msg</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                ).str();</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            }</div>
+</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keyword">static</span> <span class="keywordtype">void</span> apply(boost::format&amp; f, T&amp;&amp; t) {</div>
@@ -180,6 +182,8 @@ $(function() { codefold.init(0); });
 <div class="ttc" id="astruct_z_c_lib_log_1_1format__api_html_a77adb5baa8e53fe33c0ab1e8fb1d14ed"><div class="ttname"><a href="struct_z_c_lib_log_1_1format__api.html#a77adb5baa8e53fe33c0ab1e8fb1d14ed">ZCLibLog::format_api::FLogPack</a></div><div class="ttdeci">FLogPack FLogPack</div><div class="ttdoc">简化写法</div><div class="ttdef"><b>Definition</b> logger_types.hpp:217</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1format__apis_1_1traditional_html"><div class="ttname"><a href="struct_z_c_lib_log_1_1format__apis_1_1traditional.html">ZCLibLog::format_apis::traditional</a></div><div class="ttdoc">传统格式化API</div><div class="ttdef"><b>Definition</b> traditional.hpp:20</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1formatters_1_1boost__format_html"><div class="ttname"><a href="struct_z_c_lib_log_1_1formatters_1_1boost__format.html">ZCLibLog::formatters::boost_format</a></div><div class="ttdoc">基于boost::format</div><div class="ttdef"><b>Definition</b> tp_boost-format.hpp:23</div></div>
+<div class="ttc" id="astruct_z_c_lib_log_1_1formatters_1_1boost__format_html_a774b73338242ee261f7b837bb6666dea"><div class="ttname"><a href="struct_z_c_lib_log_1_1formatters_1_1boost__format.html#a774b73338242ee261f7b837bb6666dea">ZCLibLog::formatters::boost_format::do_format</a></div><div class="ttdeci">static std::string do_format(FLogPack pack, const std::string &amp;fmt, Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition</b> tp_boost-format.hpp:25</div></div>
+<div class="ttc" id="atraditional_8hpp_html"><div class="ttname"><a href="traditional_8hpp.html">traditional.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -83,7 +83,7 @@ $(function() { codefold.init(0); });
   <div class="headertitle"><div class="title">tp_fmtlib.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright 2026 CZF-H</span></div>
+<a href="format__apis_2tp__fmtlib_8hpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright 2026 CZF-H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Licensed under the Apache License, Version 2.0</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
@@ -93,7 +93,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef ZCLIBLOG_FORMAT_APIS_FMTLIB_HPP</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define ZCLIBLOG_FORMAT_APIS_FMTLIB_HPP</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;basic_format_api.hpp&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="basic__format__api_8hpp.html">basic_format_api.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;fmt/format.h&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
@@ -101,7 +101,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">namespace </span>format_apis {</div>
 <div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="struct_z_c_lib_log_1_1format__apis_1_1fmtlib.html">   22</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="struct_z_c_lib_log_1_1format__apis_1_1fmtlib.html">fmtlib</a> : <a class="code hl_struct" href="struct_z_c_lib_log_1_1format__api.html">format_api</a> {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            ZCLibLog_Format_API(<a class="code hl_struct" href="struct_z_c_lib_log_1_1format__apis_1_1fmtlib.html">fmtlib</a>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="struct_z_c_lib_log_1_1format__apis_1_1fmtlib.html#a8bebc894142a17fa6f3fa71950517cf6">   23</a></span>            <a class="code hl_function" href="struct_z_c_lib_log_1_1format__apis_1_1fmtlib.html#a8bebc894142a17fa6f3fa71950517cf6">ZCLibLog_Format_API</a>(<a class="code hl_struct" href="struct_z_c_lib_log_1_1format__apis_1_1fmtlib.html">fmtlib</a>);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        };</div>
 </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
@@ -119,7 +119,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                std::forward&lt;fmt::format_string&lt;Args...&gt;&amp;&amp;&gt;(fmt),</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                std::forward&lt;Args&gt;(args)...</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            );</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            this-&gt;m_logger-&gt;execute(Formatted, this-&gt;<a class="code hl_function" href="class_z_c_lib_log_1_1_log_tag_base.html#a2f0e7969a0930276584120ab6167b728">level</a>());</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            this-&gt;<a class="code hl_variable" href="class_z_c_lib_log_1_1_log_tag_base.html#aced62fad771b6535617a86e582830f84">m_logger</a>-&gt;execute(Formatted, this-&gt;<a class="code hl_function" href="class_z_c_lib_log_1_1_log_tag_base.html#a2f0e7969a0930276584120ab6167b728">level</a>());</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        }</div>
 </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    };</div>
@@ -127,16 +127,19 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif </span><span class="comment">//ZCLIBLOG_FORMAT_APIS_FMTLIB_HPP</span></div>
+<div class="ttc" id="abasic__format__api_8hpp_html"><div class="ttname"><a href="basic__format__api_8hpp.html">basic_format_api.hpp</a></div></div>
 <div class="ttc" id="aclass_z_c_lib_log_1_1_log_tag_base_html"><div class="ttname"><a href="class_z_c_lib_log_1_1_log_tag_base.html">ZCLibLog::LogTagBase</a></div><div class="ttdoc">根基Tag类，构造无用，仅继承</div><div class="ttdef"><b>Definition</b> logger_types.hpp:260</div></div>
 <div class="ttc" id="aclass_z_c_lib_log_1_1_log_tag_base_html_a1132ce0c6f62b37eed236ceb792f371b"><div class="ttname"><a href="class_z_c_lib_log_1_1_log_tag_base.html#a1132ce0c6f62b37eed236ceb792f371b">ZCLibLog::LogTagBase::LogTagBase</a></div><div class="ttdeci">LogTagBase(const Logger *const logger, const LogLevel level)</div><div class="ttdoc">构造Tag</div><div class="ttdef"><b>Definition</b> logger_types.hpp:300</div></div>
 <div class="ttc" id="aclass_z_c_lib_log_1_1_log_tag_base_html_a2f0e7969a0930276584120ab6167b728"><div class="ttname"><a href="class_z_c_lib_log_1_1_log_tag_base.html#a2f0e7969a0930276584120ab6167b728">ZCLibLog::LogTagBase::level</a></div><div class="ttdeci">ZCLibLog_NODISCARD const LogLevel &amp; level() const noexcept</div><div class="ttdoc">获取当前Tag的等级</div><div class="ttdef"><b>Definition</b> logger_types.hpp:291</div></div>
 <div class="ttc" id="aclass_z_c_lib_log_1_1_log_tag_base_html_a5553f477d17881f236563c9574791ad5"><div class="ttname"><a href="class_z_c_lib_log_1_1_log_tag_base.html#a5553f477d17881f236563c9574791ad5">ZCLibLog::LogTagBase::check_executable</a></div><div class="ttdeci">ZCLibLog_NODISCARD bool check_executable() const</div><div class="ttdoc">检查是否可执行</div><div class="ttdef"><b>Definition</b> logger_types.hpp:278</div></div>
 <div class="ttc" id="aclass_z_c_lib_log_1_1_log_tag_base_html_a5559fa40bb37a8e0e8d55490867d7dad"><div class="ttname"><a href="class_z_c_lib_log_1_1_log_tag_base.html#a5559fa40bb37a8e0e8d55490867d7dad">ZCLibLog::LogTagBase::get_log_pack</a></div><div class="ttdeci">ZCLibLog_NODISCARD LogPack get_log_pack() const</div><div class="ttdoc">获取当前的日志信息包</div><div class="ttdef"><b>Definition</b> logger_types.hpp:263</div></div>
+<div class="ttc" id="aclass_z_c_lib_log_1_1_log_tag_base_html_aced62fad771b6535617a86e582830f84"><div class="ttname"><a href="class_z_c_lib_log_1_1_log_tag_base.html#aced62fad771b6535617a86e582830f84">ZCLibLog::LogTagBase::m_logger</a></div><div class="ttdeci">const Logger *const m_logger</div><div class="ttdef"><b>Definition</b> logger_types.hpp:287</div></div>
 <div class="ttc" id="anamespace_z_c_lib_log_html"><div class="ttname"><a href="namespace_z_c_lib_log.html">ZCLibLog</a></div><div class="ttdoc">ZCLibLog的命名空间</div><div class="ttdef"><b>Definition</b> android_log.hpp:16</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1_log_tag_3_01format__apis_1_1fmtlib_00_01_logger_01_4_html_afb687b4aeae723f0503942a4c240a438"><div class="ttname"><a href="struct_z_c_lib_log_1_1_log_tag_3_01format__apis_1_1fmtlib_00_01_logger_01_4.html#afb687b4aeae723f0503942a4c240a438">ZCLibLog::LogTag&lt; format_apis::fmtlib, Logger &gt;::operator()</a></div><div class="ttdeci">void operator()(fmt::format_string&lt; Args... &gt; &amp;&amp;fmt, Args &amp;&amp;... args) const</div><div class="ttdoc">输出日志</div><div class="ttdef"><b>Definition</b> tp_fmtlib.hpp:37</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1_log_tag_html"><div class="ttname"><a href="struct_z_c_lib_log_1_1_log_tag.html">ZCLibLog::LogTag</a></div><div class="ttdoc">泛型模板，无法特化</div><div class="ttdef"><b>Definition</b> logger_types.hpp:311</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1format__api_html"><div class="ttname"><a href="struct_z_c_lib_log_1_1format__api.html">ZCLibLog::format_api</a></div><div class="ttdoc">定义了一些简化写法</div><div class="ttdef"><b>Definition</b> logger_types.hpp:214</div></div>
 <div class="ttc" id="astruct_z_c_lib_log_1_1format__apis_1_1fmtlib_html"><div class="ttname"><a href="struct_z_c_lib_log_1_1format__apis_1_1fmtlib.html">ZCLibLog::format_apis::fmtlib</a></div><div class="ttdoc">fmtlib API</div><div class="ttdef"><b>Definition</b> tp_fmtlib.hpp:22</div></div>
+<div class="ttc" id="astruct_z_c_lib_log_1_1format__apis_1_1fmtlib_html_a8bebc894142a17fa6f3fa71950517cf6"><div class="ttname"><a href="struct_z_c_lib_log_1_1format__apis_1_1fmtlib.html#a8bebc894142a17fa6f3fa71950517cf6">ZCLibLog::format_apis::fmtlib::ZCLibLog_Format_API</a></div><div class="ttdeci">ZCLibLog_Format_API(fmtlib)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
