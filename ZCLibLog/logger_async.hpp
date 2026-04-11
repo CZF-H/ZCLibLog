@@ -122,7 +122,7 @@ namespace ZCLibLog {
          */
         void execute(std::string& message, const LogLevel level) const {
             if (!message.empty()) {
-                auto message_p = new std::string(std::move(message));
+                auto message_p = std::make_shared<std::string>(std::move(message));
                 LoggerAsync_ThreadPool.submit(
                     [this, message_p, level] {
                         #if ZCLIBLOG_LOGGER_CONFIGURATIONS_LOGGER_ASYNC_MUTEX
@@ -135,7 +135,6 @@ namespace ZCLibLog {
                         }
                     }
                 );
-                delete message_p;
             }
         }
 

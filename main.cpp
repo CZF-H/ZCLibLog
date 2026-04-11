@@ -2,6 +2,7 @@
 
 #include "ZCLibLog/logger_sync.hpp"
 #include "ZCLibLog/logger_async.hpp"
+#include "ZCLibLog/logger_shortcuts.hpp"
 
 #include "ZCLibLog/formatters/csnprintf.hpp"
 #include "ZCLibLog/executors/cstdio.hpp"

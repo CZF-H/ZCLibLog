@@ -12,7 +12,6 @@
 
 #include <algorithm>
 #include <stdexcept>
-#include <chrono>
 #include <vector>
 #include <string>
 
@@ -27,10 +26,6 @@
 #include "formatters/csnprintf.hpp"
 #endif
 
-#if defined(ZCLibLog_HAS_STD_FORMAT) && ZCLIBLOG_LOGGER_CONFIGURATIONS_ENABLE_CXX20_FORMAT
-#define ZCLibLog_USE_FORMAT
-#include <format>
-#endif
 #include <type_traits>
 
 // ReSharper enable CppUnusedIncludeDirective

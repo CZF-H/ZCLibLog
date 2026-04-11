@@ -14,9 +14,6 @@
 /// @brief 异步Logger默认线程数量
 #define ZCLIBLOG_LOGGER_CONFIGURATIONS_ASYNC_THREAD_NUM 1
 
-/// @brief 启用C++20字面量format (不影响vformat)
-#define ZCLIBLOG_LOGGER_CONFIGURATIONS_ENABLE_CXX20_FORMAT true
-
 /// @brief Logger资源加锁
 #define ZCLIBLOG_LOGGER_CONFIGURATIONS_LOGGER_MUTEX false
 
