@@ -21,7 +21,7 @@ namespace ZCLibLog {
          * @brief 基于boost::format
          * @author wanjiangzhi
          */
-        struct absl_str_format : format_apis::traditional  {
+        struct boost_format : format_apis::traditional  {
             template <typename... Args>
             static std::string do_format(FLogPack pack, const std::string& fmt, Args&&... args) {
                 std::string f_msg;

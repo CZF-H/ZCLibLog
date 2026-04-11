@@ -1,10 +1,7 @@
 <map id="ZCLibLog::formatters::absl_str_format" name="ZCLibLog::formatters::absl_str_format">
-<area shape="rect" id="Node000001" title="基于absl::StrFormat" alt="" coords="116,256,249,363"/>
+<area shape="rect" id="Node000001" title="基于absl::StrFormat" alt="" coords="21,256,155,341"/>
 <area shape="rect" id="Node000002" href="$struct_z_c_lib_log_1_1format__apis_1_1absl__str__format.html" title=" " alt="" coords="5,123,170,208"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,218,151,256,145,257,123,223"/>
-<area shape="rect" id="Node000003" href="$struct_z_c_lib_log_1_1format__api.html" title="定义了一些简化写法" alt="" coords="115,5,250,75"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="147,89,122,124,117,121,149,84"/>
-<area shape="rect" id="Node000004" href="$struct_z_c_lib_log_1_1format__apis_1_1traditional.html" title="传统格式化API" alt="" coords="195,123,360,208"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="217,84,248,123,243,123,217,89"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="243,219,219,258,215,255,239,222"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,221,90,257,85,255,87,225"/>
+<area shape="rect" id="Node000003" href="$struct_z_c_lib_log_1_1format__api.html" title="定义了一些简化写法" alt="" coords="20,5,156,75"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="88,87,90,123,85,122,87,92"/>
 </map>
