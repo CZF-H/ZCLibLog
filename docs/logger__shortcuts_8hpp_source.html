@@ -95,7 +95,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;logger_sync.hpp&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;logger_async.hpp&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;executors/cstdout.hpp&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;executors/cstdio.hpp&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;inside/logger_constants.hpp&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define ZCLibLog_LOGALL(...) DefaultLoggerSync().ALL(__VA_ARGS__)</span></div>
@@ -120,7 +120,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keyword">static</span> LoggerSync&lt;&gt; logger{</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                PROJECT_NAME,</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                    <a class="code hl_function" href="class_z_c_lib_log_1_1executor.html#a59126df292856e7d0bda0c6cf5e005eb">executor::Construct&lt;executors::cstdout&gt;</a>()</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                    <a class="code hl_function" href="class_z_c_lib_log_1_1executor.html#a2e02ff50fdee4d9548f509f3571f61ee">executor::make&lt;executors::cstdio&gt;</a>()</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                }</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            };</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <span class="keywordflow">return</span> logger;</div>
@@ -129,7 +129,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keyword">static</span> LoggerAsync&lt;&gt; logger{</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                PROJECT_NAME,</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                    <a class="code hl_function" href="class_z_c_lib_log_1_1executor.html#a59126df292856e7d0bda0c6cf5e005eb">executor::Construct&lt;executors::cstdout&gt;</a>()</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                    <a class="code hl_function" href="class_z_c_lib_log_1_1executor.html#a2e02ff50fdee4d9548f509f3571f61ee">executor::make&lt;executors::cstdio&gt;</a>()</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                }</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            };</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            <span class="keywordflow">return</span> logger;</div>
@@ -138,7 +138,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif </span><span class="comment">//ZCLIBLOG_LOGGER_SHORTCUTS_HPP</span></div>
-<div class="ttc" id="aclass_z_c_lib_log_1_1executor_html_a59126df292856e7d0bda0c6cf5e005eb"><div class="ttname"><a href="class_z_c_lib_log_1_1executor.html#a59126df292856e7d0bda0c6cf5e005eb">ZCLibLog::executor::Construct</a></div><div class="ttdeci">static executor Construct(Args &amp;&amp;... args)</div><div class="ttdoc">通过工厂函数构造</div><div class="ttdef"><b>Definition</b> logger_types.hpp:152</div></div>
+<div class="ttc" id="aclass_z_c_lib_log_1_1executor_html_a2e02ff50fdee4d9548f509f3571f61ee"><div class="ttname"><a href="class_z_c_lib_log_1_1executor.html#a2e02ff50fdee4d9548f509f3571f61ee">ZCLibLog::executor::make</a></div><div class="ttdeci">static executor make(Args &amp;&amp;... args)</div><div class="ttdoc">通过工厂函数构造</div><div class="ttdef"><b>Definition</b> logger_types.hpp:152</div></div>
 <div class="ttc" id="anamespace_z_c_lib_log_html"><div class="ttname"><a href="namespace_z_c_lib_log.html">ZCLibLog</a></div><div class="ttdoc">ZCLibLog的命名空间</div><div class="ttdef"><b>Definition</b> android_log.hpp:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

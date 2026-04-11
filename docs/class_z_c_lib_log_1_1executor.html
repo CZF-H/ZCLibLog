@@ -100,10 +100,10 @@ ZCLibLog::executor 的协作图:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public 类型</h2></td></tr>
 <tr class="memitem:a2d49b40d75566028cbee1beeecaabad9" id="r_a2d49b40d75566028cbee1beeecaabad9"><td class="memItemLeft" align="right" valign="top"><a id="a2d49b40d75566028cbee1beeecaabad9" name="a2d49b40d75566028cbee1beeecaabad9"></a>
-<a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">using</a>&#160;</td><td class="memItemRight" valign="bottom"><b>base_ptr_type</b> = std::shared_ptr&lt;<a class="el" href="struct_z_c_lib_log_1_1executor__api.html">executor_api</a>&gt;</td></tr>
+<a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">using</a>&#160;</td><td class="memItemRight" valign="bottom"><b>base_ptr_type</b> = std::shared_ptr&lt;<a class="el" href="struct_z_c_lib_log_1_1executor__api.html">executor_api</a>&gt;</td></tr>
 <tr class="separator:a2d49b40d75566028cbee1beeecaabad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ee2d977d42fc27a920b868ab2e2c786" id="r_a6ee2d977d42fc27a920b868ab2e2c786"><td class="memItemLeft" align="right" valign="top"><a id="a6ee2d977d42fc27a920b868ab2e2c786" name="a6ee2d977d42fc27a920b868ab2e2c786"></a>
-<a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">using</a>&#160;</td><td class="memItemRight" valign="bottom"><b>inside_type</b> = base_ptr_type::element_type</td></tr>
+<a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">using</a>&#160;</td><td class="memItemRight" valign="bottom"><b>inside_type</b> = base_ptr_type::element_type</td></tr>
 <tr class="separator:a6ee2d977d42fc27a920b868ab2e2c786"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -112,36 +112,36 @@ Public 成员函数</h2></td></tr>
 <tr class="memdesc:aceb4873bc9e7a052d38c66e5a3ba59b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过裸指针构造  <br /></td></tr>
 <tr class="separator:aceb4873bc9e7a052d38c66e5a3ba59b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa1841ad44304dcc11085365605f72e1" id="r_afa1841ad44304dcc11085365605f72e1"><td class="memItemLeft" align="right" valign="top"><a id="afa1841ad44304dcc11085365605f72e1" name="afa1841ad44304dcc11085365605f72e1"></a>
-ZCLibLog_NODISCARD inside_type *&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> () <a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">const</a> <a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">noexcept</a></td></tr>
+ZCLibLog_NODISCARD inside_type *&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> () <a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">const</a> <a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">noexcept</a></td></tr>
 <tr class="memdesc:afa1841ad44304dcc11085365605f72e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取内部执行器的指针 <br /></td></tr>
 <tr class="separator:afa1841ad44304dcc11085365605f72e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a944e5dc8c5681ee834f61c789010f026" id="r_a944e5dc8c5681ee834f61c789010f026"><td class="memItemLeft" align="right" valign="top"><a id="a944e5dc8c5681ee834f61c789010f026" name="a944e5dc8c5681ee834f61c789010f026"></a>
-ZCLibLog_NODISCARD <a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>unique</b> () <a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">const</a> <a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">noexcept</a></td></tr>
+ZCLibLog_NODISCARD <a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><b>unique</b> () <a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">const</a> <a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">noexcept</a></td></tr>
 <tr class="memdesc:a944e5dc8c5681ee834f61c789010f026"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取执行器是否独占状态 <br /></td></tr>
 <tr class="separator:a944e5dc8c5681ee834f61c789010f026"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af079acd9fc214fcfe68412a72ec25fc8" id="r_af079acd9fc214fcfe68412a72ec25fc8"><td class="memItemLeft" align="right" valign="top"><a id="af079acd9fc214fcfe68412a72ec25fc8" name="af079acd9fc214fcfe68412a72ec25fc8"></a>
-ZCLibLog_NODISCARD <a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">long</a>&#160;</td><td class="memItemRight" valign="bottom"><b>use_count</b> () <a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">const</a> <a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">noexcept</a></td></tr>
+ZCLibLog_NODISCARD <a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">long</a>&#160;</td><td class="memItemRight" valign="bottom"><b>use_count</b> () <a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">const</a> <a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">noexcept</a></td></tr>
 <tr class="memdesc:af079acd9fc214fcfe68412a72ec25fc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取执行器使用计数 <br /></td></tr>
 <tr class="separator:af079acd9fc214fcfe68412a72ec25fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae8576cb7f9244ac00bd4ff2cbac290b" id="r_aae8576cb7f9244ac00bd4ff2cbac290b"><td class="memItemLeft" align="right" valign="top"><a id="aae8576cb7f9244ac00bd4ff2cbac290b" name="aae8576cb7f9244ac00bd4ff2cbac290b"></a>
-inside_type *&#160;</td><td class="memItemRight" valign="bottom"><b>operator-&gt;</b> () <a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">const</a> <a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">noexcept</a></td></tr>
+inside_type *&#160;</td><td class="memItemRight" valign="bottom"><b>operator-&gt;</b> () <a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">const</a> <a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">noexcept</a></td></tr>
 <tr class="memdesc:aae8576cb7f9244ac00bd4ff2cbac290b"><td class="mdescLeft">&#160;</td><td class="mdescRight">访问内部执行器内部成员 <br /></td></tr>
 <tr class="separator:aae8576cb7f9244ac00bd4ff2cbac290b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81b743877b7f99d3822b5db45965cccb" id="r_a81b743877b7f99d3822b5db45965cccb"><td class="memItemLeft" align="right" valign="top"><a id="a81b743877b7f99d3822b5db45965cccb" name="a81b743877b7f99d3822b5db45965cccb"></a>
-inside_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> () <a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">const</a> <a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">noexcept</a></td></tr>
+inside_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> () <a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">const</a> <a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">noexcept</a></td></tr>
 <tr class="memdesc:a81b743877b7f99d3822b5db45965cccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取内部执行器对象 <br /></td></tr>
 <tr class="separator:a81b743877b7f99d3822b5db45965cccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7421a156d99bb632cd11049993b9881" id="r_ae7421a156d99bb632cd11049993b9881"><td class="memItemLeft" align="right" valign="top"><a id="ae7421a156d99bb632cd11049993b9881" name="ae7421a156d99bb632cd11049993b9881"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>operator bool</b> () <a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">const</a> <a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">noexcept</a></td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>operator bool</b> () <a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">const</a> <a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">noexcept</a></td></tr>
 <tr class="memdesc:ae7421a156d99bb632cd11049993b9881"><td class="mdescLeft">&#160;</td><td class="mdescRight">判断执行器是否不为空 <br /></td></tr>
 <tr class="separator:ae7421a156d99bb632cd11049993b9881"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 静态 Public 成员函数</h2></td></tr>
-<tr class="memitem:a59126df292856e7d0bda0c6cf5e005eb" id="r_a59126df292856e7d0bda0c6cf5e005eb"><td class="memTemplParams" colspan="2">template&lt;typename Executor , typename... Args&gt; </td></tr>
-<tr class="memitem:a59126df292856e7d0bda0c6cf5e005eb"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="class_z_c_lib_log_1_1executor.html">executor</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a59126df292856e7d0bda0c6cf5e005eb">Construct</a> (Args &amp;&amp;... args)</td></tr>
-<tr class="memdesc:a59126df292856e7d0bda0c6cf5e005eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过工厂函数构造  <br /></td></tr>
-<tr class="separator:a59126df292856e7d0bda0c6cf5e005eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e02ff50fdee4d9548f509f3571f61ee" id="r_a2e02ff50fdee4d9548f509f3571f61ee"><td class="memTemplParams" colspan="2">template&lt;typename Executor , typename... Args&gt; </td></tr>
+<tr class="memitem:a2e02ff50fdee4d9548f509f3571f61ee"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="class_z_c_lib_log_1_1executor.html">executor</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2e02ff50fdee4d9548f509f3571f61ee">make</a> (Args &amp;&amp;... args)</td></tr>
+<tr class="memdesc:a2e02ff50fdee4d9548f509f3571f61ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">通过工厂函数构造  <br /></td></tr>
+<tr class="separator:a2e02ff50fdee4d9548f509f3571f61ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>执行器包装类 </p>
@@ -182,8 +182,8 @@ inside_type &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator
 </div>
 </div>
 <h2 class="groupheader">成员函数说明</h2>
-<a id="a59126df292856e7d0bda0c6cf5e005eb" name="a59126df292856e7d0bda0c6cf5e005eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59126df292856e7d0bda0c6cf5e005eb">&#9670;&#160;</a></span>Construct()</h2>
+<a id="a2e02ff50fdee4d9548f509f3571f61ee" name="a2e02ff50fdee4d9548f509f3571f61ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e02ff50fdee4d9548f509f3571f61ee">&#9670;&#160;</a></span>make()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,7 +194,7 @@ template&lt;typename Executor , typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="class_z_c_lib_log_1_1executor.html">executor</a> ZCLibLog::executor::Construct </td>
+          <td class="memname">static <a class="el" href="class_z_c_lib_log_1_1executor.html">executor</a> ZCLibLog::executor::make </td>
           <td>(</td>
           <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
           <td></td>

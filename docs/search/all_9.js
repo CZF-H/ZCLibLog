@@ -12,8 +12,9 @@ var searchData=
   ['logpack_9',['LogPack',['../struct_z_c_lib_log_1_1_log_pack.html',1,'ZCLibLog']]],
   ['logtag_10',['LogTag',['../struct_z_c_lib_log_1_1_log_tag.html',1,'ZCLibLog']]],
   ['logtag_3c_20format_5fapis_3a_3afmtlib_2c_20logger_20_3e_11',['LogTag&lt; format_apis::fmtlib, Logger &gt;',['../struct_z_c_lib_log_1_1_log_tag_3_01format__apis_1_1fmtlib_00_01_logger_01_4.html',1,'ZCLibLog']]],
-  ['logtag_3c_20format_5fapis_3a_3atraditional_2c_20logger_20_3e_12',['LogTag&lt; format_apis::traditional, Logger &gt;',['../struct_z_c_lib_log_1_1_log_tag_3_01format__apis_1_1traditional_00_01_logger_01_4.html',1,'ZCLibLog']]],
-  ['logtag_3c_20typename_20formatter_3a_3aformat_5fapi_2c_20self_20_3e_13',['LogTag&lt; typename Formatter::Format_API, Self &gt;',['../struct_z_c_lib_log_1_1_log_tag.html',1,'ZCLibLog']]],
-  ['logtagbase_14',['LogTagBase',['../class_z_c_lib_log_1_1_log_tag_base.html',1,'ZCLibLog::LogTagBase&lt; Logger &gt;'],['../class_z_c_lib_log_1_1_log_tag_base.html#a1132ce0c6f62b37eed236ceb792f371b',1,'ZCLibLog::LogTagBase::LogTagBase()']]],
-  ['logtagbase_3c_20self_20_3e_15',['LogTagBase&lt; Self &gt;',['../class_z_c_lib_log_1_1_log_tag_base.html',1,'ZCLibLog']]]
+  ['logtag_3c_20format_5fapis_3a_3astdcxx20format_2c_20logger_20_3e_12',['LogTag&lt; format_apis::stdcxx20format, Logger &gt;',['../struct_z_c_lib_log_1_1_log_tag_3_01format__apis_1_1stdcxx20format_00_01_logger_01_4.html',1,'ZCLibLog']]],
+  ['logtag_3c_20format_5fapis_3a_3atraditional_2c_20logger_20_3e_13',['LogTag&lt; format_apis::traditional, Logger &gt;',['../struct_z_c_lib_log_1_1_log_tag_3_01format__apis_1_1traditional_00_01_logger_01_4.html',1,'ZCLibLog']]],
+  ['logtag_3c_20typename_20formatter_3a_3aformat_5fapi_2c_20self_20_3e_14',['LogTag&lt; typename Formatter::Format_API, Self &gt;',['../struct_z_c_lib_log_1_1_log_tag.html',1,'ZCLibLog']]],
+  ['logtagbase_15',['LogTagBase',['../class_z_c_lib_log_1_1_log_tag_base.html',1,'ZCLibLog::LogTagBase&lt; Logger &gt;'],['../class_z_c_lib_log_1_1_log_tag_base.html#a1132ce0c6f62b37eed236ceb792f371b',1,'ZCLibLog::LogTagBase::LogTagBase()']]],
+  ['logtagbase_3c_20self_20_3e_16',['LogTagBase&lt; Self &gt;',['../class_z_c_lib_log_1_1_log_tag_base.html',1,'ZCLibLog']]]
 ];

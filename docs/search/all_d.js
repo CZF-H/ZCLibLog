@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['submit_0',['submit',['../class_z_c_lib_log_1_1details_1_1_thread_pool.html#a396b4d9b21c5077bbe6b7c5b9f02f1ca',1,'ZCLibLog::details::ThreadPool']]]
+  ['print_0',['print',['../struct_z_c_lib_log_1_1executors_1_1print.html',1,'ZCLibLog::executors']]],
+  ['println_1',['println',['../struct_z_c_lib_log_1_1executors_1_1println.html',1,'ZCLibLog::executors']]]
 ];

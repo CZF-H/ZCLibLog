@@ -10,9 +10,6 @@
 
 #include "basic_format_api.hpp"
 
-#if ZCLibLog_CPP < 20
-#error "format_api stdcxx20format 需要C++20及以上"
-#else
 #include <format>
 
 namespace ZCLibLog {
@@ -48,5 +45,5 @@ namespace ZCLibLog {
         }
     };
 }
-#endif
+
 #endif //ZCLIBLOG_FORMAT_APIS_STDCXX20FORMAT_HPP

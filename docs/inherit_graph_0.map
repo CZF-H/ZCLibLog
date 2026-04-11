@@ -1,5 +1,7 @@
 <map id="类继承关系图" name="类继承关系图">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,13,193,40"/>
-<area shape="rect" id="Node000001" href="$struct_z_c_lib_log_1_1formatters_1_1format.html" title="基于C++20的&quot;std::format&quot;的编译期格式化接口" alt="" coords="241,5,385,48"/>
-<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="208,24,243,27,238,27,208,29"/>
+<area shape="rect" id="Node000000" href="$class_z_c_lib_log_1_1_base_logger.html" title="基本日志器，无执行" alt="" coords="5,39,160,81"/>
+<area shape="rect" id="Node000001" href="$struct_z_c_lib_log_1_1_logger_async.html" title="异步日志器" alt="" coords="208,5,369,48"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="174,42,210,39,205,41,176,48"/>
+<area shape="rect" id="Node000002" href="$struct_z_c_lib_log_1_1_logger_sync.html" title="同步日志器" alt="" coords="211,72,366,115"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="175,72,213,81,208,81,175,78"/>
 </map>

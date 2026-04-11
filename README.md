@@ -46,7 +46,7 @@
 executor的构造方式目前有两种
 
 1. 通过裸指针构造
-2. 通过工厂函数`executor::Construct`构造
+2. 通过工厂函数`executor::make`构造
 
 > 裸指针构造要确保对象生命周期比Logger更长
 
@@ -54,7 +54,7 @@ executor的构造方式目前有两种
 > 
 > 🚫 如果对象不是在`executor`的构造函数中构造，请不要多次传入裸指针！
 > 
-> 📢 建议使用`executor::Construct`而不是裸指针构造
+> 📢 建议使用`executor::make`而不是裸指针构造
 > 
 > 📓 如果需要请遵循动态分配对象的立即传递
 
@@ -73,7 +73,7 @@ int main() {
     ZCLibLog::LoggerSync<ZCLibLog::formatters::format> logger{
         "MainLogger",
         {
-            ZCLibLog::executor::Construct<ZCLibLog::executors::cstdout>()
+            ZCLibLog::executor::make<ZCLibLog::executors::cstdout>()
         },
         ZCLibLog::LogLevel::INFO
     };
@@ -95,7 +95,7 @@ int main() {
     ZCLibLog::LoggerSync<> logger{
         "DefaultFmt",
         {
-            ZCLibLog::executor::Construct<ZCLibLog::executors::iostream>()
+            ZCLibLog::executor::make<ZCLibLog::executors::iostream>()
         },
         ZCLibLog::LogLevel::DEBUG
     };
@@ -115,7 +115,7 @@ int main() {
     ZCLibLog::LoggerAsync<ZCLibLog::formatters::vformat> logger{
         "AsyncLogger",
         {
-            ZCLibLog::executor::Construct<ZCLibLog::executors::cstdout>()
+            ZCLibLog::executor::make<ZCLibLog::executors::cstdout>()
         },
         ZCLibLog::LogLevel::TRACE
     };
@@ -186,7 +186,7 @@ struct MyFormatter : ZCLibLog::format_apis::stdcxx20 {
 
 ZCLibLog::LoggerSync<MyFormatter> logger{
     "CustomFmt",
-    { ZCLibLog::executor::Construct<ZCLibLog::executors::cstdout>() },
+    { ZCLibLog::executor::make<ZCLibLog::executors::cstdout>() },
     ZCLibLog::LogLevel::INFO
 };
 ```
@@ -228,7 +228,7 @@ private:
 
 ZCLibLog::LoggerSync<> logger{
     "FileLogger",
-    { ZCLibLog::executor::Construct<FileExecutor>("app.log") },
+    { ZCLibLog::executor::make<FileExecutor>("app.log") },
     ZCLibLog::LogLevel::DEBUG
 };
 ```
@@ -243,7 +243,7 @@ ZCLibLog::LoggerSync<> logger{
 
 ZCLibLog::LoggerSync<> logger{"Dynamic"};
 
-size_t id = logger.bind_executor(ZCLibLog::executor::Construct<ZCLibLog::executors::cstdout>());
+size_t id = logger.bind_executor(ZCLibLog::executor::make<ZCLibLog::executors::cstdout>());
 logger.INFO("executor attached");
 
 logger.debind_executor(id);
@@ -278,7 +278,7 @@ Android 平台可组合 `formatters::android_log + executors::android_log`：
 
 ZCLibLog::LoggerSync<ZCLibLog::formatters::android_log> logger{
     "AndroidLogger",
-    { ZCLibLog::executor::Construct<ZCLibLog::executors::android_log>("MyApp") },
+    { ZCLibLog::executor::make<ZCLibLog::executors::android_log>("MyApp") },
     ZCLibLog::LogLevel::INFO
 };
 ```
@@ -288,7 +288,7 @@ ZCLibLog::LoggerSync<ZCLibLog::formatters::android_log> logger{
 ## 🛡️ 保护与最佳实践
 
 1. **执行器生命周期管理**：
-    - 推荐使用 `executor::Construct`辅助函数来管理资源，避免`double delete`。
+    - 推荐使用 `executor::make`辅助函数来管理资源，避免`double delete`。
 2. **外部资源有效性保护**：
     - `cstdio(FILE*&)`、`ostream(std::ostream&)` 依赖外部引用，请确保日志期间对象仍然有效。
 3. **级别过滤保护**：

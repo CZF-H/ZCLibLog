@@ -10,7 +10,7 @@
 
 #include "logger_sync.hpp"
 #include "logger_async.hpp"
-#include "executors/cstdout.hpp"
+#include "executors/cstdio.hpp"
 #include "inside/logger_constants.hpp"
 
 #define ZCLibLog_LOGALL(...) DefaultLoggerSync().ALL(__VA_ARGS__)
@@ -35,7 +35,7 @@ namespace ZCLibLog {
             static LoggerSync<> logger{
                 PROJECT_NAME,
                 {
-                    executor::Construct<executors::cstdout>()
+                    executor::make<executors::cstdio>()
                 }
             };
             return logger;
@@ -44,7 +44,7 @@ namespace ZCLibLog {
             static LoggerAsync<> logger{
                 PROJECT_NAME,
                 {
-                    executor::Construct<executors::cstdout>()
+                    executor::make<executors::cstdio>()
                 }
             };
             return logger;

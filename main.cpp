@@ -5,7 +5,7 @@
 
 #include "ZCLibLog/formatters/format.hpp"
 
-#include "ZCLibLog/executors/cstdout.hpp"
+#include "ZCLibLog/executors/cstdio.hpp"
 
 using LoggerType = ZCLibLog::LoggerSync<ZCLibLog::formatters::format>;
 LoggerType Logger{
@@ -16,7 +16,7 @@ LoggerType Logger{
 int main() {
     using namespace ZCLibLog;
 
-    const auto Logger_executors_cstdout_id = Logger.bind_executor(executor::Construct<executors::cstdout>());
+    const auto Logger_executors_cstdio_id = Logger.bind_executor(new executors::cstdio(true));
 
     const auto start = std::chrono::steady_clock::now();
 
@@ -25,7 +25,7 @@ int main() {
     const auto end = std::chrono::steady_clock::now();
     const auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
 
-    Logger.debind_executor(Logger_executors_cstdout_id);
+    Logger.debind_executor(Logger_executors_cstdio_id);
 
     std::cout << "Used: " << duration.count() << " ns" << std::endl;
 

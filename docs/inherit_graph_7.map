@@ -1,3 +1,13 @@
 <map id="类继承关系图" name="类继承关系图">
-<area shape="rect" id="Node000000" href="$struct_z_c_lib_log_1_1_log_pack.html" title=" " alt="" coords="5,5,142,32"/>
+<area shape="rect" id="Node000000" href="$class_z_c_lib_log_1_1_log_tag_base.html" title="根基Tag类，构造无用，仅继承" alt="" coords="5,139,163,181"/>
+<area shape="rect" id="Node000001" href="$struct_z_c_lib_log_1_1_log_tag.html" title=" " alt="" coords="211,5,413,48"/>
+<area shape="poly" id="edge23_Node000000_Node000001" title=" " alt="" coords="117,126,159,91,209,58,237,47,233,50,212,62,162,95,120,130"/>
+<area shape="rect" id="Node000002" href="$struct_z_c_lib_log_1_1_log_tag.html" title="泛型模板，无法特化" alt="" coords="214,72,410,115"/>
+<area shape="poly" id="edge24_Node000000_Node000002" title=" " alt="" coords="172,132,238,114,234,117,174,136"/>
+<area shape="rect" id="Node000003" href="$struct_z_c_lib_log_1_1_log_tag_3_01format__apis_1_1fmtlib_00_01_logger_01_4.html" title=" " alt="" coords="224,139,400,181"/>
+<area shape="poly" id="edge25_Node000000_Node000003" title=" " alt="" coords="177,157,226,159,221,161,179,163"/>
+<area shape="rect" id="Node000004" href="$struct_z_c_lib_log_1_1_log_tag_3_01format__apis_1_1stdcxx20format_00_01_logger_01_4.html" title=" " alt="" coords="224,205,400,264"/>
+<area shape="poly" id="edge26_Node000000_Node000004" title=" " alt="" coords="166,184,226,205,221,207,166,189"/>
+<area shape="rect" id="Node000005" href="$struct_z_c_lib_log_1_1_log_tag_3_01format__apis_1_1traditional_00_01_logger_01_4.html" title=" " alt="" coords="224,288,400,331"/>
+<area shape="poly" id="edge27_Node000000_Node000005" title=" " alt="" coords="114,190,159,234,212,274,236,288,231,287,209,278,155,238,113,195"/>
 </map>

@@ -149,13 +149,13 @@ namespace ZCLibLog {
          * @return 包装执行器
          */
         template <typename Executor, typename... Args>
-        static executor Construct(Args&&... args) {
+        static executor make(Args&&... args) {
             static_assert(is_executor_api<Executor>::value, "Executor must be a real executor");
 
-            executor Constructed;
-            Constructed.executor_ptr = std::move(std::make_shared<Executor>(std::forward<Args>(args)...));
+            executor made;
+            made.executor_ptr = std::move(std::make_shared<Executor>(std::forward<Args>(args)...));
 
-            return std::move(Constructed);
+            return std::move(made);
         }
 
         /// @brief 获取内部执行器的指针
