@@ -5,18 +5,18 @@
 // Created by wanjiangzhi on 2026/4/10.
 //
 
-#ifndef ZCLIBLOG_BASIC_FORMAT_API_HPP
-#define ZCLIBLOG_BASIC_FORMAT_API_HPP
+#ifndef ZCLIBLOG_BASIC_FORMATTER_HPP
+#define ZCLIBLOG_BASIC_FORMATTER_HPP
 
 // file_wrapper
-#include "../../inside/logger_types.hpp"
+#include "../inside/logger_types.hpp"
 
 namespace ZCLibLog {
     /**
-     * @namespace ZCLibLog::format_apis
-     * @brief 预定的一些format_api
+     * @namespace ZCLibLog::formatters
+     * @brief 预定的一些formatter
      */
-    namespace format_apis {}
+    namespace formatters {}
 }
 
 /**
@@ -25,4 +25,4 @@ namespace ZCLibLog {
  */
 #define ZCLibLog_Format_API(id) typedef id Format_API;
 
-#endif //ZCLIBLOG_BASIC_FORMAT_API_HPP
+#endif //ZCLIBLOG_BASIC_FORMATTER_HPP

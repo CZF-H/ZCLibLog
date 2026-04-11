@@ -222,12 +222,6 @@ namespace ZCLibLog {
     };
 
     /**
-     * @namespace format_apis
-     * @brief 预定的一些format_api
-     */
-    namespace format_apis {}
-
-    /**
      * @brief 判断是否是基于format api
      * @tparam Formatter 需要判断的Formatter类
      * @tparam FormatAPI 判断是否是某个format_api（默认全部）

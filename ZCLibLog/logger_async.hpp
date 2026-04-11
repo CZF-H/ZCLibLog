@@ -32,7 +32,7 @@
 
 namespace ZCLibLog {
     /**
-     * @namespace details
+     * @namespace ZCLibLog::details
      * @brief 内部使用的工具
      */
     namespace details {

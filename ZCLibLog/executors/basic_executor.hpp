@@ -11,4 +11,12 @@
 // file_wrapper
 #include "../inside/logger_types.hpp"
 
+namespace ZCLibLog {
+    /**
+     * @namespace ZCLibLog::executors
+     * @brief 预定的一些executor
+     */
+    namespace executors {}
+}
+
 #endif //ZCLIBLOG_BASIC_EXECUTOR_HPP
