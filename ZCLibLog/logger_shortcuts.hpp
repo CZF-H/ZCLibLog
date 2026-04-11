@@ -13,21 +13,21 @@
 #include "executors/cstdio.hpp"
 #include "inside/logger_constants.hpp"
 
-#define ZCLibLog_LOGALL(...) DefaultLoggerSync().ALL(__VA_ARGS__)
-#define ZCLibLog_LOGTRACE(...) DefaultLoggerSync().TRACE(__VA_ARGS__)
-#define ZCLibLog_LOGDEBUG(...) DefaultLoggerSync().DEBUG(__VA_ARGS__)
-#define ZCLibLog_LOGINFO(...) DefaultLoggerSync().INFO(__VA_ARGS__)
-#define ZCLibLog_LOGWARN(...) DefaultLoggerSync().WARN(__VA_ARGS__)
-#define ZCLibLog_LOGERROR(...) DefaultLoggerSync().ERROR(__VA_ARGS__)
-#define ZCLibLog_LOGFATAL(...) DefaultLoggerSync().FATAL(__VA_ARGS__)
+#define ZCLibLog_LOG_ALL(...) DefaultLoggerSync().ALL(__VA_ARGS__)
+#define ZCLibLog_LOG_TRACE(...) DefaultLoggerSync().TRACE(__VA_ARGS__)
+#define ZCLibLog_LOG_DEBUG(...) DefaultLoggerSync().DEBUG(__VA_ARGS__)
+#define ZCLibLog_LOG_INFO(...) DefaultLoggerSync().INFO(__VA_ARGS__)
+#define ZCLibLog_LOG_WARN(...) DefaultLoggerSync().WARN(__VA_ARGS__)
+#define ZCLibLog_LOG_ERROR(...) DefaultLoggerSync().ERROR(__VA_ARGS__)
+#define ZCLibLog_LOG_FATAL(...) DefaultLoggerSync().FATAL(__VA_ARGS__)
 
-#define ZCLibLog_ALOGALL(...) DefaultLoggerAsync().ALL(__VA_ARGS__)
-#define ZCLibLog_ALOGTRACE(...) DefaultLoggerAsync().TRACE(__VA_ARGS__)
-#define ZCLibLog_ALOGDEBUG(...) DefaultLoggerAsync().DEBUG(__VA_ARGS__)
-#define ZCLibLog_ALOGINFO(...) DefaultLoggerAsync().INFO(__VA_ARGS__)
-#define ZCLibLog_ALOGWARN(...) DefaultLoggerAsync().WARN(__VA_ARGS__)
-#define ZCLibLog_ALOGERROR(...) DefaultLoggerAsync().ERROR(__VA_ARGS__)
-#define ZCLibLog_ALOGFATAL(...) DefaultLoggerAsync().FATAL(__VA_ARGS__)
+#define ZCLibLog_ALOG_ALL(...) DefaultLoggerAsync().ALL(__VA_ARGS__)
+#define ZCLibLog_ALOG_TRACE(...) DefaultLoggerAsync().TRACE(__VA_ARGS__)
+#define ZCLibLog_ALOG_DEBUG(...) DefaultLoggerAsync().DEBUG(__VA_ARGS__)
+#define ZCLibLog_ALOG_INFO(...) DefaultLoggerAsync().INFO(__VA_ARGS__)
+#define ZCLibLog_ALOG_WARN(...) DefaultLoggerAsync().WARN(__VA_ARGS__)
+#define ZCLibLog_ALOG_ERROR(...) DefaultLoggerAsync().ERROR(__VA_ARGS__)
+#define ZCLibLog_ALOG_FATAL(...) DefaultLoggerAsync().FATAL(__VA_ARGS__)
 
 namespace ZCLibLog {
     namespace shortcuts  {

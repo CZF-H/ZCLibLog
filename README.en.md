@@ -1,12 +1,20 @@
-# ZCLibLog English Documentation (Full Advanced Guide)
+# ZCLibLog
 
-**English** | [中文](./README.zh-CN.md)
+> Lightweight and extensible C++ logging library (C++11+), with sync/async loggers, pluggable formatter, and pluggable executor.
 
-> This guide covers the full path from quick integration to deep customization:
-> 1) Custom Formatter  
-> 2) Custom Executor  
-> 3) Custom Logger (inherit from `BaseLogger`)  
-> 4) Practical advice, extension ideas, and advanced patterns (including Windows beep on `WARN/ERROR/FATAL`)
+![Language](https://img.shields.io/badge/language-C%2B%2B-blue)
+![Standard](https://img.shields.io/badge/C%2B%2B-11%2B-brightgreen)
+![License](https://img.shields.io/github/license/CZF-H/ZCLibLog)
+
+---
+
+### [简体中文](./README.md) | **English**
+
+---
+
+## 📚 Documentation
+
+- Doxygen: https://czf-h.github.io/ZCLibLog
 
 ---
 
@@ -75,26 +83,26 @@ int main() {
 
 ### 3.1 Formatter
 
-| Name | Style | Notes |
-|---|---|---|
-| `formatters::csnprintf` | `printf` | default, C++11-friendly |
-| `formatters::format` | `std::format_string` | C++20 compile-time checked format |
-| `formatters::vformat` | `std::string_view + args` | C++20 runtime format string |
-| `formatters::android_log` | Android style | Logcat-oriented |
+| Name                      | Style                     | Notes                             |
+|---------------------------|---------------------------|-----------------------------------|
+| `formatters::csnprintf`   | `printf`                  | default, C++11-friendly           |
+| `formatters::format`      | `std::format_string`      | C++20 compile-time checked format |
+| `formatters::vformat`     | `std::string_view + args` | C++20 runtime format string       |
+| `formatters::android_log` | Android style             | Logcat-oriented                   |
 
 ### 3.2 Executor
 
-| Name | Output |
-|---|---|
-| `executors::cstdio` | `stdout/stderr` |
-| `executors::cfwrite` | `FILE*` (`fwrite`) |
-| `executors::cfputs` | `FILE*` (`fputs`) |
-| `executors::cputs` | C output |
-| `executors::iostream` | `std::cout/std::cerr` |
-| `executors::ostream` | any `std::ostream&` |
-| `executors::print` | print wrapper |
-| `executors::lambda` | lambda callback bridge |
-| `executors::android_log` | Android Logcat |
+| Name                     | Output                 |
+|--------------------------|------------------------|
+| `executors::cstdio`      | `stdout/stderr`        |
+| `executors::cfwrite`     | `FILE*` (`fwrite`)     |
+| `executors::cfputs`      | `FILE*` (`fputs`)      |
+| `executors::cputs`       | C output               |
+| `executors::iostream`    | `std::cout/std::cerr`  |
+| `executors::ostream`     | any `std::ostream&`    |
+| `executors::print`       | print wrapper          |
+| `executors::lambda`      | lambda callback bridge |
+| `executors::android_log` | Android Logcat         |
 
 ---
 
@@ -288,9 +296,13 @@ cmake --build build -j
 
 ---
 
-## 10. Fast multi-version switch
 
-- Entry: `README.md`
-- Chinese: `README.zh-CN.md`
-- English: `README.en.md`
+## 📢 Statement
 
+此文档使用ChatGPT Codex生成，如内容有误请您谅解，感谢指出错误，谢谢
+
+---
+
+## 📄 License
+
+Apache-2.0

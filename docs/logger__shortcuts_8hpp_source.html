@@ -98,21 +98,21 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;executors/cstdio.hpp&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;inside/logger_constants.hpp&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define ZCLibLog_LOGALL(...) DefaultLoggerSync().ALL(__VA_ARGS__)</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define ZCLibLog_LOGTRACE(...) DefaultLoggerSync().TRACE(__VA_ARGS__)</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#define ZCLibLog_LOGDEBUG(...) DefaultLoggerSync().DEBUG(__VA_ARGS__)</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define ZCLibLog_LOGINFO(...) DefaultLoggerSync().INFO(__VA_ARGS__)</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define ZCLibLog_LOGWARN(...) DefaultLoggerSync().WARN(__VA_ARGS__)</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define ZCLibLog_LOGERROR(...) DefaultLoggerSync().ERROR(__VA_ARGS__)</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define ZCLibLog_LOGFATAL(...) DefaultLoggerSync().FATAL(__VA_ARGS__)</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define ZCLibLog_LOG_ALL(...) DefaultLoggerSync().ALL(__VA_ARGS__)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#define ZCLibLog_LOG_TRACE(...) DefaultLoggerSync().TRACE(__VA_ARGS__)</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#define ZCLibLog_LOG_DEBUG(...) DefaultLoggerSync().DEBUG(__VA_ARGS__)</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#define ZCLibLog_LOG_INFO(...) DefaultLoggerSync().INFO(__VA_ARGS__)</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define ZCLibLog_LOG_WARN(...) DefaultLoggerSync().WARN(__VA_ARGS__)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#define ZCLibLog_LOG_ERROR(...) DefaultLoggerSync().ERROR(__VA_ARGS__)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#define ZCLibLog_LOG_FATAL(...) DefaultLoggerSync().FATAL(__VA_ARGS__)</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define ZCLibLog_ALOGALL(...) DefaultLoggerAsync().ALL(__VA_ARGS__)</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define ZCLibLog_ALOGTRACE(...) DefaultLoggerAsync().TRACE(__VA_ARGS__)</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define ZCLibLog_ALOGDEBUG(...) DefaultLoggerAsync().DEBUG(__VA_ARGS__)</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#define ZCLibLog_ALOGINFO(...) DefaultLoggerAsync().INFO(__VA_ARGS__)</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define ZCLibLog_ALOGWARN(...) DefaultLoggerAsync().WARN(__VA_ARGS__)</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define ZCLibLog_ALOGERROR(...) DefaultLoggerAsync().ERROR(__VA_ARGS__)</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#define ZCLibLog_ALOGFATAL(...) DefaultLoggerAsync().FATAL(__VA_ARGS__)</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#define ZCLibLog_ALOG_ALL(...) DefaultLoggerAsync().ALL(__VA_ARGS__)</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#define ZCLibLog_ALOG_TRACE(...) DefaultLoggerAsync().TRACE(__VA_ARGS__)</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#define ZCLibLog_ALOG_DEBUG(...) DefaultLoggerAsync().DEBUG(__VA_ARGS__)</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#define ZCLibLog_ALOG_INFO(...) DefaultLoggerAsync().INFO(__VA_ARGS__)</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#define ZCLibLog_ALOG_WARN(...) DefaultLoggerAsync().WARN(__VA_ARGS__)</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#define ZCLibLog_ALOG_ERROR(...) DefaultLoggerAsync().ERROR(__VA_ARGS__)</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#define ZCLibLog_ALOG_FATAL(...) DefaultLoggerAsync().FATAL(__VA_ARGS__)</span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_z_c_lib_log.html">ZCLibLog</a> {</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">namespace </span>shortcuts  {</div>
@@ -138,7 +138,7 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif </span><span class="comment">//ZCLIBLOG_LOGGER_SHORTCUTS_HPP</span></div>
-<div class="ttc" id="aclass_z_c_lib_log_1_1executor_html_a2e02ff50fdee4d9548f509f3571f61ee"><div class="ttname"><a href="class_z_c_lib_log_1_1executor.html#a2e02ff50fdee4d9548f509f3571f61ee">ZCLibLog::executor::make</a></div><div class="ttdeci">static executor make(Args &amp;&amp;... args)</div><div class="ttdoc">通过工厂函数构造</div><div class="ttdef"><b>Definition</b> logger_types.hpp:152</div></div>
+<div class="ttc" id="aclass_z_c_lib_log_1_1executor_html_a2e02ff50fdee4d9548f509f3571f61ee"><div class="ttname"><a href="class_z_c_lib_log_1_1executor.html#a2e02ff50fdee4d9548f509f3571f61ee">ZCLibLog::executor::make</a></div><div class="ttdeci">static executor make(Args &amp;&amp;... args)</div><div class="ttdoc">通过工厂函数构造</div><div class="ttdef"><b>Definition</b> logger_types.hpp:161</div></div>
 <div class="ttc" id="anamespace_z_c_lib_log_html"><div class="ttname"><a href="namespace_z_c_lib_log.html">ZCLibLog</a></div><div class="ttdoc">ZCLibLog的命名空间</div><div class="ttdef"><b>Definition</b> android_log.hpp:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

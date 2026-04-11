@@ -6,6 +6,7 @@
 #define ZCLIBLOG_LOGGER_TYPES_HPP
 
 #include <string>
+#include <chrono>
 #include <thread>
 #include <memory>
 #include <type_traits>
@@ -53,6 +54,10 @@ namespace ZCLibLog {
 
     #undef ZCLIBLOG_HELPER_LEVELS
 
+    /**
+     * @struct LogPack
+     * @brief Log格式化的参数包
+     */
     struct LogPack {
         /// @brief 该日志的名字
         const std::string* name = {};
@@ -62,6 +67,10 @@ namespace ZCLibLog {
         LogLevel level = {};
     };
 
+    /**
+     * @struct LogLevelCfg
+     * @brief Log等级范围
+     */
     struct LogLevelCfg {
         /// @brief 配置的最低等级
         LogLevel min_level;
