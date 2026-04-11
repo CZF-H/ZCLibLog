@@ -7,11 +7,7 @@
 #include "ZCLibLog/formatters/snprintf.hpp"
 #include "ZCLibLog/executors/cstdio.hpp"
 
-#include <tinyformat.h>
-
-#include "ZCLibLog/formatters/tp_absl_strformat.hpp"
-
-using LoggerType = ZCLibLog::LoggerSync<ZCLibLog::formatters::absl_str_format>;
+using LoggerType = ZCLibLog::LoggerSync<ZCLibLog::formatters::snprintf>;
 LoggerType Logger{
     ZCLibLog::PROJECT_NAME,
 };
