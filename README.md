@@ -66,7 +66,7 @@ int main() {
 int main() {
     ZCLibLog::LoggerSync<> logger{"DefaultFmt"};
 
-    logger.bind_executor(ZCLibLog::executor::make<ZCLibLog::executors::iostream>(true));
+    logger.bind_executor(ZCLibLog::executor::make<ZCLibLog::executors::iostream>());
     logger.DEBUG("id=%d user=%s", 42, "alice");
 }
 ```
