@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.31.6)
+cmake_minimum_required(VERSION 3.28.3)
 project(ZCLibLog)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 11)
 
 add_executable(${PROJECT_NAME}_Example main.cpp)
 
