@@ -303,7 +303,7 @@ cmake --build build -j
 
 ## 📢 Statement
 
-此文档使用ChatGPT Codex生成，如内容有误请您谅解，感谢指出错误，谢谢
+This document was generated using ChatGPT Codex. Please forgive any errors in the content, and thank you for pointing out mistakes. Thank you.
 
 ---
 
