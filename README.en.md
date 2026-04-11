@@ -32,7 +32,7 @@ You can replace any layer independently.
 
 ## 2. Quick start
 
-### 2.1 Sync Logger + default formatter (`csnprintf`)
+### 2.1 Sync Logger + default formatter (`snprintf`)
 
 ```cpp
 #include "ZCLibLog/logger_sync.hpp"
@@ -83,26 +83,30 @@ int main() {
 
 ### 3.1 Formatter
 
-| Name                      | Style                     | Notes                             |
-|---------------------------|---------------------------|-----------------------------------|
-| `formatters::csnprintf`   | `printf`                  | default, C++11-friendly           |
-| `formatters::format`      | `std::format_string`      | C++20 compile-time checked format |
-| `formatters::vformat`     | `std::string_view + args` | C++20 runtime format string       |
-| `formatters::android_log` | Android style             | Logcat-oriented                   |
+|                File                 |                Style                |               Notes               |
+|:-----------------------------------:|:-----------------------------------:|:---------------------------------:|
+|    `formatters/android_log。hpp`     |        Android Logcat style         |          Logcat-oriented          |
+|       `formatters/format.hpp`       |         C++20 `std::format`         | C++20 compile-time checked format |
+|      `formatters/snprintf.hpp`      |            C `snprintf`             |      default, C++11-friendly      |
+| `formatters/tp_absl_str_format.hpp` |      Abseil `absl::StrFormat`       |       absl third-party lib        |
+|  `formatters/tp_boost_format.hpp`   |        Boost `boost::format`        |       boost third-party lib       |
+|     `formatters/tp_fmtlib.hpp`      | fmtlib `fmt::format`/`fmt::vformat` |      fmtlib third-party lib       |
+|   `formatters/tp_tinyformat.hpp`    |   tinyformat `tinyformat::format`   |    tinyformat third-party lib     |
+|      `formatters/vformat.hpp`       |        C++20 `std::vformat`         |    C++20 runtime format string    |
 
 ### 3.2 Executor
 
-| Name                     | Output                 |
-|--------------------------|------------------------|
-| `executors::cstdio`      | `stdout/stderr`        |
-| `executors::cfwrite`     | `FILE*` (`fwrite`)     |
-| `executors::cfputs`      | `FILE*` (`fputs`)      |
-| `executors::cputs`       | C output               |
-| `executors::iostream`    | `std::cout/std::cerr`  |
-| `executors::ostream`     | any `std::ostream&`    |
-| `executors::print`       | print wrapper          |
-| `executors::lambda`      | lambda callback bridge |
-| `executors::android_log` | Android Logcat         |
+|            File             |         Output         |
+|:---------------------------:|:----------------------:|
+| `executors/android_log.hpp` |     Android Logcat     |
+|   `executors/cfputs.hpp`    |    `FILE*`（`fputs`）    |
+|   `executors/cfwrite.hpp`   |   `FILE*`（`fwrite`）    |
+|    `executors/cputs.hpp`    |        C output        |
+|   `executors/cstdio.hpp`    |    `stdout/stderr`     |
+|  `executors/iostream.hpp`   | `std::cout/std::cerr`  |
+|   `executors/lambda.hpp`    | Lambda callback bridge |
+|   `executors/ostream.hpp`   |  any `std::ostream&`   |
+|    `executors/print.hpp`    |  C++23 print wrapper   |
 
 ---
 
@@ -235,10 +239,10 @@ If you need logger-level strategies (context injection, custom routing, selectiv
 
 ```cpp
 #include "ZCLibLog/logger_base.hpp"
-#include "ZCLibLog/formatters/csnprintf.hpp"
+#include "ZCLibLog/formatters/snprintf.hpp"
 
 namespace MyLog {
-    template <typename Formatter = ZCLibLog::formatters::csnprintf>
+    template <typename Formatter = ZCLibLog::formatters::snprintf>
     struct MyLogger : ZCLibLog::BaseLogger<Formatter> {
         using Base = ZCLibLog::BaseLogger<Formatter>;
         using Base::Base;

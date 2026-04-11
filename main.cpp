@@ -4,14 +4,17 @@
 #include "ZCLibLog/logger_async.hpp"
 #include "ZCLibLog/logger_shortcuts.hpp"
 
-#include "ZCLibLog/formatters/csnprintf.hpp"
+#include "ZCLibLog/formatters/snprintf.hpp"
 #include "ZCLibLog/executors/cstdio.hpp"
 
-using LoggerType = ZCLibLog::LoggerSync<>;
+#include <tinyformat.h>
+
+#include "ZCLibLog/formatters/tp_absl_strformat.hpp"
+
+using LoggerType = ZCLibLog::LoggerSync<ZCLibLog::formatters::absl_str_format>;
 LoggerType Logger{
     ZCLibLog::PROJECT_NAME,
 };
-
 
 int main() {
     using namespace ZCLibLog;

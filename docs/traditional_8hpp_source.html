@@ -114,8 +114,8 @@ $(function() { codefold.init(0); });
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            <span class="keywordflow">if</span> (!this-&gt;<a class="code hl_function" href="class_z_c_lib_log_1_1_log_tag_base.html#a5553f477d17881f236563c9574791ad5">check_executable</a>()) <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            std::string Formatted = Logger::m_formatter::do_format(</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                this-&gt;<a class="code hl_function" href="class_z_c_lib_log_1_1_log_tag_base.html#a5559fa40bb37a8e0e8d55490867d7dad">get_log_pack</a>(),</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                std::forward&lt;Fmt&amp;&amp;&gt;(fmt),</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                std::forward&lt;Args&amp;&amp;&gt;(args)...</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                std::forward&lt;Fmt&gt;(fmt),</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                std::forward&lt;Args&gt;(args)...</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            );</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            this-&gt;<a class="code hl_variable" href="class_z_c_lib_log_1_1_log_tag_base.html#aced62fad771b6535617a86e582830f84">m_logger</a>-&gt;execute(Formatted, this-&gt;<a class="code hl_function" href="class_z_c_lib_log_1_1_log_tag_base.html#a2f0e7969a0930276584120ab6167b728">level</a>());</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }</div>

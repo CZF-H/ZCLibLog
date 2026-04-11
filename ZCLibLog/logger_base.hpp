@@ -22,8 +22,8 @@
 #include "inside/logger_constants.hpp"
 
 #include "logger_configurations.h"
-#if ZCLIBLOG_LOGGER_CONFIGURATIONS_DEFAULT_CSNPRINTF
-#include "formatters/csnprintf.hpp"
+#if ZCLIBLOG_LOGGER_CONFIGURATIONS_DEFAULT_SNPRINTF
+#include "formatters/snprintf.hpp"
 #endif
 
 #include <type_traits>
@@ -49,8 +49,8 @@ namespace ZCLibLog {
      */
     template <
         typename Formatter
-        #if ZCLIBLOG_LOGGER_CONFIGURATIONS_DEFAULT_CSNPRINTF
-        = formatters::csnprintf
+        #if ZCLIBLOG_LOGGER_CONFIGURATIONS_DEFAULT_SNPRINTF
+        = formatters::snprintf
         #endif
     >
     class BaseLogger {

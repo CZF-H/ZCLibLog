@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.10.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ZCLibLog: ZCLibLog/formatters/snprintf.hpp 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">ZCLibLog
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.10.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">载入中...</div>
+<div class="SRStatus" id="Searching">搜索中...</div>
+<div class="SRStatus" id="NoMatches">未找到</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_5f71cbd69de711eaebafa5a61b512c59.html">ZCLibLog</a></li><li class="navelem"><a class="el" href="dir_cd93620e6c31c7c1c93f04eb184acd1d.html">formatters</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#namespaces">命名空间</a>  </div>
+  <div class="headertitle"><div class="title">snprintf.hpp 文件参考</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="basic__formatter_8hpp_source.html">basic_formatter.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="traditional_8hpp_source.html">format_apis/traditional.hpp</a>&quot;</code><br />
+<code>#include &lt;ctime&gt;</code><br />
+<code>#include &lt;cstdio&gt;</code><br />
+<code>#include &lt;array&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+snprintf.hpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="snprintf_8hpp__incl.png" border="0" usemap="#a_z_c_lib_log_2formatters_2snprintf_8hpp" alt=""/></div>
+<map name="a_z_c_lib_log_2formatters_2snprintf_8hpp" id="a_z_c_lib_log_2formatters_2snprintf_8hpp">
+<area shape="rect" title=" " alt="" coords="378,5,518,48"/>
+<area shape="rect" href="basic__formatter_8hpp.html" title=" " alt="" coords="88,171,224,197"/>
+<area shape="poly" title=" " alt="" coords="375,36,338,45,295,58,252,75,214,98,187,126,169,158,165,155,183,123,210,94,250,70,293,53,337,40,380,34"/>
+<area shape="rect" href="traditional_8hpp.html" title=" " alt="" coords="224,96,398,123"/>
+<area shape="poly" title=" " alt="" coords="410,50,347,90,344,86,415,47"/>
+<area shape="rect" title=" " alt="" coords="421,96,475,123"/>
+<area shape="poly" title=" " alt="" coords="449,46,450,81,446,79,447,51"/>
+<area shape="rect" title=" " alt="" coords="498,96,555,123"/>
+<area shape="poly" title=" " alt="" coords="469,46,506,85,501,84,468,51"/>
+<area shape="rect" title=" " alt="" coords="579,96,629,123"/>
+<area shape="poly" title=" " alt="" coords="488,46,569,88,564,89,488,51"/>
+<area shape="rect" href="logger__types_8hpp.html" title=" " alt="" coords="154,245,324,272"/>
+<area shape="poly" title=" " alt="" coords="171,195,216,235,210,235,170,200"/>
+<area shape="rect" title=" " alt="" coords="5,320,59,347"/>
+<area shape="poly" title=" " alt="" coords="203,275,74,320,72,315,202,270"/>
+<area shape="rect" title=" " alt="" coords="83,320,144,347"/>
+<area shape="poly" title=" " alt="" coords="219,272,149,314,147,310,214,273"/>
+<area shape="rect" title=" " alt="" coords="167,320,225,347"/>
+<area shape="poly" title=" " alt="" coords="234,271,213,309,209,305,229,274"/>
+<area shape="rect" title=" " alt="" coords="248,320,317,347"/>
+<area shape="poly" title=" " alt="" coords="248,270,270,307,265,306,245,275"/>
+<area shape="rect" title=" " alt="" coords="342,320,424,347"/>
+<area shape="poly" title=" " alt="" coords="264,270,346,312,341,313,263,275"/>
+<area shape="rect" href="logger__macros_8h.html" title=" " alt="" coords="448,320,565,347"/>
+<area shape="poly" title=" " alt="" coords="286,270,448,315,443,316,285,275"/>
+<area shape="rect" href="basic__format__api_8hpp.html" title=" " alt="" coords="249,171,394,197"/>
+<area shape="poly" title=" " alt="" coords="314,121,320,156,315,154,311,126"/>
+<area shape="poly" title=" " alt="" coords="309,197,266,237,263,233,305,199"/>
+</map>
+</div>
+</div>
+<p><a href="snprintf_8hpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_z_c_lib_log_1_1formatters_1_1snprintf.html">ZCLibLog::formatters::snprintf</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">基于C语言"snprintf"的格式化接口  <a href="struct_z_c_lib_log_1_1formatters_1_1snprintf.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+命名空间</h2></td></tr>
+<tr class="memitem:namespace_z_c_lib_log" id="r_namespace_z_c_lib_log"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_z_c_lib_log.html">ZCLibLog</a></td></tr>
+<tr class="memdesc:namespace_z_c_lib_log"><td class="mdescLeft">&#160;</td><td class="mdescRight">ZCLibLog的命名空间 <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespace_z_c_lib_log_1_1formatters" id="r_namespace_z_c_lib_log_1_1formatters"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_z_c_lib_log_1_1formatters.html">ZCLibLog::formatters</a></td></tr>
+<tr class="memdesc:namespace_z_c_lib_log_1_1formatters"><td class="mdescLeft">&#160;</td><td class="mdescRight">预定的一些formatter <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0
+</small></address>
+</body>
+</html>

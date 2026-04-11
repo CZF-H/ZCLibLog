@@ -8,7 +8,7 @@
 
 ---
 
-### **简体中文** | [English](./README.en.md) 
+### **简体中文** | [English](./README.en.md)
 
 ---
 
@@ -32,7 +32,7 @@ ZCLibLog 是头文件风格日志库，核心设计是：
 
 ## 2. 快速开始
 
-### 2.1 同步 Logger + 默认 Formatter（`csnprintf`）
+### 2.1 同步 Logger + 默认 Formatter（`snprintf`）
 
 ```cpp
 #include "ZCLibLog/logger_sync.hpp"
@@ -83,26 +83,30 @@ int main() {
 
 ### 3.1 Formatter
 
-| 名称                        | 风格                        | 说明                  |
-|---------------------------|---------------------------|---------------------|
-| `formatters::csnprintf`   | `printf`                  | 默认方案，兼容 C++11，跨平台稳妥 |
-| `formatters::format`      | `std::format_string`      | C++20 编译期检查风格       |
-| `formatters::vformat`     | `std::string_view + args` | C++20 动态 format 字符串 |
-| `formatters::android_log` | Android 风格                | 面向 Logcat           |
+|                 文件                  |                 风格                  |             说明             |
+|:-----------------------------------:|:-----------------------------------:|:--------------------------:|
+|    `formatters/android_log。hpp`     |          Android Logcat风格           |         面向 Logcat          |
+|       `formatters/format.hpp`       |         C++20 `std::format`         |       C++20 编译期检查风格        |
+|      `formatters/snprintf.hpp`      |            C `snprintf`             |    默认方案，兼容 C++11，跨平台稳妥     |
+| `formatters/tp_absl_str_format.hpp` |      Abseil `absl::StrFormat`       |    absl third-party lib    |
+|  `formatters/tp_boost_format.hpp`   |        Boost `boost::format`        |   boost third-party lib    |
+|     `formatters/tp_fmtlib.hpp`      | fmtlib `fmt::format`/`fmt::vformat` |   fmtlib third-party lib   |
+|   `formatters/tp_tinyformat.hpp`    |   tinyformat `tinyformat::format`   | tinyformat third-party lib |
+|      `formatters/vformat.hpp`       |        C++20 `std::vformat`         |    C++20 动态 format 字符串     |
 
 ### 3.2 Executor
 
-| 名称                       | 输出目标                  |
-|--------------------------|-----------------------|
-| `executors::cstdio`      | `stdout/stderr`       |
-| `executors::cfwrite`     | `FILE*`（`fwrite`）     |
-| `executors::cfputs`      | `FILE*`（`fputs`）      |
-| `executors::cputs`       | C 标准输出                |
-| `executors::iostream`    | `std::cout/std::cerr` |
-| `executors::ostream`     | 任意 `std::ostream&`    |
-| `executors::print`       | 标准输出封装                |
-| `executors::lambda`      | Lambda 回调桥接           |
-| `executors::android_log` | Android Logcat        |
+|             文件              |         输出目标          |
+|:---------------------------:|:---------------------:|
+| `executors/android_log.hpp` |    Android Logcat     |
+|   `executors/cfputs.hpp`    |   `FILE*`（`fputs`）    |
+|   `executors/cfwrite.hpp`   |   `FILE*`（`fwrite`）   |
+|    `executors/cputs.hpp`    |        C 标准输出         |
+|   `executors/cstdio.hpp`    |    `stdout/stderr`    |
+|  `executors/iostream.hpp`   | `std::cout/std::cerr` |
+|   `executors/lambda.hpp`    |      Lambda 回调桥接      |
+|   `executors/ostream.hpp`   |  任意 `std::ostream&`   |
+|    `executors/print.hpp`    |      C++23标准输出封装      |
 
 ---
 
@@ -263,19 +267,20 @@ struct HttpExecutor : ZCLibLog::executor_api {
 ## 6. 自定义 Logger（继承 `BaseLogger`）
 
 当你需要在 Logger 层做统一策略（例如：
+
 - 额外上下文注入，
 - 多播路由，
 - 自定义执行策略），
-可直接继承 `BaseLogger<Formatter>`。
+  可直接继承 `BaseLogger<Formatter>`。
 
 ### 6.1 最小可用自定义 Logger
 
 ```cpp
 #include "ZCLibLog/logger_base.hpp"
-#include "ZCLibLog/formatters/csnprintf.hpp"
+#include "ZCLibLog/formatters/snprintf.hpp"
 
 namespace MyLog {
-    template <typename Formatter = ZCLibLog::formatters::csnprintf>
+    template <typename Formatter = ZCLibLog::formatters::snprintf>
     struct MyLogger : ZCLibLog::BaseLogger<Formatter> {
         using Base = ZCLibLog::BaseLogger<Formatter>;
         using Base::Base;
@@ -322,7 +327,7 @@ void execute(const std::string& message, const ZCLibLog::LogLevel level) const {
 1. **优先 `executor::make<T>(...)`，谨慎裸指针。**  
    裸指针交给 `executor` 后不要手动 delete。
 2. **高频路径避免重分配。**  
-   Formatter 内可复用 `thread_local` buffer（内置 `csnprintf` 已示例）。
+   Formatter 内可复用 `thread_local` buffer（内置 `snprintf` 已示例）。
 3. **把“慢 I/O”下沉到异步。**  
    网络、磁盘大量写入建议用 `LoggerAsync` + 队列化 Executor。
 4. **日志格式尽量结构化。**  
@@ -352,17 +357,21 @@ void execute(const std::string& message, const ZCLibLog::LogLevel level) const {
 ## 9. 常见问题（FAQ）
 
 ### Q1：为什么 `LoggerSync<>` 不传 Formatter 也能用？
-因为默认配置下启用了 `csnprintf`（见 `logger_configurations.h`）。
+
+因为默认配置下启用了 `snprintf`（见 `logger_configurations.h`）。
 
 ### Q2：我应该用 `format` 还是 `vformat`？
+
 - 固定格式字符串、追求类型安全：`format`
 - 运行时动态模板：`vformat`
-- 最大兼容（C++11）：`csnprintf`
+- 最大兼容（C++11）：`snprintf`
 
 ### Q3：自定义 Formatter 报错“must be format_api”？
+
 说明你的 Formatter 没有继承任何 `format_api` 类型。
 
 ### Q4：我能否扩展日志等级？
+
 可以，在 `inside/logger_types.hpp` 的等级宏处可扩展（注意与现有比较逻辑一致）。
 
 ---

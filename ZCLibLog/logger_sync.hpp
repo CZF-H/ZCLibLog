@@ -18,8 +18,8 @@ namespace ZCLibLog {
      */
     template <
         typename Formatter
-        #if ZCLIBLOG_LOGGER_CONFIGURATIONS_DEFAULT_CSNPRINTF
-        = formatters::csnprintf
+        #if ZCLIBLOG_LOGGER_CONFIGURATIONS_DEFAULT_SNPRINTF
+        = formatters::snprintf
         #endif
     >
     struct LoggerSync : BaseLogger<Formatter> {

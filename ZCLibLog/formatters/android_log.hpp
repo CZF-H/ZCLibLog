@@ -8,6 +8,7 @@
 #ifndef ZCLIBLOG_FORMATTERS_ANDROID_LOG_HPP
 #define ZCLIBLOG_FORMATTERS_ANDROID_LOG_HPP
 
+#include "basic_formatter.hpp"
 #include "format_apis/traditional.hpp"
 #include <ctime>
 #include <cstdio>

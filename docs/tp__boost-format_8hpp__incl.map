@@ -1,13 +1,15 @@
 <map id="ZCLibLog/formatters/tp_boost&#45;format.hpp" name="ZCLibLog/formatters/tp_boost&#45;format.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="397,5,539,48"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="456,5,597,48"/>
 <area shape="rect" id="Node000002" href="$traditional_8hpp.html" title=" " alt="" coords="152,96,326,123"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="407,50,291,93,288,88,411,47"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="453,49,300,94,298,89,458,46"/>
 <area shape="rect" id="Node000011" title=" " alt="" coords="350,96,469,123"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="455,47,429,85,426,81,451,50"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="499,47,442,89,439,85,494,50"/>
 <area shape="rect" id="Node000012" title=" " alt="" coords="494,96,560,123"/>
-<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="484,46,511,83,506,83,482,51"/>
-<area shape="rect" id="Node000013" title=" " alt="" coords="584,96,653,123"/>
-<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="507,46,584,88,579,89,507,51"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="528,46,529,81,524,79,525,51"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="584,96,637,123"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="549,46,589,85,584,85,548,51"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="662,96,730,123"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="570,46,658,89,653,89,570,51"/>
 <area shape="rect" id="Node000003" href="$basic__format__api_8hpp.html" title=" " alt="" coords="166,171,311,197"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="240,121,241,156,236,154,237,126"/>
 <area shape="rect" id="Node000004" href="$logger__types_8hpp.html" title=" " alt="" coords="180,245,298,288"/>

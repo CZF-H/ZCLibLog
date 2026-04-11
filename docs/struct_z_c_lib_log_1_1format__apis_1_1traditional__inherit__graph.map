@@ -1,15 +1,17 @@
 <map id="ZCLibLog::format_apis::traditional" name="ZCLibLog::format_apis::traditional">
-<area shape="rect" id="Node000001" title="传统格式化API" alt="" coords="304,123,469,208"/>
-<area shape="rect" id="Node000003" href="$struct_z_c_lib_log_1_1formatters_1_1android__log.html" title="为&quot;__android_log_write&quot;设计的基于C语言&quot;snprintf&quot;的格式化接口" alt="" coords="5,256,139,341"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="288,202,152,258,140,264,138,259,150,254,292,198"/>
-<area shape="rect" id="Node000004" href="$struct_z_c_lib_log_1_1formatters_1_1boost__format.html" title="基于boost::format" alt="" coords="163,256,296,341"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="328,216,281,258,278,254,323,218"/>
-<area shape="rect" id="Node000005" href="$struct_z_c_lib_log_1_1formatters_1_1csnprintf.html" title="基于C语言&quot;snprintf&quot;的格式化接口" alt="" coords="320,256,454,341"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="389,221,389,258,385,255,385,225"/>
-<area shape="rect" id="Node000006" href="$struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1vformat.html" title="基于第三方的fmtlib" alt="" coords="477,256,611,341"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="449,215,497,256,492,256,447,220"/>
-<area shape="rect" id="Node000007" href="$struct_z_c_lib_log_1_1formatters_1_1vformat.html" title="基于C++20的&quot;std::vformat&quot;+&quot;std::format&quot;的动态格式化接口" alt="" coords="635,256,768,341"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="484,198,624,254,637,262,632,261,622,258,483,203"/>
-<area shape="rect" id="Node000002" href="$struct_z_c_lib_log_1_1format__api.html" title="定义了一些简化写法" alt="" coords="319,5,455,75"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="388,87,389,124,384,121,385,92"/>
+<area shape="rect" id="Node000001" title="传统格式化API" alt="" coords="383,123,548,208"/>
+<area shape="rect" id="Node000003" href="$struct_z_c_lib_log_1_1formatters_1_1absl__str__format.html" title="基于absl::StrFormat" alt="" coords="5,256,139,363"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="366,187,263,217,206,236,152,258,140,264,137,260,150,254,205,231,261,212,371,185"/>
+<area shape="rect" id="Node000004" href="$struct_z_c_lib_log_1_1formatters_1_1android__log.html" title="为&quot;__android_log_write&quot;设计的基于C语言&quot;snprintf&quot;的格式化接口" alt="" coords="163,267,296,352"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="380,214,310,258,292,269,290,264,307,254,375,216"/>
+<area shape="rect" id="Node000005" href="$struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1vformat.html" title="基于第三方的fmtlib" alt="" coords="320,267,454,352"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="437,219,411,269,408,265,433,222"/>
+<area shape="rect" id="Node000006" href="$struct_z_c_lib_log_1_1formatters_1_1snprintf.html" title="基于C语言&quot;snprintf&quot;的格式化接口" alt="" coords="477,267,611,352"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="497,219,524,268,519,266,494,223"/>
+<area shape="rect" id="Node000007" href="$struct_z_c_lib_log_1_1formatters_1_1tinyformat_1_1format.html" title="基于tinyformat::format" alt="" coords="635,267,768,352"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="554,213,624,254,643,267,637,266,621,258,553,218"/>
+<area shape="rect" id="Node000008" href="$struct_z_c_lib_log_1_1formatters_1_1vformat.html" title="基于C++20的&quot;std::vformat&quot;+&quot;std::format&quot;的动态格式化接口" alt="" coords="792,267,926,352"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="563,183,670,212,726,231,781,254,803,267,798,266,779,258,725,236,668,217,562,189"/>
+<area shape="rect" id="Node000002" href="$struct_z_c_lib_log_1_1format__api.html" title="定义了一些简化写法" alt="" coords="398,5,533,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="467,87,468,124,463,121,464,91"/>
 </map>

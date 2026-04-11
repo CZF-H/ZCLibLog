@@ -11,6 +11,7 @@
 // file_wrapper
 #include "../../inside/logger_types.hpp"
 
+// NOLINTNEXTLINE
 namespace ZCLibLog {
     /**
      * @namespace ZCLibLog::format_apis

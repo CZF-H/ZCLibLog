@@ -34,11 +34,11 @@ namespace ZCLibLog {
          * @param args 格式化可变参数
          */
         template <typename... Args>
-        void operator()(fmt::format_string<Args...>&& fmt, Args&&... args) const {
+        void operator()(const fmt::format_string<Args...>& fmt, Args&&... args) const {
             if (!this->check_executable()) return;
             const std::string Formatted = Logger::m_formatter::do_format(
                 this->get_log_pack(),
-                std::forward<fmt::format_string<Args...>&&>(fmt),
+                fmt,
                 std::forward<Args>(args)...
             );
             this->m_logger->execute(Formatted, this->level());

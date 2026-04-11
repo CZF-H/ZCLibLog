@@ -8,6 +8,7 @@
 #ifndef ZCLIBLOG_FORMATTERS_VFORMAT_HPP
 #define ZCLIBLOG_FORMATTERS_VFORMAT_HPP
 
+#include "basic_formatter.hpp"
 #include "format_apis/traditional.hpp"
 #include <format>
 #include <chrono>
@@ -28,7 +29,7 @@ namespace ZCLibLog::formatters {
             }
             else {
                 try {
-                    f_msg = std::vformat(fmt, std::make_format_args(args...));
+                    f_msg = std::vformat(fmt, std::make_format_args(std::forward<Args>(args)...));
                 } catch (const std::format_error& e) {
                     return e.what();
                 }

@@ -8,6 +8,7 @@
 #ifndef ZCLIBLOG_FORMATTERS_FORMAT_HPP
 #define ZCLIBLOG_FORMATTERS_FORMAT_HPP
 
+#include "basic_formatter.hpp"
 #include "format_apis/stdcxx20format.hpp"
 #include <format>
 #include <chrono>
@@ -27,7 +28,7 @@ namespace ZCLibLog::formatters {
                 f_msg = fmt.get();
             }
             else {
-                f_msg = std::format(std::forward<std::format_string<Args...>&&>(fmt), std::forward<Args&&>(args)...);
+                f_msg = std::format(fmt, std::forward<Args>(args)...);
             }
 
             const auto tp = std::chrono::system_clock::time_point(std::chrono::milliseconds(pack.time));

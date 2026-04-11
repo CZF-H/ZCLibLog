@@ -1,22 +1,28 @@
 <map id="ZCLibLog/formatters/format_apis/basic_format_api.hpp" name="ZCLibLog/formatters/format_apis/basic_format_api.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="241,5,414,64"/>
-<area shape="rect" id="Node000002" href="$stdcxx20format_8hpp.html" title=" " alt="" coords="5,112,218,155"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,72,159,114,157,109,252,69"/>
-<area shape="rect" id="Node000004" href="$format__apis_2tp__fmtlib_8hpp.html" title=" " alt="" coords="241,112,414,155"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="329,77,330,113,325,111,326,81"/>
-<area shape="rect" id="Node000006" href="$traditional_8hpp.html" title=" " alt="" coords="476,112,654,155"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="412,67,516,111,511,112,412,73"/>
-<area shape="rect" id="Node000003" href="$format_8hpp.html" title=" " alt="" coords="41,203,182,245"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="113,168,114,203,109,201,110,172"/>
-<area shape="rect" id="Node000005" href="$tp__fmtlib_8hpp.html" title=" " alt="" coords="231,203,371,245"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="319,168,309,204,305,201,315,171"/>
-<area shape="poly" id="edge9_Node000006_Node000005" title=" " alt="" coords="491,160,363,205,362,199,486,161"/>
-<area shape="rect" id="Node000007" href="$formatters_2android__log_8hpp.html" title=" " alt="" coords="395,203,535,245"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="533,164,489,204,487,200,528,166"/>
-<area shape="rect" id="Node000008" href="$csnprintf_8hpp.html" title=" " alt="" coords="559,203,699,245"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="590,165,617,203,612,201,587,170"/>
-<area shape="rect" id="Node000009" href="$tp__boost-format_8hpp.html" title=" " alt="" coords="724,203,865,245"/>
-<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="633,158,743,202,738,202,632,163"/>
-<area shape="rect" id="Node000010" href="$vformat_8hpp.html" title=" " alt="" coords="889,203,1030,245"/>
-<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="669,154,877,200,891,206,886,205,876,205,669,159"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="315,5,487,64"/>
+<area shape="rect" id="Node000002" href="$stdcxx20format_8hpp.html" title=" " alt="" coords="5,120,218,163"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="306,72,170,122,168,117,309,68"/>
+<area shape="rect" id="Node000004" href="$format__apis_2tp__absl__strformat_8hpp.html" title=" " alt="" coords="241,112,382,171"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="369,74,338,114,334,110,364,77"/>
+<area shape="rect" id="Node000006" href="$format__apis_2tp__fmtlib_8hpp.html" title=" " alt="" coords="405,120,578,163"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="436,73,477,120,471,119,434,78"/>
+<area shape="rect" id="Node000008" href="$traditional_8hpp.html" title=" " alt="" coords="725,120,903,163"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="502,59,735,119,730,120,502,64"/>
+<area shape="rect" id="Node000003" href="$format_8hpp.html" title=" " alt="" coords="41,219,182,261"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="113,176,114,219,109,217,110,180"/>
+<area shape="rect" id="Node000005" href="$tp__absl__strformat_8hpp.html" title=" " alt="" coords="236,219,387,261"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="313,184,314,220,309,217,310,188"/>
+<area shape="rect" id="Node000007" href="$tp__fmtlib_8hpp.html" title=" " alt="" coords="416,219,556,261"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="491,176,489,220,485,217,488,180"/>
+<area shape="poly" id="edge11_Node000008_Node000007" title=" " alt="" coords="732,167,557,221,556,216,726,168"/>
+<area shape="rect" id="Node000009" href="$formatters_2android__log_8hpp.html" title=" " alt="" coords="580,219,720,261"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="769,170,686,221,684,216,763,172"/>
+<area shape="rect" id="Node000010" href="$snprintf_8hpp.html" title=" " alt="" coords="744,219,884,261"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="816,176,816,220,812,217,812,180"/>
+<area shape="rect" id="Node000011" href="$tp__boost-format_8hpp.html" title=" " alt="" coords="909,219,1050,261"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="863,168,947,219,941,218,862,173"/>
+<area shape="rect" id="Node000012" href="$tp__tinyformat_8hpp.html" title=" " alt="" coords="1075,219,1215,261"/>
+<area shape="poly" id="edge12_Node000008_Node000012" title=" " alt="" coords="900,165,1077,218,1071,218,899,170"/>
+<area shape="rect" id="Node000013" href="$vformat_8hpp.html" title=" " alt="" coords="1239,219,1379,261"/>
+<area shape="poly" id="edge13_Node000008_Node000013" title=" " alt="" coords="919,157,1228,216,1241,221,1236,221,1227,221,918,163"/>
 </map>

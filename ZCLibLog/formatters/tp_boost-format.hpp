@@ -11,16 +11,17 @@
 #include "format_apis/traditional.hpp"
 #include <boost/format.hpp>
 #include <iomanip>
+#include <ctime>
 #include <sstream>
 
 namespace ZCLibLog {
     namespace formatters {
         /**
-         * @struct boost_format
+         * @struct absl_str_format
          * @brief 基于boost::format
          * @author wanjiangzhi
          */
-        struct boost_format : format_apis::traditional  {
+        struct absl_str_format : format_apis::traditional  {
             template <typename... Args>
             static std::string do_format(FLogPack pack, const std::string& fmt, Args&&... args) {
                 std::string f_msg;

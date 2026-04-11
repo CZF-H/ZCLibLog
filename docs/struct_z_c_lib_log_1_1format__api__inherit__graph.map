@@ -1,23 +1,28 @@
 <map id="ZCLibLog::format_api" name="ZCLibLog::format_api">
-<area shape="rect" id="Node000001" title="定义了一些简化写法" alt="" coords="209,5,345,75"/>
-<area shape="rect" id="Node000002" href="$struct_z_c_lib_log_1_1format__apis_1_1fmtlib.html" title="fmtlib API" alt="" coords="5,123,170,208"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,85,153,125,150,121,215,81"/>
-<area shape="rect" id="Node000004" href="$struct_z_c_lib_log_1_1format__apis_1_1stdcxx20format.html" title="C++20 format API" alt="" coords="195,123,360,208"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="278,87,280,124,275,122,276,92"/>
-<area shape="rect" id="Node000006" href="$struct_z_c_lib_log_1_1format__apis_1_1traditional.html" title="传统格式化API" alt="" coords="572,123,737,208"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="359,65,575,136,570,138,359,71"/>
-<area shape="rect" id="Node000003" href="$struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1format.html" title="基于第三方的fmtlib" alt="" coords="21,256,155,341"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="89,221,90,257,85,255,87,225"/>
-<area shape="rect" id="Node000005" href="$struct_z_c_lib_log_1_1formatters_1_1format.html" title="基于C++20的&quot;std::format&quot;的编译期格式化接口" alt="" coords="194,256,328,341"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="272,221,268,258,264,255,269,225"/>
-<area shape="rect" id="Node000007" href="$struct_z_c_lib_log_1_1formatters_1_1android__log.html" title="为&quot;__android_log_write&quot;设计的基于C语言&quot;snprintf&quot;的格式化接口" alt="" coords="352,256,485,341"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="570,214,486,263,484,258,565,216"/>
-<area shape="rect" id="Node000008" href="$struct_z_c_lib_log_1_1formatters_1_1boost__format.html" title="基于boost::format" alt="" coords="509,256,643,341"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="624,219,602,258,599,254,620,222"/>
-<area shape="rect" id="Node000009" href="$struct_z_c_lib_log_1_1formatters_1_1csnprintf.html" title="基于C语言&quot;snprintf&quot;的格式化接口" alt="" coords="666,256,800,341"/>
-<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="688,218,711,257,706,255,686,223"/>
-<area shape="rect" id="Node000010" href="$struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1vformat.html" title="基于第三方的fmtlib" alt="" coords="824,256,957,341"/>
-<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="742,212,827,261,821,260,741,218"/>
-<area shape="rect" id="Node000011" href="$struct_z_c_lib_log_1_1formatters_1_1vformat.html" title="基于C++20的&quot;std::vformat&quot;+&quot;std::format&quot;的动态格式化接口" alt="" coords="981,256,1115,341"/>
-<area shape="poly" id="edge10_Node000006_Node000011" title=" " alt="" coords="752,186,858,215,970,254,984,262,979,261,968,258,857,220,751,191"/>
+<area shape="rect" id="Node000001" title="定义了一些简化写法" alt="" coords="304,5,440,75"/>
+<area shape="rect" id="Node000002" href="$struct_z_c_lib_log_1_1format__apis_1_1absl__str__format.html" title=" " alt="" coords="384,123,549,208"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="407,84,437,123,432,122,406,89"/>
+<area shape="rect" id="Node000004" href="$struct_z_c_lib_log_1_1format__apis_1_1fmtlib.html" title="fmtlib API" alt="" coords="5,123,170,208"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="289,78,184,125,172,130,168,126,181,120,292,74"/>
+<area shape="rect" id="Node000006" href="$struct_z_c_lib_log_1_1format__apis_1_1stdcxx20format.html" title="C++20 format API" alt="" coords="195,123,360,208"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="339,84,311,125,307,121,335,88"/>
+<area shape="rect" id="Node000008" href="$struct_z_c_lib_log_1_1format__apis_1_1traditional.html" title="传统格式化API" alt="" coords="683,123,848,208"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="454,64,685,137,680,139,454,70"/>
+<area shape="rect" id="Node000003" href="$struct_z_c_lib_log_1_1formatters_1_1absl__str__format.html" title="基于absl::StrFormat" alt="" coords="384,256,517,363"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="462,221,458,258,454,255,458,225"/>
+<area shape="rect" id="Node000005" href="$struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1format.html" title="基于第三方的fmtlib" alt="" coords="21,267,155,352"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="89,221,90,267,85,266,87,225"/>
+<area shape="rect" id="Node000007" href="$struct_z_c_lib_log_1_1formatters_1_1format.html" title="基于C++20的&quot;std::format&quot;的编译期格式化接口" alt="" coords="210,267,344,352"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="279,221,280,268,275,266,275,225"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="671,197,600,227,530,258,518,265,516,260,528,254,598,222,666,199"/>
+<area shape="rect" id="Node000009" href="$struct_z_c_lib_log_1_1formatters_1_1android__log.html" title="为&quot;__android_log_write&quot;设计的基于C语言&quot;snprintf&quot;的格式化接口" alt="" coords="856,267,989,352"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="823,215,879,268,874,266,821,220"/>
+<area shape="rect" id="Node000010" href="$struct_z_c_lib_log_1_1formatters_1_1fmtlib_1_1vformat.html" title="基于第三方的fmtlib" alt="" coords="1013,267,1147,352"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="862,195,932,222,1002,254,1023,267,1018,266,1000,258,930,227,861,200"/>
+<area shape="rect" id="Node000011" href="$struct_z_c_lib_log_1_1formatters_1_1snprintf.html" title="基于C语言&quot;snprintf&quot;的格式化接口" alt="" coords="1170,267,1304,352"/>
+<area shape="poly" id="edge11_Node000008_Node000011" title=" " alt="" coords="862,176,1005,204,1084,226,1160,254,1183,267,1177,266,1157,258,1082,231,1004,209,862,181"/>
+<area shape="rect" id="Node000012" href="$struct_z_c_lib_log_1_1formatters_1_1tinyformat_1_1format.html" title="基于tinyformat::format" alt="" coords="541,267,675,352"/>
+<area shape="poly" id="edge12_Node000008_Node000012" title=" " alt="" coords="711,217,655,269,652,265,706,219"/>
+<area shape="rect" id="Node000013" href="$struct_z_c_lib_log_1_1formatters_1_1vformat.html" title="基于C++20的&quot;std::vformat&quot;+&quot;std::format&quot;的动态格式化接口" alt="" coords="698,267,832,352"/>
+<area shape="poly" id="edge13_Node000008_Node000013" title=" " alt="" coords="767,221,767,269,763,265,763,225"/>
 </map>

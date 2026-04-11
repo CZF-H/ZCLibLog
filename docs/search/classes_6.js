@@ -6,10 +6,11 @@ var searchData=
   ['loglevelcfg_3',['LogLevelCfg',['../struct_z_c_lib_log_1_1_log_level_cfg.html',1,'ZCLibLog']]],
   ['logpack_4',['LogPack',['../struct_z_c_lib_log_1_1_log_pack.html',1,'ZCLibLog']]],
   ['logtag_5',['LogTag',['../struct_z_c_lib_log_1_1_log_tag.html',1,'ZCLibLog']]],
-  ['logtag_3c_20format_5fapis_3a_3afmtlib_2c_20logger_20_3e_6',['LogTag&lt; format_apis::fmtlib, Logger &gt;',['../struct_z_c_lib_log_1_1_log_tag_3_01format__apis_1_1fmtlib_00_01_logger_01_4.html',1,'ZCLibLog']]],
-  ['logtag_3c_20format_5fapis_3a_3astdcxx20format_2c_20logger_20_3e_7',['LogTag&lt; format_apis::stdcxx20format, Logger &gt;',['../struct_z_c_lib_log_1_1_log_tag_3_01format__apis_1_1stdcxx20format_00_01_logger_01_4.html',1,'ZCLibLog']]],
-  ['logtag_3c_20format_5fapis_3a_3atraditional_2c_20logger_20_3e_8',['LogTag&lt; format_apis::traditional, Logger &gt;',['../struct_z_c_lib_log_1_1_log_tag_3_01format__apis_1_1traditional_00_01_logger_01_4.html',1,'ZCLibLog']]],
-  ['logtag_3c_20typename_20formatter_3a_3aformat_5fapi_2c_20self_20_3e_9',['LogTag&lt; typename Formatter::Format_API, Self &gt;',['../struct_z_c_lib_log_1_1_log_tag.html',1,'ZCLibLog']]],
-  ['logtagbase_10',['LogTagBase',['../class_z_c_lib_log_1_1_log_tag_base.html',1,'ZCLibLog']]],
-  ['logtagbase_3c_20self_20_3e_11',['LogTagBase&lt; Self &gt;',['../class_z_c_lib_log_1_1_log_tag_base.html',1,'ZCLibLog']]]
+  ['logtag_3c_20format_5fapis_3a_3aabsl_5fstr_5fformat_2c_20logger_20_3e_6',['LogTag&lt; format_apis::absl_str_format, Logger &gt;',['../struct_z_c_lib_log_1_1_log_tag_3_01format__apis_1_1absl__str__format_00_01_logger_01_4.html',1,'ZCLibLog']]],
+  ['logtag_3c_20format_5fapis_3a_3afmtlib_2c_20logger_20_3e_7',['LogTag&lt; format_apis::fmtlib, Logger &gt;',['../struct_z_c_lib_log_1_1_log_tag_3_01format__apis_1_1fmtlib_00_01_logger_01_4.html',1,'ZCLibLog']]],
+  ['logtag_3c_20format_5fapis_3a_3astdcxx20format_2c_20logger_20_3e_8',['LogTag&lt; format_apis::stdcxx20format, Logger &gt;',['../struct_z_c_lib_log_1_1_log_tag_3_01format__apis_1_1stdcxx20format_00_01_logger_01_4.html',1,'ZCLibLog']]],
+  ['logtag_3c_20format_5fapis_3a_3atraditional_2c_20logger_20_3e_9',['LogTag&lt; format_apis::traditional, Logger &gt;',['../struct_z_c_lib_log_1_1_log_tag_3_01format__apis_1_1traditional_00_01_logger_01_4.html',1,'ZCLibLog']]],
+  ['logtag_3c_20typename_20formatter_3a_3aformat_5fapi_2c_20self_20_3e_10',['LogTag&lt; typename Formatter::Format_API, Self &gt;',['../struct_z_c_lib_log_1_1_log_tag.html',1,'ZCLibLog']]],
+  ['logtagbase_11',['LogTagBase',['../class_z_c_lib_log_1_1_log_tag_base.html',1,'ZCLibLog']]],
+  ['logtagbase_3c_20self_20_3e_12',['LogTagBase&lt; Self &gt;',['../class_z_c_lib_log_1_1_log_tag_base.html',1,'ZCLibLog']]]
 ];

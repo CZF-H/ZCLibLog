@@ -22,7 +22,7 @@ var searchData=
   ['zcliblog_5flog_5ftrace_19',['ZCLibLog_LOG_TRACE',['../logger__shortcuts_8hpp.html#a351ebb6c6fa5035e0de1c79b7562f75f',1,'logger_shortcuts.hpp']]],
   ['zcliblog_5flog_5fwarn_20',['ZCLibLog_LOG_WARN',['../logger__shortcuts_8hpp.html#ad2d7084666b3eeacfc93b5f3b36df476',1,'logger_shortcuts.hpp']]],
   ['zcliblog_5flogger_5fconfigurations_5fasync_5fthread_5fnum_21',['ZCLIBLOG_LOGGER_CONFIGURATIONS_ASYNC_THREAD_NUM',['../logger__configurations_8h.html#ada96330de563d0bf28726e8a7a19721a',1,'logger_configurations.h']]],
-  ['zcliblog_5flogger_5fconfigurations_5fdefault_5fcsnprintf_22',['ZCLIBLOG_LOGGER_CONFIGURATIONS_DEFAULT_CSNPRINTF',['../logger__configurations_8h.html#a5eee7e137312f32dca894a278f903daa',1,'logger_configurations.h']]],
+  ['zcliblog_5flogger_5fconfigurations_5fdefault_5fsnprintf_22',['ZCLIBLOG_LOGGER_CONFIGURATIONS_DEFAULT_SNPRINTF',['../logger__configurations_8h.html#abe95eaaade7028b67ca023caef1516b7',1,'logger_configurations.h']]],
   ['zcliblog_5flogger_5fconfigurations_5flogger_5fmutex_23',['ZCLIBLOG_LOGGER_CONFIGURATIONS_LOGGER_MUTEX',['../logger__configurations_8h.html#a4770d9a76000b7b5c4b4c9bee3659c3e',1,'logger_configurations.h']]],
   ['zcliblog_5fnodiscard_24',['ZCLibLog_NODISCARD',['../logger__macros_8h.html#a4654cad2bbb1397cc61c8b2fbd649b41',1,'logger_macros.h']]]
 ];

@@ -37,8 +37,8 @@ namespace ZCLibLog {
             if (!this->check_executable()) return;
             std::string Formatted = Logger::m_formatter::do_format(
                 this->get_log_pack(),
-                std::forward<Fmt&&>(fmt),
-                std::forward<Args&&>(args)...
+                std::forward<Fmt>(fmt),
+                std::forward<Args>(args)...
             );
             this->m_logger->execute(Formatted, this->level());
         }

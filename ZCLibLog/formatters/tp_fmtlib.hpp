@@ -8,6 +8,7 @@
 #ifndef ZCLIBLOG_FORMATTERS_TP_FMTLIB_HPP
 #define ZCLIBLOG_FORMATTERS_TP_FMTLIB_HPP
 
+#include "basic_formatter.hpp"
 #include "format_apis/tp_fmtlib.hpp"
 #include "format_apis/traditional.hpp"
 #include <fmt/format.h>
@@ -29,13 +30,13 @@ namespace ZCLibLog {
              */
             struct format : format_apis::fmtlib {
                 template <typename... Args>
-                static std::string do_format(FLogPack pack, fmt::format_string<Args...>&& fmt, Args&&... args) {
+                static std::string do_format(FLogPack pack, const fmt::format_string<Args...>& fmt, Args&&... args) {
                     std::string f_msg;
                     if (sizeof...(args) == 0) {
                         f_msg = fmt.get().data();
                     } else {
                         try {
-                            f_msg = fmt::format(fmt, args...);
+                            f_msg = fmt::format(fmt, std::forward<Args>(args)...);
                         } catch (fmt::format_error& e) {
                             return e.what();
                         }
@@ -82,7 +83,7 @@ namespace ZCLibLog {
                         f_msg = fmt.data();
                     } else {
                         try {
-                            f_msg = fmt::vformat(fmt, fmt::make_format_args(args...));
+                            f_msg = fmt::vformat(fmt, fmt::make_format_args(stdargs...));
                         } catch (fmt::format_error& e) {
                             return e.what();
                         }
