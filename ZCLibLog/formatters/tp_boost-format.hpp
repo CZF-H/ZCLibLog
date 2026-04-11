@@ -17,7 +17,7 @@
 namespace ZCLibLog {
     namespace formatters {
         /**
-         * @struct absl_str_format
+         * @struct boost_format
          * @brief 基于boost::format
          * @author wanjiangzhi
          */
