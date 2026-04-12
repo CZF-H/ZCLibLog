@@ -13,7 +13,6 @@
 #include <algorithm>
 #include <stdexcept>
 #include <vector>
-#include <string>
 
 // ReSharper disable CppUnusedIncludeDirective
 
@@ -22,11 +21,9 @@
 #include "inside/logger_constants.hpp"
 
 #include "logger_configurations.h"
-#if ZCLIBLOG_LOGGER_CONFIGURATIONS_DEFAULT_SNPRINTF
-#include "formatters/snprintf.hpp"
+#if ZCLIBLOG_LOGGER_CONFIGURATIONS_DEFAULT_CSNPRINTF
+#include "formatters/csnprintf.hpp"
 #endif
-
-#include <type_traits>
 
 // ReSharper enable CppUnusedIncludeDirective
 
@@ -49,8 +46,8 @@ namespace ZCLibLog {
      */
     template <
         typename Formatter
-        #if ZCLIBLOG_LOGGER_CONFIGURATIONS_DEFAULT_SNPRINTF
-        = formatters::snprintf
+        #if ZCLIBLOG_LOGGER_CONFIGURATIONS_DEFAULT_CSNPRINTF
+        = formatters::csnprintf
         #endif
     >
     class BaseLogger {

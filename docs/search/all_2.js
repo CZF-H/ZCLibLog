@@ -10,6 +10,8 @@ var searchData=
   ['constructible_7',['constructible',['../struct_z_c_lib_log_1_1executors_1_1lambda.html#ac6cfd124ed84b02243600644cdf63162',1,'ZCLibLog::executors::lambda']]],
   ['cputs_8',['cputs',['../struct_z_c_lib_log_1_1executors_1_1cputs.html',1,'ZCLibLog::executors::cputs'],['../struct_z_c_lib_log_1_1executors_1_1cputs.html#a0873b86a269a091d0c1a0ad28c9316f0',1,'ZCLibLog::executors::cputs::cputs()']]],
   ['cputs_2ehpp_9',['cputs.hpp',['../cputs_8hpp.html',1,'']]],
-  ['cstdio_10',['cstdio',['../struct_z_c_lib_log_1_1executors_1_1cstdio.html',1,'ZCLibLog::executors::cstdio'],['../struct_z_c_lib_log_1_1executors_1_1cstdio.html#a5b0cfa99fa14febcce9b83d454ef3aa8',1,'ZCLibLog::executors::cstdio::cstdio()']]],
-  ['cstdio_2ehpp_11',['cstdio.hpp',['../cstdio_8hpp.html',1,'']]]
+  ['csnprintf_10',['csnprintf',['../struct_z_c_lib_log_1_1formatters_1_1csnprintf.html',1,'ZCLibLog::formatters']]],
+  ['csnprintf_2ehpp_11',['csnprintf.hpp',['../csnprintf_8hpp.html',1,'']]],
+  ['cstdio_12',['cstdio',['../struct_z_c_lib_log_1_1executors_1_1cstdio.html',1,'ZCLibLog::executors::cstdio'],['../struct_z_c_lib_log_1_1executors_1_1cstdio.html#a5b0cfa99fa14febcce9b83d454ef3aa8',1,'ZCLibLog::executors::cstdio::cstdio()']]],
+  ['cstdio_2ehpp_13',['cstdio.hpp',['../cstdio_8hpp.html',1,'']]]
 ];

@@ -4,10 +4,10 @@
 #include "ZCLibLog/logger_async.hpp"
 #include "ZCLibLog/logger_shortcuts.hpp"
 
-#include "ZCLibLog/formatters/snprintf.hpp"
+#include "ZCLibLog/formatters/csnprintf.hpp"
 #include "ZCLibLog/executors/cstdio.hpp"
 
-using LoggerType = ZCLibLog::LoggerSync<ZCLibLog::formatters::snprintf>;
+using LoggerType = ZCLibLog::LoggerSync<ZCLibLog::formatters::csnprintf>;
 LoggerType Logger{
     ZCLibLog::PROJECT_NAME,
 };

@@ -8,8 +8,8 @@
 #ifndef ZCLIBLOG_LOGGER_CONFIGURATIONS_H
 #define ZCLIBLOG_LOGGER_CONFIGURATIONS_H
 
-/// @brief 是否为Logger添加默认snprintf formatter
-#define ZCLIBLOG_LOGGER_CONFIGURATIONS_DEFAULT_SNPRINTF true
+/// @brief 是否为Logger添加默认csnprintf formatter
+#define ZCLIBLOG_LOGGER_CONFIGURATIONS_DEFAULT_CSNPRINTF true
 
 /// @brief 异步Logger默认线程数量
 #define ZCLIBLOG_LOGGER_CONFIGURATIONS_ASYNC_THREAD_NUM 1

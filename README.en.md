@@ -32,7 +32,7 @@ You can replace any layer independently.
 
 ## 2. Quick start
 
-### 2.1 Sync Logger + default formatter (`snprintf`)
+### 2.1 Sync Logger + default formatter (`csnprintf`)
 
 ```cpp
 #include "ZCLibLog/logger_sync.hpp"
@@ -86,8 +86,8 @@ int main() {
 |                File                 |                Style                |               Notes               |
 |:-----------------------------------:|:-----------------------------------:|:---------------------------------:|
 |    `formatters/android_log.hpp`     |        Android Logcat style         |          Logcat-oriented          |
+|     `formatters/csnprintf.hpp`      |            C `snprintf`             |      default, C++11-friendly      |
 |       `formatters/format.hpp`       |         C++20 `std::format`         | C++20 compile-time checked format |
-|      `formatters/snprintf.hpp`      |            C `snprintf`             |      default, C++11-friendly      |
 | `formatters/tp_absl_str_format.hpp` |      Abseil `absl::StrFormat`       |       absl third-party lib        |
 |  `formatters/tp_boost_format.hpp`   |        Boost `boost::format`        |       boost third-party lib       |
 |     `formatters/tp_fmtlib.hpp`      | fmtlib `fmt::format`/`fmt::vformat` |      fmtlib third-party lib       |
@@ -239,10 +239,10 @@ If you need logger-level strategies (context injection, custom routing, selectiv
 
 ```cpp
 #include "ZCLibLog/logger_base.hpp"
-#include "ZCLibLog/formatters/snprintf.hpp"
+#include "ZCLibLog/formatters/csnprintf.hpp"
 
 namespace MyLog {
-    template <typename Formatter = ZCLibLog::formatters::snprintf>
+    template <typename Formatter = ZCLibLog::formatters::csnprintf>
     struct MyLogger : ZCLibLog::BaseLogger<Formatter> {
         using Base = ZCLibLog::BaseLogger<Formatter>;
         using Base::Base;

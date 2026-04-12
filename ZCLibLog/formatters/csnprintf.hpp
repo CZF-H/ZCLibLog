@@ -5,8 +5,8 @@
 // Created by wanjiangzhi on 2026/3/30.
 //
 
-#ifndef ZCLIBLOG_FORMATTERS_SNPRINTF_HPP
-#define ZCLIBLOG_FORMATTERS_SNPRINTF_HPP
+#ifndef ZCLIBLOG_FORMATTERS_CSNPRINTF_HPP
+#define ZCLIBLOG_FORMATTERS_CSNPRINTF_HPP
 
 #include "basic_formatter.hpp"
 #include "format_apis/traditional.hpp"
@@ -18,11 +18,11 @@
 namespace ZCLibLog {
     namespace formatters {
         /**
-         * @struct snprintf
+         * @struct csnprintf
          * @brief 基于C语言"snprintf"的格式化接口
          * @author wanjiangzhi
          */
-        struct snprintf : format_apis::traditional {
+        struct csnprintf : format_apis::traditional {
             template<typename... Args>
             static std::string do_format(FLogPack pack, const char* fmt, Args&&... args) {
                 thread_local std::array<char, 4096> buffer;
@@ -76,4 +76,4 @@ namespace ZCLibLog {
     }
 }
 
-#endif //ZCLIBLOG_FORMATTERS_SNPRINTF_HPP
+#endif //ZCLIBLOG_FORMATTERS_CSNPRINTF_HPP

@@ -7,8 +7,8 @@
 
 #include <string>
 #include <chrono>
-#include <thread>
 #include <memory>
+#include <utility>
 #include <type_traits>
 
 #include "logger_macros.h"
